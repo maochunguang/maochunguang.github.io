@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+
+  
+  <title>Mysql学习笔记 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="mysql学习笔记：     mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mysql学习笔记">
+<meta property="og:url" content="http://geeksblog.cc/mysql-study.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="mysql学习笔记：     mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。">
+<meta property="og:updated_time" content="2016-11-13T05:48:05.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mysql学习笔记">
+<meta name="twitter:description" content="mysql学习笔记：     mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。">
+  
+    <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Tommy</a></h1>
+        </hgroup>
+
+        
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a rel="external nofollow" href="/">主页</a></li>
+                        
+                            <li><a rel="external nofollow" href="/archives/">所有文章</a></li>
+                        
+                            <li><a rel="external nofollow" href="/categories/开发工具/">玩转开发工具</a></li>
+                        
+                            <li><a rel="external nofollow" href="/tags/">标签云</a></li>
+                        
+                            <li><a rel="external nofollow" href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" rel="external nofollow" target="_blank" href="https://github.com/maochunguang" title="github">github</a>
+                            
+                                <a class="fl csdn" rel="external nofollow" target="_blank" href="http://blog.csdn.net/baidu_21483933/article/" title="csdn">csdn</a>
+                            
+                                <a class="fl rss" rel="external nofollow" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/http/" style="font-size: 12.5px;">http</a> <a href="/tags/java/" style="font-size: 12.5px;">java</a> <a href="/tags/javacript/" style="font-size: 10px;">javacript</a> <a href="/tags/linux/" style="font-size: 12.5px;">linux</a> <a href="/tags/mac/" style="font-size: 12.5px;">mac</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/node/" style="font-size: 17.5px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/others/" style="font-size: 20px;">others</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/开发工具/" style="font-size: 12.5px;">开发工具</a> <a href="/tags/编程语言/" style="font-size: 10px;">编程语言</a>
+                    </div>
+                </section>
+                
+
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" rel="external nofollow" class="main-nav-link switch-friends-link" href="http://blog.csdn.net/baidu_21483933">csdn</a>
+                    
+                      <a target="_blank" rel="external nofollow" class="main-nav-link switch-friends-link" href="https://segmentfault.com/blog/maocg_web">segmentfault</a>
+                    
+                      <a target="_blank" rel="external nofollow" class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/eb37ef89c746/latest_articles">简书</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">爱动漫,爱游戏,爱编程,爱运动,爱的太多了!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Tommy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Tommy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/开发工具/">玩转开发工具</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/maochunguang" title="github">github</a>
+                    
+                        <a class="csdn" target="_blank" href="http://blog.csdn.net/baidu_21483933/article/" title="csdn">csdn</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-mysql-study" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a rel="external nofollow" href="/mysql-study.html" class="article-date">
+      <time datetime="2016-05-28T14:24:56.000Z" itemprop="datePublished">2016-05-28</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Mysql学习笔记
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> mysql学习笔记：</strong> <Excerpt in index | 首页摘要><br>    mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。<br><a id="more"></a></p>
+<The rest of contents | 余下全文\>
+
+<h3 id="mysql的特点"><a href="#mysql的特点" class="headerlink" title="mysql的特点"></a>mysql的特点</h3><ol>
+<li>关系型数据库，免费使用，</li>
+<li>插入式存储引擎，</li>
+<li>性能高，</li>
+</ol>
+<h3 id="基础的增删改查"><a href="#基础的增删改查" class="headerlink" title="基础的增删改查"></a>基础的增删改查</h3><ol>
+<li><p>ddl语句，数据定义语句</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">database</span> test1;</div><div class="line"><span class="keyword">drop</span> <span class="keyword">database</span> test1;</div><div class="line"><span class="keyword">use</span> test1;</div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp(ename <span class="built_in">varchar</span>(<span class="number">10</span>),hiredate <span class="built_in">date</span>,sal <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),deptno <span class="built_in">int</span>(<span class="number">2</span>));</div><div class="line"><span class="keyword">drop</span> <span class="keyword">table</span> emp;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">modify</span> ename <span class="built_in">varchar</span>(<span class="number">20</span>);</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> <span class="keyword">column</span> age <span class="built_in">int</span>(<span class="number">3</span>);</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">drop</span> <span class="keyword">column</span> age;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">change</span> age age1 <span class="built_in">int</span>(<span class="number">4</span>);</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> birth <span class="built_in">date</span> <span class="keyword">after</span> ename;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">modify</span> age <span class="built_in">int</span>(<span class="number">3</span>) <span class="keyword">first</span>;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">rename</span> emp1;</div></pre></td></tr></table></figure>
+</li>
+<li><p>dml语句，数据操纵语句</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> emp(ename,hiredate,sal,deptno) <span class="keyword">values</span>(<span class="string">'zzx1'</span>,<span class="string">'2000-10-11'</span>,<span class="number">2000</span>,<span class="number">1</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> emp <span class="keyword">values</span>(<span class="string">'lisa'</span>,<span class="string">'2004-05-09'</span>,<span class="number">3000</span>,<span class="number">2</span>);</div><div class="line"><span class="keyword">insert</span> <span class="keyword">into</span> dept <span class="keyword">values</span>(<span class="number">5</span>,<span class="string">'dept5'</span>),(<span class="number">6</span>,<span class="string">'dept6'</span>);</div><div class="line"><span class="keyword">update</span> emp <span class="keyword">set</span> sal=<span class="number">4000</span> <span class="keyword">where</span> ename=<span class="string">'lisa'</span>;</div><div class="line"><span class="keyword">update</span> emp a,dept b <span class="keyword">set</span> a.sal=a.sal*b.deptno,b.deptname=a.ename <span class="keyword">where</span> a.deptno=b.deptno;</div><div class="line"><span class="keyword">delete</span> <span class="keyword">from</span> emp <span class="keyword">where</span> ename=<span class="string">'dony'</span>;</div><div class="line"><span class="keyword">delete</span> a,b <span class="keyword">from</span> emp a,dept b <span class="keyword">where</span> a.deptno=b.deptno <span class="keyword">and</span> a.deptno=<span class="number">3</span>;</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">where</span> ename=<span class="string">'lisa'</span>;</div><div class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> deptno <span class="keyword">from</span> emp;</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal(<span class="keyword">desc</span>);</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">limit</span> <span class="number">5</span>;</div><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> emp <span class="keyword">order</span> <span class="keyword">by</span> sal <span class="keyword">limit</span> <span class="number">1</span>,<span class="number">5</span>;ss</div></pre></td></tr></table></figure>
+</li>
+<li><p>dcl语句，数据控制语句</p>
+</li>
+</ol>
+<h3 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h3><ol>
+<li>尽量使用 prepareStatement(java)，利用预处理功能。</li>
+<li>在进行多条记录的增加、修改、删除时，建议使用批处理功能，批处理的次数以整<br>个 SQL 语句不超过相应数据库的 SQL 语句大小的限制为准。</li>
+<li>建议每条 SQL 语句中 in 中的元素个数在 200 以下，如果个数超过时，应拆分为多<br>条 SQL 语句。禁止使用 xx in(‘’,’’….) or xx in(‘’,’’,’’)。 ★</li>
+<li>禁止使用 or 超过 200，如 xx =’123’ or xx=’456’。 ★</li>
+<li>尽量不使用外连接。</li>
+<li>禁止使用 not in 语句，建议用 not exist。 ★</li>
+<li>禁止使用 Union, 如果有业务需要，请拆分为两个查询。 ★</li>
+<li>禁止在一条 SQL 语句中使用 3 层以上的嵌套查询，如果有，请考虑使用临时表或<br>中间结果集。</li>
+<li>尽量避免在一条 SQL 语句中从&gt;= 4 个表中同时取数， 对于仅是作为过滤条件关联，<br>但不涉及取数的表，不参与表个数计算</li>
+<li>查询条件里任何对列的操作都将导致表扫描，所以应尽量将数据库函数、计算表达<br>式写在逻辑操作符右边。</li>
+<li>在对 char 类型比较时,建议不要使用 rtrim()函数,应该在程序中将不足的长度补<br>齐。</li>
+<li>用多表连接代替 EXISTS 子句。</li>
+<li>如果有多表连接时， 应该有主从之分， 并尽量从一个表取数， 如 select a.col1, a.col2<br>from a join b on a.col3=b.col4 where b.col5 = ‘a’。</li>
+<li>在使用 Like 时，建议 Like 的一边是字符串，表列在一边出现。</li>
+<li>不允许将 where 子句的条件放到 having 中。</li>
+<li>将更新操作放到事务的最后执行。如</li>
+<li>一个事务需更新多个对象时，需保证更新的顺序一致以避免死锁的发生。如总是先<br>更新子表再更新主表，根据存货档案批量更新现存量时，对传入的存货档案 PK 进<br>行排序，再做更新处理等。</li>
+<li>禁止随意使用临时表，在临时数据不超过 200 行的情况下禁止使用临时表。</li>
+<li>禁止随意使用 distinct，避免造成不必要的排序。</li>
+</ol>
+<h3 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h3><ol>
+<li><p>创建索引，删除索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">index</span> cityname <span class="keyword">on</span> city(city(<span class="number">10</span>));</div><div class="line"><span class="keyword">drop</span> <span class="keyword">index</span> cityname <span class="keyword">on</span> city;</div></pre></td></tr></table></figure>
+</li>
+<li><p>搜索的索引列最好在where的字句或者连接子句</p>
+</li>
+<li>使用唯一索引</li>
+<li>使用短索引，对于较长的字段，使用其前缀做索引</li>
+<li>不要过度使用索引，索引引起额外的性能开销和维护</li>
+</ol>
+<h3 id="高级优化措施"><a href="#高级优化措施" class="headerlink" title="高级优化措施"></a>高级优化措施</h3><h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h3>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a rel="external nofollow" href="/mysql-study.html">Mysql学习笔记</a></p>
+        <p><span>文章作者:</span><a rel="external nofollow" href="/" title="访问 Tommy 的个人博客">Tommy</a></p>
+        <p><span>发布时间:</span>2016年05月28日 - 22时24分</p>
+        <p><span>最后更新:</span>2016年11月13日 - 13时48分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/mysql-study.html" title="Mysql学习笔记">http://geeksblog.cc/mysql-study.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/mysql-study.html　　作者: Tommy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a rel="external nofollow" href="/mac-mysql-unicode.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          mac下mysql5.6字符集设置
+        
+      </div>
+    </a>
+  
+  
+    <a rel="external nofollow" href="/node-develop.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nodejs开发规范</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql的特点"><span class="toc-number">1.</span> <span class="toc-text">mysql的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础的增删改查"><span class="toc-number">2.</span> <span class="toc-text">基础的增删改查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql优化"><span class="toc-number">3.</span> <span class="toc-text">sql优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引优化"><span class="toc-number">4.</span> <span class="toc-text">索引优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级优化措施"><span class="toc-number">5.</span> <span class="toc-text">高级优化措施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集群搭建"><span class="toc-number">6.</span> <span class="toc-text">集群搭建</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'maochunguang'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a rel="external nofollow" href="/mac-mysql-unicode.html" title="上一篇: mac下mysql5.6字符集设置">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a rel="external nofollow" href="/node-develop.html" title="下一篇: Nodejs开发规范">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One配置入门</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">Mybooks</a></li><li class="post-list-item"><a class="post-list-link" href="/async-dev.html">异步那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器私人定制</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/code-resource.html">程序员编程资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime-config.html">Sublime详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/js-study.html">Js秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-coding-blog.html">Hexo和coding打造静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li><li class="post-list-item"><a class="post-list-link" href="/hello-world.html">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Tommy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >网站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 3;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-80304484-2', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
