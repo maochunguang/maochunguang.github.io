@@ -1,3 +1,5 @@
+http://geeksblog.cc/bestblog.html
+http://geeksblog.cc/redis-config.html
 http://geeksblog.cc/spider-koa2.html
 http://geeksblog.cc/wechat-dev.html
 http://geeksblog.cc/mac-shortcut.html

@@ -8,18 +8,18 @@
   
 
   
-  <title>用koa2.x写下载漫画的爬虫 | Blog</title>
+  <title>Redis后台启动详细配置 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用koa2.x写下载漫画的爬虫： 使用koa2.x的async ，await解决异步问题，写一个下载漫画的爬虫，代码里有惊喜和福利哦！">
+  <meta name="description" content="Redis后台启动详细配置：   redis启动的时候有多种模式，后台启动，集群启动等等。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用koa2.x写下载漫画的爬虫">
-<meta property="og:url" content="http://geeksblog.cc/spider-koa2.html">
+<meta property="og:title" content="Redis后台启动详细配置">
+<meta property="og:url" content="http://geeksblog.cc/redis-config.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="用koa2.x写下载漫画的爬虫： 使用koa2.x的async ，await解决异步问题，写一个下载漫画的爬虫，代码里有惊喜和福利哦！">
-<meta property="og:updated_time" content="2017-05-13T23:39:46.000Z">
+<meta property="og:description" content="Redis后台启动详细配置：   redis启动的时候有多种模式，后台启动，集群启动等等。">
+<meta property="og:updated_time" content="2017-05-15T15:46:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用koa2.x写下载漫画的爬虫">
-<meta name="twitter:description" content="用koa2.x写下载漫画的爬虫： 使用koa2.x的async ，await解决异步问题，写一个下载漫画的爬虫，代码里有惊喜和福利哦！">
+<meta name="twitter:title" content="Redis后台启动详细配置">
+<meta name="twitter:description" content="Redis后台启动详细配置：   redis启动的时候有多种模式，后台启动，集群启动等等。">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -242,11 +242,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-spider-koa2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-redis-config" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a rel="external nofollow" href="/spider-koa2.html" class="article-date">
-      <time datetime="2017-05-13T23:15:38.000Z" itemprop="datePublished">2017-05-14</time>
+      <a rel="external nofollow" href="/redis-config.html" class="article-date">
+      <time datetime="2017-05-15T14:58:07.000Z" itemprop="datePublished">2017-05-15</time>
 </a>
 
     </div>
@@ -260,7 +260,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      用koa2.x写下载漫画的爬虫
+      Redis后台启动详细配置
     </h1>
   
 
@@ -270,13 +270,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+    <a class="article-category-link" href="/categories/数据库/">数据库</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -286,24 +286,14 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> 用koa2.x写下载漫画的爬虫：</strong> <Excerpt in index | 首页摘要><br>使用koa2.x的async ，await解决异步问题，写一个下载漫画的爬虫，代码里有惊喜和福利哦！<br><a id="more"></a></p>
+        <p><strong> Redis后台启动详细配置：</strong> <Excerpt in index | 首页摘要><br>  redis启动的时候有多种模式，后台启动，集群启动等等。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h3><ol>
-<li>安装nodejs&gt;7.6,安装koa-generator</li>
-<li>直接<code>koa2 spider</code>,生成项目</li>
-<li>安装request,request-promise,cheerio,mkdirp</li>
-<li>npm install安装依赖</li>
-</ol>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>图片或者漫画爬虫的思路很简单，首先观察url的规律，把url按规律加入到下载任务，其实就是请求获得html内容，然后对html进行解析，找到下载的图片url（一般都是img标签的src属性值），把url放到数组保存，使用async await控制所有的任务，直到把所有的图片下载完。</p>
-<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><p>但是nodejs本身上异步的，如果你直接在for循环里去下载，肯定是不行的，必须控制好异步的执行上关键。<br>爬虫简单，处理好异步难。这里我使用的es7中async，await配合promise解决异步问题，还可以使用async模块，eventproxy，等等异步控制模块来解决。</p>
-<h3 id="核心代码-spider-js"><a href="#核心代码-spider-js" class="headerlink" title="核心代码,spider.js"></a>核心代码,spider.js</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">"request-promise"</span>);</div><div class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">"cheerio"</span>);</div><div class="line"><span class="keyword">const</span> mkdirp = <span class="built_in">require</span>(<span class="string">'mkdirp'</span>);</div><div class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'../config'</span>);</div><div class="line">exports.download = <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params">ctx, next</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> dir = <span class="string">'images'</span>;</div><div class="line">    <span class="comment">// 图片链接地址</span></div><div class="line">    <span class="keyword">let</span> links = [];</div><div class="line">    <span class="comment">// 创建目录</span></div><div class="line">    mkdirp(dir);</div><div class="line">    <span class="keyword">var</span> urls = [];</div><div class="line">    <span class="keyword">let</span> tasks = [];</div><div class="line">    <span class="keyword">let</span> downloadTask = [];</div><div class="line">    <span class="keyword">let</span> url = config.url;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= config.size; i++) &#123;</div><div class="line">        <span class="keyword">let</span> link = url + <span class="string">'_'</span> + i + <span class="string">'.html'</span>;</div><div class="line">        <span class="keyword">if</span> (i == <span class="number">1</span>) &#123;</div><div class="line">            link = url + <span class="string">'.html'</span>;</div><div class="line">        &#125;</div><div class="line">        tasks.push(getResLink(i, link))</div><div class="line">    &#125;</div><div class="line">    links = <span class="keyword">await</span> <span class="built_in">Promise</span>.all(tasks)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'links=========='</span>, links.length);</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; links.length; i++) &#123;</div><div class="line">        <span class="keyword">let</span> item = links[i];</div><div class="line">        <span class="keyword">let</span> index = item.split(<span class="string">'___'</span>)[<span class="number">0</span>];</div><div class="line">        <span class="keyword">let</span> src = item.split(<span class="string">'___'</span>)[<span class="number">1</span>];</div><div class="line">        downloadTask.push(downloadImg(src, dir, index + links[i].substr(<span class="number">-4</span>, <span class="number">4</span>)));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">await</span> <span class="built_in">Promise</span>.all(downloadTask);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">downloadImg</span>(<span class="params">url, dir, filename</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'download begin---'</span>, url);</div><div class="line">    request.get(url).pipe(fs.createWriteStream(dir + <span class="string">"/"</span> + filename)).on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'download success'</span>, url);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getResLink</span>(<span class="params">index, url</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> body = <span class="keyword">await</span> request(url);</div><div class="line">    <span class="keyword">let</span> urls = [];</div><div class="line">    <span class="keyword">var</span> $ = cheerio.load(body);</div><div class="line">    $(config.rule).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> src = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>);</div><div class="line">        urls.push(src);</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> index + <span class="string">'___'</span> + urls[<span class="number">0</span>];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h3><p>由于爬虫的复杂性基于不同的网站，不同的任务很不一样，这里只是把几个常用的变量抽取到了config.js。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">//初始url</span></div><div class="line">    url: <span class="string">'http://www.xieet.com/meinv/230'</span>,</div><div class="line">    size: <span class="number">10</span>,</div><div class="line">    <span class="comment">// 选中图片img标签的选择器</span></div><div class="line">    rule: <span class="string">'.imgbox a img'</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h3 id="运行代码"><a href="#运行代码" class="headerlink" title="运行代码"></a>运行代码</h3><ol>
-<li>下载我上传的代码<a href="https://github.com/maochunguang/koa-spider">koa-spider</a></li>
-<li>npm install,npm start即可运行</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>其实无论是写爬虫还是些其他程序，使用nodejs很大一部分都是要处理异步，要学好nodejs必须学好异步处理。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>在开发中一般都是在命令行中直接运行<code>redis-server</code>,但是这样命令行关闭，服务就停止了。<br>如果要在后台运行redis服务，需要制定配置文件。这里以<strong>ubuntu14</strong>为例子</p>
+<h3 id="准备配置文件"><a href="#准备配置文件" class="headerlink" title="准备配置文件"></a>准备配置文件</h3><p>查看‘/etc/redis/redis.conf’,没有可以创建一个，或者下载一个，配置文件位置没有要求</p>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><p>把daemonize设置为yes，<br>然后<code>redis-server /etc/redis/redis.conf</code>启动服务，</p>
+<h3 id="查看服务"><a href="#查看服务" class="headerlink" title="查看服务"></a>查看服务</h3><p><code>ps -ef|grep redis-server</code>查看是否有redis进程存在</p>
+<h3 id="更多配置，在conf文件有说明"><a href="#更多配置，在conf文件有说明" class="headerlink" title="更多配置，在conf文件有说明"></a>更多配置，在conf文件有说明</h3><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"># 是否以后台daemon方式运行，默认是 no，一般我们会改为 yes</div><div class="line">daemonize no</div><div class="line">pidfile /var/run/redis.pid</div><div class="line"># 只允许本机访问</div><div class="line">bind <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></div><div class="line"># 端口设置</div><div class="line">port <span class="number">6379</span></div><div class="line">tcp-backlog <span class="number">511</span></div><div class="line">timeout <span class="number">0</span></div><div class="line">tcp-keepalive <span class="number">0</span></div><div class="line">loglevel notice</div><div class="line"># 日志文件</div><div class="line">logfile <span class="string">""</span></div><div class="line"># 开启数据库的数量，Redis 是有数据库概念的，默认是 <span class="number">16</span> 个，数字从 <span class="number">0</span> ~ <span class="number">15</span></div><div class="line">databases <span class="number">16</span></div><div class="line">save <span class="number">900</span> <span class="number">1</span></div><div class="line">save <span class="number">300</span> <span class="number">10</span></div><div class="line">save <span class="number">60</span> <span class="number">10000</span></div><div class="line">stop-writes-on-bgsave-error yes</div><div class="line">rdbcompression yes</div><div class="line">rdbchecksum yes</div><div class="line">dbfilename dump.rdb</div><div class="line">dir ./</div><div class="line">slave-serve-stale-data yes</div><div class="line">slave-read-only yes</div><div class="line">repl-diskless-sync no</div><div class="line">repl-diskless-sync-delay <span class="number">5</span></div><div class="line">repl-disable-tcp-nodelay no</div><div class="line"># 密码设置，需要设置密码打开</div><div class="line">requirepass <span class="number">123455</span></div><div class="line">slave-priority <span class="number">100</span></div><div class="line">appendonly no</div><div class="line">appendfilename <span class="string">"appendonly.aof"</span></div><div class="line">appendfsync everysec</div><div class="line">no-appendfsync-on-rewrite no</div><div class="line">auto-aof-rewrite-percentage <span class="number">100</span></div><div class="line">auto-aof-rewrite-min-size <span class="number">64</span>mb</div><div class="line">aof-load-truncated yes</div><div class="line">lua-time-limit <span class="number">5000</span></div><div class="line">slowlog-log-slower-than <span class="number">10000</span></div><div class="line">slowlog-max-len <span class="number">128</span></div><div class="line">latency-monitor-threshold <span class="number">0</span></div><div class="line">notify-keyspace-events <span class="string">""</span></div><div class="line">hash-max-ziplist-entries <span class="number">512</span></div><div class="line">hash-max-ziplist-value <span class="number">64</span></div><div class="line"><span class="type">list</span>-max-ziplist-entries <span class="number">512</span></div><div class="line"><span class="type">list</span>-max-ziplist-value <span class="number">64</span></div><div class="line">set-max-intset-entries <span class="number">512</span></div><div class="line">zset-max-ziplist-entries <span class="number">128</span></div><div class="line">zset-max-ziplist-value <span class="number">64</span></div><div class="line">hll-sparse-max-bytes <span class="number">3000</span></div><div class="line">activerehashing yes</div><div class="line">client-output-buffer-limit normal <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></div><div class="line">client-output-buffer-limit slave <span class="number">256</span>mb <span class="number">64</span>mb <span class="number">60</span></div><div class="line">client-output-buffer-limit pubsub <span class="number">32</span>mb <span class="number">8</span>mb <span class="number">60</span></div><div class="line">hz <span class="number">10</span></div><div class="line">aof-rewrite-incremental-fsync yes</div></pre></td></tr></table></figure>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
 </blockquote>
@@ -315,13 +305,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a rel="external nofollow" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></p>
+        <p><span>本文标题:</span><a rel="external nofollow" href="/redis-config.html">Redis后台启动详细配置</a></p>
         <p><span>文章作者:</span><a rel="external nofollow" href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
-        <p><span>发布时间:</span>2017年05月14日 - 07时15分</p>
-        <p><span>最后更新:</span>2017年05月14日 - 07时39分</p>
+        <p><span>发布时间:</span>2017年05月15日 - 22时58分</p>
+        <p><span>最后更新:</span>2017年05月15日 - 23时46分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/spider-koa2.html" title="用koa2.x写下载漫画的爬虫">http://geeksblog.cc/spider-koa2.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/spider-koa2.html　　作者: 山不转水转" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/redis-config.html" title="Redis后台启动详细配置">http://geeksblog.cc/redis-config.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/redis-config.html　　作者: 山不转水转" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -334,18 +324,18 @@
 
 <nav id="article-nav">
   
-    <a rel="external nofollow" href="/redis-config.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a rel="external nofollow" href="/bestblog.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Redis后台启动详细配置
+          如何写一篇好博客？
         
       </div>
     </a>
   
   
-    <a rel="external nofollow" href="/wechat-dev.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微信公众号开发</div>
+    <a rel="external nofollow" href="/spider-koa2.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">用koa2.x写下载漫画的爬虫</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -357,7 +347,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#项目搭建"><span class="toc-number">1.</span> <span class="toc-text">项目搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#难点"><span class="toc-number">3.</span> <span class="toc-text">难点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核心代码-spider-js"><span class="toc-number">4.</span> <span class="toc-text">核心代码,spider.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础配置"><span class="toc-number">5.</span> <span class="toc-text">基础配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行代码"><span class="toc-number">6.</span> <span class="toc-text">运行代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#说明"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#准备配置文件"><span class="toc-number">2.</span> <span class="toc-text">准备配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改配置文件"><span class="toc-number">3.</span> <span class="toc-text">修改配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看服务"><span class="toc-number">4.</span> <span class="toc-text">查看服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更多配置，在conf文件有说明"><span class="toc-number">5.</span> <span class="toc-text">更多配置，在conf文件有说明</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -435,13 +425,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a rel="external nofollow" href="/redis-config.html" title="上一篇: Redis后台启动详细配置">
+            <a rel="external nofollow" href="/bestblog.html" title="上一篇: 如何写一篇好博客？">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a rel="external nofollow" href="/wechat-dev.html" title="下一篇: 微信公众号开发">
+            <a rel="external nofollow" href="/spider-koa2.html" title="下一篇: 用koa2.x写下载漫画的爬虫">
                 <i class="fa fa-angle-right"></i>
             </a>
         
