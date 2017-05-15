@@ -73,6 +73,7 @@
     <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
         <a href="/" class="profilepic">
             
             <img lazy-src="/img/avatar.png" class="js-avatar">
@@ -86,19 +87,53 @@
         
         
             <form>
-                <input type="text" class="st-default-search-input search" id="bdcsMain" placeholder=" Search...">
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
             </form>
+            <div id="local-search-result"></div>
         
         
             <script type="text/javascript">
                 (function() {
-                    document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
-                    var bdcs = document.createElement('script');
-                    bdcs.type = 'text/javascript';
-                    bdcs.async = true;
-                    bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=15597137818865072752' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date() / 3600000);
-                    var s = document.getElementsByTagName('script')[0];
-                    s.parentNode.insertBefore(bdcs, s);
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
                 })();
             </script>
         
