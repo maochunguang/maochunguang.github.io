@@ -44,21 +44,14 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc//404.html</loc>
-    
-    <lastmod>2017-05-17T23:42:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://geeksblog.cc/code-resource.html</loc>
-    
-    <lastmod>2017-05-17T23:42:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://geeksblog.cc/coder-study.html</loc>
+    
+    <lastmod>2017-05-17T23:42:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://geeksblog.cc/tags/index.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -72,6 +65,13 @@
   </url>
   
   <url>
+    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
+    
+    <lastmod>2017-05-17T23:42:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://geeksblog.cc/dream.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/ubuntu-dev-config.html</loc>
+    <loc>http://geeksblog.cc//404.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/sublime-config.html</loc>
+    <loc>http://geeksblog.cc/ubuntu-dev-config.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -114,7 +114,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/study-goals.html</loc>
+    <loc>http://geeksblog.cc/hello-world.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/hello-world.html</loc>
+    <loc>http://geeksblog.cc/sublime-config.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -142,7 +142,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/tags/index.html</loc>
+    <loc>http://geeksblog.cc/java-date.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/java-date.html</loc>
+    <loc>http://geeksblog.cc/code-resource.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
+    <loc>http://geeksblog.cc/study-goals.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/redis-study.html</loc>
+    <loc>http://geeksblog.cc/mongodb-study.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/mongodb-study.html</loc>
+    <loc>http://geeksblog.cc/redis-study.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -282,14 +282,14 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/free-books.html</loc>
+    <loc>http://geeksblog.cc/hexo-config.html</loc>
     
     <lastmod>2016-11-30T23:47:25.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/hexo-config.html</loc>
+    <loc>http://geeksblog.cc/free-books.html</loc>
     
     <lastmod>2016-11-30T23:47:25.000Z</lastmod>
     
