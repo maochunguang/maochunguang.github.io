@@ -16,7 +16,7 @@
 <meta property="og:url" content="http://geeksblog.cc/hexo-githup-blog.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="hexo和github打造个人博客 ：     使用hexo和github打造属于自己的静态博客，展示自己的作品，思想……">
-<meta property="og:updated_time" content="2017-05-17T23:42:12.000Z">
+<meta property="og:updated_time" content="2017-05-23T02:54:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo和github打造个人博客">
 <meta name="twitter:description" content="hexo和github打造个人博客 ：     使用hexo和github打造属于自己的静态博客，展示自己的作品，思想……">
@@ -327,11 +327,11 @@
 <p>##说明<br>    自己在使用hexo搭建静态博客的时候踩了许多坑,最终去官网看教程搞定了,<br>    建议用hexo搭建个人博客的时候,最好看清教程的日期和使用的版本,这样就<br>    不会因为版本的不同导致的问题了.建议先去hexo官网了解一下<br>   <a href="https://hexo.io/zh-cn/"><strong>hexo官网</strong></a></p>
 <h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><ol>
 <li>安装nodejs<ul>
-<li>去官网下载nodejs安装(推荐安装0.12.x),安装之后在命令行 node -v,如果成功说明node环境ok,不成功就去环境变量配置一下.</li>
+<li>去官网下载nodejs安装(推荐安装4.x),安装之后在命令行 node -v,如果成功说明node环境ok,不成功就去环境变量配置一下.</li>
 </ul>
 </li>
 <li>安装hexo<ul>
-<li>使用命令 npm install hexo -g,执行hexo -v 查看版本,本教程适合<strong>3.1.1</strong>版本</li>
+<li>使用命令 npm install hexo -g,执行hexo -v 查看版本,本教程适合<strong>3.1.1以上</strong>版本</li>
 </ul>
 </li>
 <li>安装git<ul>
@@ -343,31 +343,26 @@
 </ul>
 </li>
 </ol>
-<h2 id="2-github-pages和gitcafe-page的说明"><a href="#2-github-pages和gitcafe-page的说明" class="headerlink" title="2.github-pages和gitcafe-page的说明"></a>2.github-pages和gitcafe-page的说明</h2><ol>
+<h2 id="2-github-pages的说明"><a href="#2-github-pages的说明" class="headerlink" title="2.github-pages的说明"></a>2.github-pages的说明</h2><ol>
 <li>github有两种主页,一种是github-page(个人主页),一种是项目主页,本教程针对个人主页</li>
-<li>gitcafe-page的个人主页只是在项目下有一个gitcafe-pages的分支,部署成功后访问主页即可</li>
 <li>github-page需要将hexo博客发布到repository的master(主干)即可</li>
-<li>gitcafe需要将hexo博客发布到repository的gitcafe-pages的分支</li>
-<li>github的个人主页要求repository的名称和username一致，加入username是tom，则repository的名称为tom.github.io<h2 id="3-使用hexo写博客"><a href="#3-使用hexo写博客" class="headerlink" title="3.使用hexo写博客"></a>3.使用hexo写博客</h2><ul>
-<li>新建一个文件夹myblog,</li>
-<li>右键git bash here使用git的shell</li>
-<li>在shell中输入hexo init,回车执行</li>
-<li>在shell中输入hexo g ,回车</li>
-<li>在shell中hexo s,回车</li>
-<li>去浏览器访问<a href="http://localhost:4000,访问到主页,然后在shell中ctrl">http://localhost:4000,访问到主页,然后在shell中ctrl</a> c停止</li>
-<li>在shell中hexo new “first-blog”,回车</li>
-<li>在shell中hexo g ,回车</li>
-<li>在shell中hexo s ,回车,在访问</li>
-<li>ok,在本地测试就没问题了</li>
-</ul>
-</li>
+<li>github的个人主页要求repository的名称和username一致，加入username是tom，则repository的名称为tom.github.io</li>
 </ol>
-<h2 id="4-发布到github和gitcafe"><a href="#4-发布到github和gitcafe" class="headerlink" title="4.发布到github和gitcafe"></a>4.发布到github和gitcafe</h2><pre><code>- 打开项目根部录下的.config.yml,找到deploy,修改如下:
-</code></pre><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line"> - <span class="attribute">type</span>: git</div><div class="line">   <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourname/yourname.github.io.git,master</div><div class="line"> - <span class="attribute">type</span>: git</div><div class="line">   <span class="attribute">repo</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:yourname/yourname.git,gitcafe-pages</div></pre></td></tr></table></figure>
-<pre><code>- 如果只发布到github或者gitcafe上,修改如下:git的branch是master,gitcafe的是gitcafe-pages
-</code></pre><figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">  type:</span> git</div><div class="line"><span class="symbol">  repo:</span> <span class="params">&lt;repository url&gt;</span></div><div class="line"><span class="symbol">  branch:</span> [branch]</div><div class="line"><span class="symbol">  message:</span> [message]</div></pre></td></tr></table></figure>
-<pre><code>访问地址就是 http://tom.github.io/
-</code></pre><h3 id="5-常用命令"><a href="#5-常用命令" class="headerlink" title="5.常用命令"></a>5.常用命令</h3><pre><code>命令的简写为：
+<h2 id="3-使用hexo写博客"><a href="#3-使用hexo写博客" class="headerlink" title="3.使用hexo写博客"></a>3.使用hexo写博客</h2><pre><code>- 新建一个文件夹myblog,
+- 右键git bash here使用git的shell
+- 在shell中输入hexo init,回车执行
+- 在shell中输入hexo g ,回车
+- 在shell中hexo s,回车
+- 去浏览器访问http://localhost:4000,访问到主页,然后在shell中ctrl c停止
+- 在shell中hexo new &quot;first-blog&quot;,回车
+- 在shell中hexo g ,回车
+- 在shell中hexo s ,回车,在访问
+- ok,在本地测试就没问题了
+</code></pre><h2 id="4-发布到github"><a href="#4-发布到github" class="headerlink" title="4.发布到github"></a>4.发布到github</h2><p>打开项目根部录下的.config.yml,找到deploy,修改如下:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">deploy</span>:</div><div class="line"> - <span class="attribute">type</span>: git</div><div class="line">   <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourname/yourname.github.io.git,master</div></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">deploy:</span></div><div class="line"><span class="symbol">  type:</span> git</div><div class="line"><span class="symbol">  repo:</span> <span class="params">&lt;repository url&gt;</span></div><div class="line"><span class="symbol">  branch:</span> [branch]</div><div class="line"><span class="symbol">  message:</span> [message]</div></pre></td></tr></table></figure>
+<p>访问地址就是 <a href="http://tom.github.io/">http://tom.github.io/</a></p>
+<h3 id="5-常用命令"><a href="#5-常用命令" class="headerlink" title="5.常用命令"></a>5.常用命令</h3><pre><code>命令的简写为：
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo n == hexo <span class="keyword">new</span></div><div class="line">hexo g == hexo <span class="keyword">generate</span></div><div class="line">hexo s == hexo server</div><div class="line">hexo d == hexo deploy</div><div class="line">hexo clean  删除public文件夹</div></pre></td></tr></table></figure>
 </code></pre><h2 id="6-常见问题"><a href="#6-常见问题" class="headerlink" title="6.常见问题"></a>6.常见问题</h2><ol>
 <li>部署时出现git not found<ul>
@@ -378,7 +373,7 @@
 <h2 id="7-详细设置"><a href="#7-详细设置" class="headerlink" title="7.详细设置"></a>7.详细设置</h2><pre><code>每个人对自己的博客都有不一样的要求，比如主题，分类，标签，评论插件的选择，  
 这些对程序员的你来说，都是小菜一碟，下面是官网教程：
 </code></pre><p>   <a href="https://hexo.io/docs/">hexo官方文档</a></p>
-<p>博客效果可以看我的个人博客     <a href="http://geekwalker.cn">我的个人博客</a></p>
+<p>博客效果可以看我的个人博客     <a href="http://geeksblog.cc">我的个人博客</a></p>
 
       
     </div>
@@ -390,7 +385,7 @@
         <p><span>本文标题:</span><a rel="external nofollow" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></p>
         <p><span>文章作者:</span><a rel="external nofollow" href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2015年12月20日 - 22时35分</p>
-        <p><span>最后更新:</span>2017年05月18日 - 07时42分</p>
+        <p><span>最后更新:</span>2017年05月23日 - 10时54分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/hexo-githup-blog.html" title="Hexo和github打造个人博客">http://geeksblog.cc/hexo-githup-blog.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/hexo-githup-blog.html　　作者: 山不转水转" title=""></span>
@@ -427,7 +422,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-准备工作"><span class="toc-number">1.</span> <span class="toc-text">1.准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github-pages和gitcafe-page的说明"><span class="toc-number">2.</span> <span class="toc-text">2.github-pages和gitcafe-page的说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用hexo写博客"><span class="toc-number">3.</span> <span class="toc-text">3.使用hexo写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-发布到github和gitcafe"><span class="toc-number">4.</span> <span class="toc-text">4.发布到github和gitcafe</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-常用命令"><span class="toc-number">4.1.</span> <span class="toc-text">5.常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-常见问题"><span class="toc-number">5.</span> <span class="toc-text">6.常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-详细设置"><span class="toc-number">6.</span> <span class="toc-text">7.详细设置</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-准备工作"><span class="toc-number">1.</span> <span class="toc-text">1.准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-github-pages的说明"><span class="toc-number">2.</span> <span class="toc-text">2.github-pages的说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-使用hexo写博客"><span class="toc-number">3.</span> <span class="toc-text">3.使用hexo写博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-发布到github"><span class="toc-number">4.</span> <span class="toc-text">4.发布到github</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-常用命令"><span class="toc-number">4.1.</span> <span class="toc-text">5.常用命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-常见问题"><span class="toc-number">5.</span> <span class="toc-text">6.常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-详细设置"><span class="toc-number">6.</span> <span class="toc-text">7.详细设置</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -487,9 +482,8 @@
 
 
     
-        <section class="youyan" id="comments">
+        <section class="changyan" id="comments">
   <!--<div id="uyan_frame"></div>-->
-  <!--<script src="http://v2.uyan.cc/code/uyan.js?uid=2133530"></script>-->
   <div id="SOHUCS"></div>
   <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
   <script type="text/javascript">
@@ -516,7 +510,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/digital-info.html">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/cognition-deep.html">谈一谈认知</a></li><li class="post-list-item"><a class="post-list-link" href="/eggjs-action.html">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/bestblog.html">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-config.html">Redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One配置入门</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">Mybooks</a></li><li class="post-list-item"><a class="post-list-link" href="/async-dev.html">异步那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器私人定制</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/code-resource.html">程序员编程资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime-config.html">Sublime详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/js-study.html">Js秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-coding-blog.html">Hexo和coding打造静态博客</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/digital-info.html">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/cognition-deep.html">谈一谈认知</a></li><li class="post-list-item"><a class="post-list-link" href="/eggjs-action.html">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/bestblog.html">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-config.html">Redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One配置入门</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">Mybooks</a></li><li class="post-list-item"><a class="post-list-link" href="/async-dev.html">异步那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器私人定制</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/code-resource.html">程序员编程资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime-config.html">Sublime详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/js-study.html">Js秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-theme.html">Hexo自用黑色主题</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

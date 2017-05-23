@@ -35,7 +35,7 @@ http://geeksblog.cc/ubuntu-dev-config.html
 http://geeksblog.cc/sublime-config.html
 http://geeksblog.cc/dream.html
 http://geeksblog.cc/js-study.html
-http://geeksblog.cc/hexo-coding-blog.html
+http://geeksblog.cc/hexo-theme.html
 http://geeksblog.cc/coder-study.html
 http://geeksblog.cc/hexo-githup-blog.html
 http://geeksblog.cc/mongodb-study.html
