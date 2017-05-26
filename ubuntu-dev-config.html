@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/ubuntu-dev-config.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
-<meta property="og:updated_time" content="2017-05-17T23:42:12.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16开发环境配置">
 <meta name="twitter:description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
@@ -320,7 +320,7 @@
         <p><strong> ubuntu开发环境配置：</strong> <Excerpt in index | 首页摘要><br>    ubuntu16下node,java开发环境配置<br> <a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="安装系统软件"><a href="#安装系统软件" class="headerlink" title="安装系统软件"></a>安装系统软件</h3><ol>
+<h2 id="安装系统软件"><a href="#安装系统软件" class="headerlink" title="安装系统软件"></a>安装系统软件</h2><ol>
 <li><p>更新系统和软件</p>
 <figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> upgade</div></pre></td></tr></table></figure>
 </li>
@@ -328,7 +328,7 @@
 </li>
 <li>安装搜狗输入法（官网），安装fcitx配置搜狗输入法</li>
 </ol>
-<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><ol>
+<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><ol>
 <li><p>下载jdk并新建一个文件夹</p>
  <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">jvm</span></span></div></pre></td></tr></table></figure>
 </li>
@@ -342,7 +342,7 @@
  <figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java <span class="comment">--version</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><ol>
+<h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><ol>
 <li>nodejs版本迭代较快，有时候需要检查在不同版本下的兼容性问题，用nvm来控制版本</li>
 <li><p>安装nvm,source的时候根据自己的shell版本，~/.bashrc, ~/.profile, 或者 ~/.zshrc</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash</div><div class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></div><div class="line">[ <span class="_">-s</span> <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; . <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> <span class="comment"># This loads nvm</span></div><div class="line"><span class="built_in">source</span> ~/.profile</div></pre></td></tr></table></figure>
@@ -350,7 +350,7 @@
 <li><p>安装不同版本的nodejs<br>　　<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nvm ls-remote</div><div class="line">nvm install v0<span class="number">.12</span><span class="number">.9</span></div><div class="line">nvm install <span class="number">5.0</span></div><div class="line">nvm use <span class="number">0.12</span><span class="number">.9</span></div><div class="line">nvm alias <span class="section">default</span> <span class="number">0.12</span><span class="number">.9</span></div></pre></td></tr></table></figure></p>
 </li>
 </ol>
-<h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><ol>
+<h2 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h2><ol>
 <li><p>配置公钥</p>
  <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver <span class="string">hkp:</span><span class="comment">//keyserver.ubuntu.com:80 --recv 7F0CEB10</span></div><div class="line">echo <span class="string">"deb http://repo.mongodb.org/apt/ubuntu "</span>$(lsb_release -sc)<span class="string">"/mongodb-org/3.0 multiverse"</span> | sudo tee <span class="regexp">/etc/</span>apt<span class="regexp">/sources.list.d/</span>mongodb-org<span class="number">-3.0</span>.list</div></pre></td></tr></table></figure>
 </li>
@@ -364,7 +364,7 @@
  <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo service mongod <span class="literal">start</span></div><div class="line">sudo service mongod <span class="literal">stop</span></div><div class="line">sudo service mongod restart</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h3><ol>
+<h2 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h2><ol>
 <li><p>下载软件</p>
  <figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget <span class="string">http:</span><span class="comment">//download.redis.io/releases/redis-2.8.11.tar.gz</span></div></pre></td></tr></table></figure>
 </li>
@@ -385,7 +385,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><ol>
+<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><ol>
 <li>认识环境变量相关的文件</li>
 </ol>
 <ul>
@@ -407,7 +407,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="安装开发工具"><a href="#安装开发工具" class="headerlink" title="安装开发工具"></a>安装开发工具</h3><ol>
+<h2 id="安装开发工具"><a href="#安装开发工具" class="headerlink" title="安装开发工具"></a>安装开发工具</h2><ol>
 <li>zsh命令行工具</li>
 <li>mysql客户端workbench，mongo客户端工具robomongo</li>
 <li>安装git,svn版本控制工具 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get <span class="keyword">install</span> git</div><div class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> subversion</div></pre></td></tr></table></figure>
@@ -424,7 +424,7 @@
         <p><span>本文标题:</span><a  href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年04月26日 - 18时48分</p>
-        <p><span>最后更新:</span>2017年05月18日 - 07时42分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/ubuntu-dev-config.html" title="Ubuntu16开发环境配置">http://geeksblog.cc/ubuntu-dev-config.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/ubuntu-dev-config.html　　作者: 山不转水转" title=""></span>
@@ -461,7 +461,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装系统软件"><span class="toc-number">1.</span> <span class="toc-text">安装系统软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装jdk"><span class="toc-number">2.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">3.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mongodb"><span class="toc-number">4.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装redis"><span class="toc-number">5.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量配置"><span class="toc-number">6.</span> <span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装开发工具"><span class="toc-number">7.</span> <span class="toc-text">安装开发工具</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装系统软件"><span class="toc-number">1.</span> <span class="toc-text">安装系统软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jdk"><span class="toc-number">2.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">3.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mongodb"><span class="toc-number">4.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装redis"><span class="toc-number">5.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量配置"><span class="toc-number">6.</span> <span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装开发工具"><span class="toc-number">7.</span> <span class="toc-text">安装开发工具</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

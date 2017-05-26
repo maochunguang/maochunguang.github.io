@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/fullprj-desc.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="一个完整项目的得失： 想做一个完美的cms太难，架构本身就是要有取舍，只有最合适的架构，没有最好的架构。">
-<meta property="og:updated_time" content="2017-05-26T04:01:53.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一个完整项目的得失">
 <meta name="twitter:description" content="一个完整项目的得失： 想做一个完美的cms太难，架构本身就是要有取舍，只有最合适的架构，没有最好的架构。">
@@ -320,35 +320,35 @@
         <p><strong> 一个完整项目的得失：</strong> <Excerpt in index | 首页摘要><br>想做一个完美的cms太难，架构本身就是要有取舍，只有最合适的架构，没有最好的架构。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>今年从2月份到4月份做了一个完整到项目，后台cms系统，包括前台应用。写打造一个完美到系统，确实需要考虑太多因素，<br>自己收获颇多，特此总结一下。</p>
-<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>cms后台主要使用java的spring，mybits，shiro框架，前台就是jquery，jsp，bootstrap，<br>数据库方面是mysql，缓存没有使用</p>
-<h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><p>使用mysql设计数据库，对业务的不深入很多时候会导致设置的表满足不了需求</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>今年从2月份到4月份做了一个完整到项目，后台cms系统，包括前台应用。写打造一个完美到系统，确实需要考虑太多因素，<br>自己收获颇多，特此总结一下。</p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>cms后台主要使用java的spring，mybits，shiro框架，前台就是jquery，jsp，bootstrap，<br>数据库方面是mysql，缓存没有使用</p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>使用mysql设计数据库，对业务的不深入很多时候会导致设置的表满足不了需求</p>
 <ol>
 <li>提前预留几个def空字段，这样不需要频繁的修改表结构</li>
 <li>索引要建好，数据量增长起来后，没有索引搜索肯定慢的很，对常见的搜索条件建索引</li>
 <li>对并发有个大致的数</li>
 </ol>
-<h3 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h3><ol>
+<h2 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h2><ol>
 <li>反向代理配置，代理80端口，代理域名访问</li>
 <li>静态资源缓存，压缩</li>
 <li>websocket配置，https配置</li>
 <li>集群的负载均衡配置</li>
 </ol>
-<h3 id="tomcat配置"><a href="#tomcat配置" class="headerlink" title="tomcat配置"></a>tomcat配置</h3><ol>
+<h2 id="tomcat配置"><a href="#tomcat配置" class="headerlink" title="tomcat配置"></a>tomcat配置</h2><ol>
 <li>jvm参数设置</li>
 <li>项目路径设置</li>
 <li>日志，重启配置</li>
 </ol>
-<h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><ol>
+<h2 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h2><ol>
 <li>防止</li>
 </ol>
-<h3 id="选购服务器和域名"><a href="#选购服务器和域名" class="headerlink" title="选购服务器和域名"></a>选购服务器和域名</h3><ol>
+<h2 id="选购服务器和域名"><a href="#选购服务器和域名" class="headerlink" title="选购服务器和域名"></a>选购服务器和域名</h2><ol>
 <li>估算并发量，预留一定的并发量</li>
 <li>根据并发量计算带宽和cpu还有内存</li>
 <li>根据网络情况选择不同区域的服务器</li>
 <li>根据需求选择域名</li>
 </ol>
-<h3 id="突发状况的处理机制"><a href="#突发状况的处理机制" class="headerlink" title="突发状况的处理机制"></a>突发状况的处理机制</h3><ol>
+<h2 id="突发状况的处理机制"><a href="#突发状况的处理机制" class="headerlink" title="突发状况的处理机制"></a>突发状况的处理机制</h2><ol>
 <li>选购的第三方接口挂了</li>
 <li>数据库挂了</li>
 <li>服务器挂了</li>
@@ -368,7 +368,7 @@
         <p><span>本文标题:</span><a  href="/fullprj-desc.html">一个完整项目的得失</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2017年04月11日 - 10时18分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 12时01分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/fullprj-desc.html" title="一个完整项目的得失">http://geeksblog.cc/fullprj-desc.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/fullprj-desc.html　　作者: 山不转水转" title=""></span>
@@ -405,7 +405,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#架构"><span class="toc-number">2.</span> <span class="toc-text">架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库设计"><span class="toc-number">3.</span> <span class="toc-text">数据库设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx配置"><span class="toc-number">4.</span> <span class="toc-text">nginx配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat配置"><span class="toc-number">5.</span> <span class="toc-text">tomcat配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安全问题"><span class="toc-number">6.</span> <span class="toc-text">安全问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选购服务器和域名"><span class="toc-number">7.</span> <span class="toc-text">选购服务器和域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#突发状况的处理机制"><span class="toc-number">8.</span> <span class="toc-text">突发状况的处理机制</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#架构"><span class="toc-number">2.</span> <span class="toc-text">架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据库设计"><span class="toc-number">3.</span> <span class="toc-text">数据库设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx配置"><span class="toc-number">4.</span> <span class="toc-text">nginx配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tomcat配置"><span class="toc-number">5.</span> <span class="toc-text">tomcat配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安全问题"><span class="toc-number">6.</span> <span class="toc-text">安全问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选购服务器和域名"><span class="toc-number">7.</span> <span class="toc-text">选购服务器和域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#突发状况的处理机制"><span class="toc-number">8.</span> <span class="toc-text">突发状况的处理机制</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

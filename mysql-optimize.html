@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/mysql-optimize.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="mysql优化：     mysql的优化措施，从sql优化做起">
-<meta property="og:updated_time" content="2017-05-17T23:42:12.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql优化">
 <meta name="twitter:description" content="mysql优化：     mysql的优化措施，从sql优化做起">
@@ -320,7 +320,7 @@
         <p><strong> mysql优化：</strong> <Excerpt in index | 首页摘要><br>    mysql的优化措施，从sql优化做起<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="优化sql的一般步骤"><a href="#优化sql的一般步骤" class="headerlink" title="优化sql的一般步骤"></a>优化sql的一般步骤</h3><ol>
+<h2 id="优化sql的一般步骤"><a href="#优化sql的一般步骤" class="headerlink" title="优化sql的一般步骤"></a>优化sql的一般步骤</h2><ol>
 <li>通过show status了解各种sql的执行频率</li>
 <li>定位执行效率低的sql语句</li>
 <li>通过explain分析效率低的sql</li>
@@ -328,7 +328,7 @@
 <li>通过trace分析优化器如何选择执行计划</li>
 <li>确定问题，采取措施优化</li>
 </ol>
-<h3 id="索引优化措施"><a href="#索引优化措施" class="headerlink" title="索引优化措施"></a>索引优化措施</h3><ol>
+<h2 id="索引优化措施"><a href="#索引优化措施" class="headerlink" title="索引优化措施"></a>索引优化措施</h2><ol>
 <li><p>mysql中使用索引的典型场景</p>
 <ol>
 <li>匹配全值，条件所有列都在索引中而且是等值匹配</li>
@@ -352,7 +352,7 @@
 </li>
 </ol>
 <p>如果Handler_read_rnd_next的值比较高，说明索引不正确或者查询没有使用到索引</p>
-<h3 id="简单实用的优化方法"><a href="#简单实用的优化方法" class="headerlink" title="简单实用的优化方法"></a>简单实用的优化方法</h3><ol>
+<h2 id="简单实用的优化方法"><a href="#简单实用的优化方法" class="headerlink" title="简单实用的优化方法"></a>简单实用的优化方法</h2><ol>
 <li>定期检查表和分析表<br>分析表语法：<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">analyze <span class="keyword">table</span> 表名；</div></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -378,7 +378,7 @@
         <p><span>本文标题:</span><a  href="/mysql-optimize.html">Mysql优化</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年06月11日 - 07时25分</p>
-        <p><span>最后更新:</span>2017年05月18日 - 07时42分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/mysql-optimize.html" title="Mysql优化">http://geeksblog.cc/mysql-optimize.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/mysql-optimize.html　　作者: 山不转水转" title=""></span>
@@ -415,7 +415,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#优化sql的一般步骤"><span class="toc-number">1.</span> <span class="toc-text">优化sql的一般步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引优化措施"><span class="toc-number">2.</span> <span class="toc-text">索引优化措施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单实用的优化方法"><span class="toc-number">3.</span> <span class="toc-text">简单实用的优化方法</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#优化sql的一般步骤"><span class="toc-number">1.</span> <span class="toc-text">优化sql的一般步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化措施"><span class="toc-number">2.</span> <span class="toc-text">索引优化措施</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单实用的优化方法"><span class="toc-number">3.</span> <span class="toc-text">简单实用的优化方法</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

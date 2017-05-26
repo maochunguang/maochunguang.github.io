@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/wechat-dev.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="微信公众号开发： 微信公众号开发的一些注意事项">
-<meta property="og:updated_time" content="2017-05-14T00:05:45.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信公众号开发">
 <meta name="twitter:description" content="微信公众号开发： 微信公众号开发的一些注意事项">
@@ -320,34 +320,34 @@
         <p><strong> 微信公众号开发：</strong> <Excerpt in index | 首页摘要><br>微信公众号开发的一些注意事项<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h3><ol>
+<h2 id="开发环境搭建"><a href="#开发环境搭建" class="headerlink" title="开发环境搭建"></a>开发环境搭建</h2><ol>
 <li>微信公众号开发者配置，url，token，</li>
 <li>本地调试，使用内网穿透工具，花生壳，或者netapp，买一个可以自定义域名的，内网映射到制定端口，</li>
 <li>项目搭建，express或koa搭建项目，npm有微信的现成包，直接配置</li>
 </ol>
-<h3 id="回复"><a href="#回复" class="headerlink" title="回复"></a>回复</h3><ol>
+<h2 id="回复"><a href="#回复" class="headerlink" title="回复"></a>回复</h2><ol>
 <li>回复和发消息并没有什么特别注意的地方，这里不多说</li>
 </ol>
-<h3 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h3><ol>
+<h2 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h2><ol>
 <li>微信菜单有自定义菜单，有个性化菜单，但是个性化菜单优先级高于个性化菜单</li>
 <li>个性化菜单可以根据用户的tag，sex，group等属性进行区分菜单</li>
 <li>注意，我在使用时发现<strong>个性化菜单经常会失效</strong>，不起作用，偶尔会起作用，如果线上打算使用个性化菜单，请慎重并仔细测试</li>
 </ol>
-<h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><p>授权有网页授权，js sdk授权，<br>网页授权也有两种，一个上静默授权，一个是点击授权，贴一下js sdk调用前认证的代码，要使用sha1加密<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> getSignConfig(originUrl) &#123;</div><div class="line">      <span class="keyword">let</span> data = &#123;&#125;</div><div class="line">      <span class="keyword">const</span> sha1 = crypto.createHash(<span class="string">'sha1'</span>)</div><div class="line">      <span class="keyword">const</span> appId = <span class="keyword">this</span>.app.config.weixin.appID</div><div class="line">      <span class="keyword">const</span> jsapi_ticket = <span class="keyword">await</span> <span class="keyword">this</span>.ctx.service.token.getJSApiTicket()</div><div class="line">      <span class="keyword">const</span> noncestr = <span class="keyword">this</span>.app.config.jsapi.noncestr</div><div class="line">      <span class="keyword">const</span> url = <span class="keyword">this</span>.app.config.domain + originUrl</div><div class="line">      <span class="keyword">const</span> timestamp = <span class="built_in">parseInt</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() / <span class="number">1000</span>)</div><div class="line">      <span class="comment">// sha1加密</span></div><div class="line">      <span class="keyword">const</span> str = <span class="string">`jsapi_ticket=<span class="subst">$&#123;jsapi_ticket&#125;</span>&amp;noncestr=<span class="subst">$&#123;noncestr&#125;</span>&amp;timestamp=<span class="subst">$&#123;timestamp&#125;</span>&amp;url=<span class="subst">$&#123;url&#125;</span>`</span></div><div class="line">      sha1.update(str)</div><div class="line">      <span class="keyword">const</span> signature = sha1.digest(<span class="string">'hex'</span>)</div><div class="line">      data = &#123; jsapi_ticket, noncestr, timestamp, url, signature, appId &#125;</div><div class="line">      <span class="keyword">return</span> data</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><p>授权有网页授权，js sdk授权，<br>网页授权也有两种，一个上静默授权，一个是点击授权，贴一下js sdk调用前认证的代码，要使用sha1加密<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> getSignConfig(originUrl) &#123;</div><div class="line">      <span class="keyword">let</span> data = &#123;&#125;</div><div class="line">      <span class="keyword">const</span> sha1 = crypto.createHash(<span class="string">'sha1'</span>)</div><div class="line">      <span class="keyword">const</span> appId = <span class="keyword">this</span>.app.config.weixin.appID</div><div class="line">      <span class="keyword">const</span> jsapi_ticket = <span class="keyword">await</span> <span class="keyword">this</span>.ctx.service.token.getJSApiTicket()</div><div class="line">      <span class="keyword">const</span> noncestr = <span class="keyword">this</span>.app.config.jsapi.noncestr</div><div class="line">      <span class="keyword">const</span> url = <span class="keyword">this</span>.app.config.domain + originUrl</div><div class="line">      <span class="keyword">const</span> timestamp = <span class="built_in">parseInt</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() / <span class="number">1000</span>)</div><div class="line">      <span class="comment">// sha1加密</span></div><div class="line">      <span class="keyword">const</span> str = <span class="string">`jsapi_ticket=<span class="subst">$&#123;jsapi_ticket&#125;</span>&amp;noncestr=<span class="subst">$&#123;noncestr&#125;</span>&amp;timestamp=<span class="subst">$&#123;timestamp&#125;</span>&amp;url=<span class="subst">$&#123;url&#125;</span>`</span></div><div class="line">      sha1.update(str)</div><div class="line">      <span class="keyword">const</span> signature = sha1.digest(<span class="string">'hex'</span>)</div><div class="line">      data = &#123; jsapi_ticket, noncestr, timestamp, url, signature, appId &#125;</div><div class="line">      <span class="keyword">return</span> data</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 <p>调用js sdk页面上代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">wx.config(&#123;</div><div class="line">    debug: <span class="literal">false</span>, <span class="comment">// 开启调试模式,</span></div><div class="line">    appId: appId, <span class="comment">// 必填，公众号的唯一标识</span></div><div class="line">    timestamp: timestamp, <span class="comment">// 必填，生成签名的时间戳</span></div><div class="line">    nonceStr: nonceStr, <span class="comment">// 必填，生成签名的随机串</span></div><div class="line">    signature:  signature,<span class="comment">// 必填，签名，见附录1</span></div><div class="line">    jsApiList: [<span class="string">'closeWindow'</span>] <span class="comment">// 必填，需要使用的JS接口列表，所有JS接口列表见附录2</span></div><div class="line">&#125;);</div><div class="line">wx.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      wx.closeWindow();</div><div class="line">    &#125;,<span class="number">2000</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="实用的常识"><a href="#实用的常识" class="headerlink" title="实用的常识"></a>实用的常识</h3><ol>
+<h2 id="实用的常识"><a href="#实用的常识" class="headerlink" title="实用的常识"></a>实用的常识</h2><ol>
 <li>tag不能重复创建，但是给用户可以重复打同一个tag</li>
 <li>更改菜单一般五分钟生效，或者重新关注公众号，立马能看到</li>
 <li>如果调用js sdk，务必使用https，防止因为安全问题，导致ios下js下载失败。如果你的服务是https，而引用了https的微信js，在ios下肯定会下载失败，这是ios的安全机制导致的。</li>
 <li>微信关闭窗口的js接口，不管jsconfig验证是否通过，窗口都可以关闭</li>
 <li>微信的token过期时间上2h，但是很多时候30分钟不到可能已经失效，建议<strong>把token过期时间设置为10分钟之内</strong></li>
 </ol>
-<h3 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h3><ol>
+<h2 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h2><ol>
 <li>创建菜单的时候，菜单长度不合法，仔细检查自己传的json菜单，一般都是<strong>json格式问题</strong>，而不是长度</li>
 <li>redirect_uri不合法，是创建授权菜单的redirect_uri和<strong>网页授权域名</strong>配置不一样</li>
 <li>关注公众号，服务端设置的欢迎消息发不过去，如果自己代码无异常，一般是因为<strong>token过期</strong></li>
 </ol>
-<h3 id="以后遇到其他问题继续补充"><a href="#以后遇到其他问题继续补充" class="headerlink" title="以后遇到其他问题继续补充"></a>以后遇到其他问题继续补充</h3><blockquote>
+<h2 id="以后遇到其他问题继续补充"><a href="#以后遇到其他问题继续补充" class="headerlink" title="以后遇到其他问题继续补充"></a>以后遇到其他问题继续补充</h2><blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
 </blockquote>
 
@@ -361,7 +361,7 @@
         <p><span>本文标题:</span><a  href="/wechat-dev.html">微信公众号开发</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2017年04月28日 - 12时55分</p>
-        <p><span>最后更新:</span>2017年05月14日 - 08时05分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/wechat-dev.html" title="微信公众号开发">http://geeksblog.cc/wechat-dev.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/wechat-dev.html　　作者: 山不转水转" title=""></span>
@@ -398,7 +398,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#开发环境搭建"><span class="toc-number">1.</span> <span class="toc-text">开发环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回复"><span class="toc-number">2.</span> <span class="toc-text">回复</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#菜单"><span class="toc-number">3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#授权"><span class="toc-number">4.</span> <span class="toc-text">授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实用的常识"><span class="toc-number">5.</span> <span class="toc-text">实用的常识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见报错"><span class="toc-number">6.</span> <span class="toc-text">常见报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#以后遇到其他问题继续补充"><span class="toc-number">7.</span> <span class="toc-text">以后遇到其他问题继续补充</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开发环境搭建"><span class="toc-number">1.</span> <span class="toc-text">开发环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回复"><span class="toc-number">2.</span> <span class="toc-text">回复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#菜单"><span class="toc-number">3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#授权"><span class="toc-number">4.</span> <span class="toc-text">授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实用的常识"><span class="toc-number">5.</span> <span class="toc-text">实用的常识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见报错"><span class="toc-number">6.</span> <span class="toc-text">常见报错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#以后遇到其他问题继续补充"><span class="toc-number">7.</span> <span class="toc-text">以后遇到其他问题继续补充</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

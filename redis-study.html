@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/redis-study.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="redis学习笔记：     redis数据库的基本操作，增删改查">
-<meta property="og:updated_time" content="2017-05-17T23:42:12.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis学习笔记">
 <meta name="twitter:description" content="redis学习笔记：     redis数据库的基本操作，增删改查">
@@ -320,7 +320,7 @@
         <p><strong> redis学习笔记：</strong> <Excerpt in index | 首页摘要><br>    redis数据库的基本操作，增删改查<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h3><p>redis本质上是一个key-value数据库</p>
+<h2 id="keys"><a href="#keys" class="headerlink" title="keys"></a>keys</h2><p>redis本质上是一个key-value数据库</p>
 <ol>
 <li>设置：set key value</li>
 <li>获取：get key</li>
@@ -333,14 +333,14 @@
 <li>设置有效时间：expire test:fan:age 30</li>
 <li>查询有效时间：ttl test:fan:age</li>
 </ol>
-<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3><ol>
+<h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><ol>
 <li>设置：<br> set key value<br> setnx ky value(nx是not exist)<br> mset key1 value1 keyN valueN<br> msetnx key1 value1 keyN valueN</li>
 <li>获取：<br> get            不存在返回nil<br> getset        设置key的值，并返回key的旧值，不存在返回nil<br> mget        </li>
 <li>自增减：<br> incr key   对key的值进行++操作，返回新的值<br> decr key<br> incrby key integer        对key加上一个数值<br> decrby key integer</li>
 <li>截取：<br> substr key indexStart indexEnd             下标从0开始</li>
 <li>追加：<br> append key value</li>
 </ol>
-<h3 id="list类型"><a href="#list类型" class="headerlink" title="list类型"></a>list类型</h3><p>redis的list其实就是一个每个元素都是string 的双向链表，所以push和pop的时间复杂度都是O（1）</p>
+<h2 id="list类型"><a href="#list类型" class="headerlink" title="list类型"></a>list类型</h2><p>redis的list其实就是一个每个元素都是string 的双向链表，所以push和pop的时间复杂度都是O（1）</p>
 <ol>
 <li>添加<br> lpush key string         在头部添加<br> rpush key string        在尾部添加</li>
 <li>修改<br> lset key index value  修改指定下标的key的值</li>
@@ -350,7 +350,7 @@
 <li>截取<br> ltrim key start end</li>
 <li>转移<br> rpoplpush key1 key2    从key1尾部移到key2头部</li>
 </ol>
-<h3 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h3><p>redis的set就是String的无序集合，通过hashtable实现</p>
+<h2 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h2><p>redis的set就是String的无序集合，通过hashtable实现</p>
 <ol>
 <li>添加<br> sadd key member</li>
 <li>删除<br> srem key member        移除指定的元素<br> spop key                     删除并返回一个随机的</li>
@@ -362,7 +362,7 @@
 <li>取并集<br> sunion key1 key2 keyN<br> sunionstore dstkey key1 keyN    将并集存在dstkey</li>
 <li>取差集<br> sdiff key1 key2 keyN<br> sdiffstore dstkey key1 keyN        将差集存在dstkey</li>
 </ol>
-<h3 id="有序set类型"><a href="#有序set类型" class="headerlink" title="有序set类型"></a>有序set类型</h3><p>和set一样，不同的是每个元素关联一个double类型的score，根据score排序，sorted set的实现由skip list和hashtable</p>
+<h2 id="有序set类型"><a href="#有序set类型" class="headerlink" title="有序set类型"></a>有序set类型</h2><p>和set一样，不同的是每个元素关联一个double类型的score，根据score排序，sorted set的实现由skip list和hashtable</p>
 <ol>
 <li>添加<br> zadd key score member</li>
 <li>删除<br> zrem key member<br> zremrangebyrank key min max<br> zremrangebyscore key min max     删除集合score在给定区间的元素</li>
@@ -371,7 +371,7 @@
 <li>数量<br> zcard key                        总数<br> zcount key min max         区间的数量</li>
 <li>修改<br> zincrby key incr member    增加member的score值并排序</li>
 </ol>
-<h3 id="hash类型"><a href="#hash类型" class="headerlink" title="hash类型"></a>hash类型</h3><p>redis的hash是一个string类型的field和value的映射表，hash特别适合存储对象，</p>
+<h2 id="hash类型"><a href="#hash类型" class="headerlink" title="hash类型"></a>hash类型</h2><p>redis的hash是一个string类型的field和value的映射表，hash特别适合存储对象，</p>
 <ol>
 <li>设置：<br> hset key field value<br> hmset key field1 value1 field2 value2</li>
 <li>获取：<br> hget key field<br> hmget key field1 field2</li>
@@ -392,7 +392,7 @@
         <p><span>本文标题:</span><a  href="/redis-study.html">Redis学习笔记</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年05月23日 - 08时25分</p>
-        <p><span>最后更新:</span>2017年05月18日 - 07时42分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/redis-study.html" title="Redis学习笔记">http://geeksblog.cc/redis-study.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/redis-study.html　　作者: 山不转水转" title=""></span>
@@ -429,7 +429,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#keys"><span class="toc-number">1.</span> <span class="toc-text">keys</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String类型"><span class="toc-number">2.</span> <span class="toc-text">String类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list类型"><span class="toc-number">3.</span> <span class="toc-text">list类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set集合"><span class="toc-number">4.</span> <span class="toc-text">set集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序set类型"><span class="toc-number">5.</span> <span class="toc-text">有序set类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash类型"><span class="toc-number">6.</span> <span class="toc-text">hash类型</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#keys"><span class="toc-number">1.</span> <span class="toc-text">keys</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String类型"><span class="toc-number">2.</span> <span class="toc-text">String类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list类型"><span class="toc-number">3.</span> <span class="toc-text">list类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set集合"><span class="toc-number">4.</span> <span class="toc-text">set集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有序set类型"><span class="toc-number">5.</span> <span class="toc-text">有序set类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hash类型"><span class="toc-number">6.</span> <span class="toc-text">hash类型</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

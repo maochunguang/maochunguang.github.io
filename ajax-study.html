@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/ajax-study.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="ajax简单教程：     ajax常用的方法，一些容易出错的地方">
-<meta property="og:updated_time" content="2017-05-17T23:42:12.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax简单教程">
 <meta name="twitter:description" content="ajax简单教程：     ajax常用的方法，一些容易出错的地方">
@@ -320,7 +320,7 @@
         <p><strong> ajax简单教程：</strong> <Excerpt in index | 首页摘要><br>    ajax常用的方法，一些容易出错的地方<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h3 id="ajax原理"><a href="#ajax原理" class="headerlink" title="ajax原理"></a>ajax原理</h3><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。要清楚这个过程和原理，我们必须对 XMLHttpRequest有所了解。<br>XMLHttpRequest是ajax的核心机制，它是在IE5中首先引入的，是一种支持异步请求的技术。简单的说，也就是javascript可以及时向服务器提出请求和处理响应，而不阻塞用户。达到无刷新的效果。<br>所以我们先从XMLHttpRequest讲起，来看看它的工作原理。首先，我们先来看看XMLHttpRequest这个对象的属性。<br>它的属性有：</p>
+<h2 id="ajax原理"><a href="#ajax原理" class="headerlink" title="ajax原理"></a>ajax原理</h2><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。要清楚这个过程和原理，我们必须对 XMLHttpRequest有所了解。<br>XMLHttpRequest是ajax的核心机制，它是在IE5中首先引入的，是一种支持异步请求的技术。简单的说，也就是javascript可以及时向服务器提出请求和处理响应，而不阻塞用户。达到无刷新的效果。<br>所以我们先从XMLHttpRequest讲起，来看看它的工作原理。首先，我们先来看看XMLHttpRequest这个对象的属性。<br>它的属性有：</p>
 <table>
 <thead>
 <tr>
@@ -371,7 +371,7 @@
 <li>3 (数据传送中) 已接收部分数据，因为响应及http头不全，这时通过responseBody和responseText获取部分数据会出现错误，</li>
 <li>4 (完成) 数据接收完毕,此时可以通过通过responseXml和responseText获取完整的回应数据</li>
 </ul>
-<h3 id="ajax的使用"><a href="#ajax的使用" class="headerlink" title="ajax的使用"></a>ajax的使用</h3><ol>
+<h2 id="ajax的使用"><a href="#ajax的使用" class="headerlink" title="ajax的使用"></a>ajax的使用</h2><ol>
 <li>原生的ajax</li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateXmlHttp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//非IE浏览器创建XmlHttpRequest对象</span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XmlHttpRequest) &#123;</div><div class="line">        xmlhttp = <span class="keyword">new</span> XmlHttpRequest();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//IE浏览器创建XmlHttpRequest对象</span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">catch</span> (e) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"msxml2.XMLHTTP"</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">catch</span> (ex) &#123; &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ustbwuyi</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="built_in">document</span>.getElementById(<span class="string">"username"</span>).value;</div><div class="line">    CreateXmlHttp();</div><div class="line">    <span class="keyword">if</span> (!xmlhttp) &#123;</div><div class="line">        alert(<span class="string">"创建xmlhttp对象异常！"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    xmlhttp.open(<span class="string">"POST"</span>, url, <span class="literal">false</span>);</div><div class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (xmlhttp.readyState == <span class="number">4</span>) &#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"user1"</span>).innerHTML = <span class="string">"数据正在加载..."</span>;</div><div class="line">            <span class="keyword">if</span> (xmlhttp.status == <span class="number">200</span>) &#123;</div><div class="line">                <span class="built_in">document</span>.write(xmlhttp.responseText);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    xmlhttp.send();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -393,7 +393,7 @@
         <p><span>本文标题:</span><a  href="/ajax-study.html">Ajax简单教程</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年07月06日 - 20时53分</p>
-        <p><span>最后更新:</span>2017年05月18日 - 07时42分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/ajax-study.html" title="Ajax简单教程">http://geeksblog.cc/ajax-study.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/ajax-study.html　　作者: 山不转水转" title=""></span>
@@ -430,7 +430,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax原理"><span class="toc-number">1.</span> <span class="toc-text">ajax原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax的使用"><span class="toc-number">2.</span> <span class="toc-text">ajax的使用</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax原理"><span class="toc-number">1.</span> <span class="toc-text">ajax原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax的使用"><span class="toc-number">2.</span> <span class="toc-text">ajax的使用</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/mysql-study.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="mysql学习笔记：     mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。">
-<meta property="og:updated_time" content="2017-05-17T23:42:12.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql学习笔记">
 <meta name="twitter:description" content="mysql学习笔记：     mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。">
@@ -320,12 +320,12 @@
         <p><strong> mysql学习笔记：</strong> <Excerpt in index | 首页摘要><br>    mysql学习，基础的增删改查，数据库优化，索引，分片，集群搭建等等。<br><a id="more"></a></p>
 <The rest of contents | 余下全文\>
 
-<h3 id="mysql的特点"><a href="#mysql的特点" class="headerlink" title="mysql的特点"></a>mysql的特点</h3><ol>
+<h2 id="mysql的特点"><a href="#mysql的特点" class="headerlink" title="mysql的特点"></a>mysql的特点</h2><ol>
 <li>关系型数据库，免费使用，</li>
 <li>插入式存储引擎，</li>
 <li>性能高，</li>
 </ol>
-<h3 id="基础的增删改查"><a href="#基础的增删改查" class="headerlink" title="基础的增删改查"></a>基础的增删改查</h3><ol>
+<h2 id="基础的增删改查"><a href="#基础的增删改查" class="headerlink" title="基础的增删改查"></a>基础的增删改查</h2><ol>
 <li><p>ddl语句，数据定义语句</p>
  <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">database</span> test1;</div><div class="line"><span class="keyword">drop</span> <span class="keyword">database</span> test1;</div><div class="line"><span class="keyword">use</span> test1;</div><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> emp(ename <span class="built_in">varchar</span>(<span class="number">10</span>),hiredate <span class="built_in">date</span>,sal <span class="built_in">decimal</span>(<span class="number">10</span>,<span class="number">2</span>),deptno <span class="built_in">int</span>(<span class="number">2</span>));</div><div class="line"><span class="keyword">drop</span> <span class="keyword">table</span> emp;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">modify</span> ename <span class="built_in">varchar</span>(<span class="number">20</span>);</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> <span class="keyword">column</span> age <span class="built_in">int</span>(<span class="number">3</span>);</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">drop</span> <span class="keyword">column</span> age;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">change</span> age age1 <span class="built_in">int</span>(<span class="number">4</span>);</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">add</span> birth <span class="built_in">date</span> <span class="keyword">after</span> ename;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">modify</span> age <span class="built_in">int</span>(<span class="number">3</span>) <span class="keyword">first</span>;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">table</span> emp <span class="keyword">rename</span> emp1;</div></pre></td></tr></table></figure>
 </li>
@@ -335,7 +335,7 @@
 <li><p>dcl语句，数据控制语句</p>
 </li>
 </ol>
-<h3 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h3><ol>
+<h2 id="sql优化"><a href="#sql优化" class="headerlink" title="sql优化"></a>sql优化</h2><ol>
 <li>尽量使用 prepareStatement(java)，利用预处理功能。</li>
 <li>在进行多条记录的增加、修改、删除时，建议使用批处理功能，批处理的次数以整<br>个 SQL 语句不超过相应数据库的 SQL 语句大小的限制为准。</li>
 <li>建议每条 SQL 语句中 in 中的元素个数在 200 以下，如果个数超过时，应拆分为多<br>条 SQL 语句。禁止使用 xx in(‘’,’’….) or xx in(‘’,’’,’’)。 ★</li>
@@ -356,7 +356,7 @@
 <li>禁止随意使用临时表，在临时数据不超过 200 行的情况下禁止使用临时表。</li>
 <li>禁止随意使用 distinct，避免造成不必要的排序。</li>
 </ol>
-<h3 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h3><ol>
+<h2 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h2><ol>
 <li><p>创建索引，删除索引</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">index</span> cityname <span class="keyword">on</span> city(city(<span class="number">10</span>));</div><div class="line"><span class="keyword">drop</span> <span class="keyword">index</span> cityname <span class="keyword">on</span> city;</div></pre></td></tr></table></figure>
 </li>
@@ -366,7 +366,7 @@
 <li>使用短索引，对于较长的字段，使用其前缀做索引</li>
 <li>不要过度使用索引，索引引起额外的性能开销和维护</li>
 </ol>
-<h3 id="高级优化措施"><a href="#高级优化措施" class="headerlink" title="高级优化措施"></a>高级优化措施</h3><h3 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h3>
+<h2 id="高级优化措施"><a href="#高级优化措施" class="headerlink" title="高级优化措施"></a>高级优化措施</h2><h2 id="集群搭建"><a href="#集群搭建" class="headerlink" title="集群搭建"></a>集群搭建</h2>
       
     </div>
     
@@ -377,7 +377,7 @@
         <p><span>本文标题:</span><a  href="/mysql-study.html">Mysql学习笔记</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年05月28日 - 22时24分</p>
-        <p><span>最后更新:</span>2017年05月18日 - 07时42分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/mysql-study.html" title="Mysql学习笔记">http://geeksblog.cc/mysql-study.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/mysql-study.html　　作者: 山不转水转" title=""></span>
@@ -414,7 +414,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql的特点"><span class="toc-number">1.</span> <span class="toc-text">mysql的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础的增删改查"><span class="toc-number">2.</span> <span class="toc-text">基础的增删改查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql优化"><span class="toc-number">3.</span> <span class="toc-text">sql优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引优化"><span class="toc-number">4.</span> <span class="toc-text">索引优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高级优化措施"><span class="toc-number">5.</span> <span class="toc-text">高级优化措施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集群搭建"><span class="toc-number">6.</span> <span class="toc-text">集群搭建</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mysql的特点"><span class="toc-number">1.</span> <span class="toc-text">mysql的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基础的增删改查"><span class="toc-number">2.</span> <span class="toc-text">基础的增删改查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sql优化"><span class="toc-number">3.</span> <span class="toc-text">sql优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引优化"><span class="toc-number">4.</span> <span class="toc-text">索引优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级优化措施"><span class="toc-number">5.</span> <span class="toc-text">高级优化措施</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集群搭建"><span class="toc-number">6.</span> <span class="toc-text">集群搭建</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {

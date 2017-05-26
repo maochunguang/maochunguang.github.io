@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/server-config.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="ubuntu服务器私人定制： 把ubuntu服务器打造成自己的个性服务器，装逼必备！！！">
-<meta property="og:updated_time" content="2016-11-28T13:06:26.000Z">
+<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu服务器私人定制">
 <meta name="twitter:description" content="ubuntu服务器私人定制： 把ubuntu服务器打造成自己的个性服务器，装逼必备！！！">
@@ -320,8 +320,8 @@
         <p><strong> ubuntu服务器私人定制：</strong> <Excerpt in index | 首页摘要><br>把ubuntu服务器打造成自己的个性服务器，装逼必备！！！<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<p>###　说明<br><strong>此教程针对Ubuntu14,其他版本仅作参考</strong></p>
-<p>###　用户密码管理<br><code>sudo passwd root</code></p>
+<p>##　说明<br><strong>此教程针对Ubuntu14,其他版本仅作参考</strong></p>
+<p>##　用户密码管理<br><code>sudo passwd root</code></p>
 <ol>
 <li>添加一个用户组并指定id为1002<br><code>sudo groupadd －g 1002 www</code></li>
 <li><p>添加一个用户到www组并指定id为1003<br><code>sudo useradd wyx -g 1002 -u 1003 -m</code></p>
@@ -338,18 +338,18 @@
 <li>查看所有用户和用户组：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cat /etc/passwd</div><div class="line">cat /etc/group</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><ol>
+<h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><ol>
 <li>安装nvm<code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash</code></li>
 <li>安装node<code>nvm install v4.4.4</code>,安装<code>nvm install v6.9.1</code></li>
 <li>设置默认的node版本<code>nvm alias default v4.4.4</code></li>
 <li>安装npm3  <code>npm install -g npm@3</code></li>
 <li>设置淘宝的cnpm源  <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></li>
-<li>验证安装<code>node -v,npm -v,cnpm -v</code><h3 id="安装node常用包"><a href="#安装node常用包" class="headerlink" title="安装node常用包"></a>安装node常用包</h3></li>
+<li>验证安装<code>node -v,npm -v,cnpm -v</code><h2 id="安装node常用包"><a href="#安装node常用包" class="headerlink" title="安装node常用包"></a>安装node常用包</h2></li>
 <li>安装pm2<code>cnpm install -g pm2</code></li>
 <li>安装hexo博客<code>cnpm install -g hexo-cli</code></li>
 <li>安装同步插件rsync<code>cnpm install -g rsync</code></li>
 </ol>
-<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><ol>
+<h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><ol>
 <li>apt安装</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y docker.io</div><div class="line">sudo ln -sf /usr/bin/docker.io /usr/<span class="built_in">local</span>/bin/docker</div><div class="line">sudo sed -i <span class="string">'$acomplete -F _docker docker'</span> /etc/bash_completion.d/docker.io</div></pre></td></tr></table></figure>
@@ -360,9 +360,9 @@
 <ol>
 <li>验证安装版本<br><code>docker -v</code></li>
 </ol>
-<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><p><code>sudo apt-get install nginx</code><br>启动和配置nginx</p>
-<h3 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h3><p><code>sudo apt-get install redis-server</code><br>启动和配置文件:</p>
-<h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><ol>
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p><code>sudo apt-get install nginx</code><br>启动和配置nginx</p>
+<h2 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h2><p><code>sudo apt-get install redis-server</code><br>启动和配置文件:</p>
+<h2 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h2><ol>
 <li>安装3.0</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</div><div class="line"><span class="built_in">echo</span> <span class="string">"deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main"</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list</div><div class="line">apt-get update  </div><div class="line">apt-get install mongodb-org</div></pre></td></tr></table></figure>
@@ -381,10 +381,10 @@
 <li>验证安装<br><code>mongod --version</code></li>
 </ol>
 <p>配置</p>
-<h3 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h3><p>安装jdk1.7<code>sudo apt-get install openjdk-7-jdk</code><br>源码安装</p>
+<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><p>安装jdk1.7<code>sudo apt-get install openjdk-7-jdk</code><br>源码安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/lib/jvm</div><div class="line">sudo tar zxvf jdk-7u21-linux-i586.tar.gz -C /usr/lib/jvm</div><div class="line"><span class="built_in">cd</span> /usr/lib/jvm</div><div class="line">sudo mv jdk1.7.0_21 java</div><div class="line"></div><div class="line">sudo vim ~/.bashrc</div><div class="line"></div><div class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java</div><div class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre  </div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib  </div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
-<h3 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h3><p>实用ubuntu自带的工具下载<br><code>sudo apt-get install mysql-server</code></p>
-<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><p>常见的方法有两种。</p>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><p>实用ubuntu自带的工具下载<br><code>sudo apt-get install mysql-server</code></p>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><p>常见的方法有两种。</p>
 <ol>
 <li><p>在用户主目录下有一个 .bashrc 文件，可以在此文件中加入 PATH 的设置如下：<br><code>export PATH=”$PATH:/your path1/:/your path2/…..”</code></p>
 </li>
@@ -394,21 +394,21 @@
 </code></pre>
 </li>
 </ol>
-<h3 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h3><ol>
+<h2 id="开机自启动"><a href="#开机自启动" class="headerlink" title="开机自启动"></a>开机自启动</h2><ol>
 <li><p>方法一，编辑rc.loacl脚本<br>Ubuntu开机之后会执行/etc/rc.local文件中的脚本，<br>所以我们可以直接在/etc/rc.local中添加启动脚本。<br>当然要添加到语句：exit 0 前面才行。代码如下:<br><code>sudo vi /etc/rc.local</code><br>然后在 exit 0 前面添加好脚本代码。</p>
 </li>
 <li><p>方法二，添加一个Ubuntu的开机启动服务。<br>如果要添加为开机启动执行的脚本文件，<br>可先将脚本复制或者软连接到/etc/init.d/目录下，<br>然后用：update-rc.d xxx defaults NN命令(NN为启动顺序)，<br>将脚本添加到初始化执行的队列中去。<br>注意如果脚本需要用到网络，则NN需设置一个比较大的数字，如99。<br>1) 将你的启动脚本复制到 /etc/init.d目录下<br>以下假设你的脚本文件名为 test。<br>2) 设置脚本文件的权限</p>
 </li>
 </ol>
 <p>代码如下:<br><code>sudo chmod 755 /etc/init.d/test</code><br>3) 执行如下命令将脚本放到启动脚本中去：<br>代码如下:<br><code>cd /etc/init.d</code>  <code>sudo update-rc.d test defaults 95</code><br> 注：其中数字95是脚本启动的顺序号，按照自己的需要相应修改即可。在你有多个启动脚本，而它们之间又有先后启动的依赖关系时你就知道这个数字的具体作用了。该命令的输出信息参考如下：<br>卸载启动脚本的方法：<br>代码如下:<br><code>cd /etc/init.d</code><br><code>sudo update-rc.d -f test remove</code></p>
-<h3 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h3><p>在Ubuntu下，cron是被默认安装并启动的。通过查看/etc/crontab<br>推荐使用crontab -e命令添加自定义的任务（编辑的是/var/spool/cron下对应用户的cron文件，在/var/spool/cron下的crontab文件 不可以直接创建或者直接修改，crontab文件是通过crontab命令得到的）。<br><code>crontab -e</code></p>
+<h2 id="定时任务"><a href="#定时任务" class="headerlink" title="定时任务"></a>定时任务</h2><p>在Ubuntu下，cron是被默认安装并启动的。通过查看/etc/crontab<br>推荐使用crontab -e命令添加自定义的任务（编辑的是/var/spool/cron下对应用户的cron文件，在/var/spool/cron下的crontab文件 不可以直接创建或者直接修改，crontab文件是通过crontab命令得到的）。<br><code>crontab -e</code></p>
 <ol>
 <li><p>直接执行命令行<br>每2分钟打印一个字符串“Hello World”，保存至文件/home/laigw/cron/HelloWorld.txt中，cron 格式如下：<br><code>*/2 * * * * echo “Hello World.” &gt;&gt; /home/HelloWorld.txt</code></p>
 </li>
 <li><p>shell 文件<br>每3分钟调用一次 /home/laigw/cron/test.sh 文件，cron 格式如下：<br><code>*/3 * * * * /home/laigw/cron/test.sh</code></p>
-<h3 id="ftp和rsync配置"><a href="#ftp和rsync配置" class="headerlink" title="ftp和rsync配置"></a>ftp和rsync配置</h3></li>
+<h2 id="ftp和rsync配置"><a href="#ftp和rsync配置" class="headerlink" title="ftp和rsync配置"></a>ftp和rsync配置</h2></li>
 </ol>
-<h3 id="持续集成环境"><a href="#持续集成环境" class="headerlink" title="持续集成环境"></a>持续集成环境</h3><ol>
+<h2 id="持续集成环境"><a href="#持续集成环境" class="headerlink" title="持续集成环境"></a>持续集成环境</h2><ol>
 <li>jenkens配置</li>
 <li>gitlab配置</li>
 <li>git服务器</li>
@@ -427,7 +427,7 @@
         <p><span>本文标题:</span><a  href="/server-config.html">Ubuntu服务器私人定制</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年11月28日 - 20时36分</p>
-        <p><span>最后更新:</span>2016年11月28日 - 21时06分</p>
+        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/server-config.html" title="Ubuntu服务器私人定制">http://geeksblog.cc/server-config.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/server-config.html　　作者: 山不转水转" title=""></span>
@@ -464,7 +464,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nodejs"><span class="toc-number">1.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装node常用包"><span class="toc-number">2.</span> <span class="toc-text">安装node常用包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装docker"><span class="toc-number">3.</span> <span class="toc-text">安装docker</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nginx"><span class="toc-number">4.</span> <span class="toc-text">安装nginx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装redis"><span class="toc-number">5.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mongodb"><span class="toc-number">6.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装jdk"><span class="toc-number">7.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mysql"><span class="toc-number">8.</span> <span class="toc-text">安装mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量"><span class="toc-number">9.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开机自启动"><span class="toc-number">10.</span> <span class="toc-text">开机自启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定时任务"><span class="toc-number">11.</span> <span class="toc-text">定时任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ftp和rsync配置"><span class="toc-number">12.</span> <span class="toc-text">ftp和rsync配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#持续集成环境"><span class="toc-number">13.</span> <span class="toc-text">持续集成环境</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">1.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装node常用包"><span class="toc-number">2.</span> <span class="toc-text">安装node常用包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装docker"><span class="toc-number">3.</span> <span class="toc-text">安装docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nginx"><span class="toc-number">4.</span> <span class="toc-text">安装nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装redis"><span class="toc-number">5.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mongodb"><span class="toc-number">6.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jdk"><span class="toc-number">7.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mysql"><span class="toc-number">8.</span> <span class="toc-text">安装mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量"><span class="toc-number">9.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开机自启动"><span class="toc-number">10.</span> <span class="toc-text">开机自启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时任务"><span class="toc-number">11.</span> <span class="toc-text">定时任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ftp和rsync配置"><span class="toc-number">12.</span> <span class="toc-text">ftp和rsync配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#持续集成环境"><span class="toc-number">13.</span> <span class="toc-text">持续集成环境</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
