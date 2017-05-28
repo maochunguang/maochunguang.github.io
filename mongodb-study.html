@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://geeksblog.cc/mongodb-study.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="mongodb从入门到精通     mongodb日常使用的一些知识，增删改查，索引，分片。">
-<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
+<meta property="og:updated_time" content="2017-05-28T00:30:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mongodb从入门到精通">
 <meta name="twitter:description" content="mongodb从入门到精通     mongodb日常使用的一些知识，增删改查，索引，分片。">
@@ -277,7 +277,7 @@
   
     <div class="article-meta">
       <a  href="/mongodb-study.html" class="article-date">
-      <time datetime="2015-12-19T15:21:23.000Z" itemprop="datePublished">2015-12-19</time>
+      <time datetime="2017-05-26T15:21:23.000Z" itemprop="datePublished">2017-05-26</time>
 </a>
 
     </div>
@@ -328,252 +328,117 @@
 6）mongo本身支持集群和数据分片
 7）mongo是c++实现的，支持windows mac linux等主流操作系统
 8）性能优越，速度快
-</code></pre><h2 id="2-mongo常用操作"><a href="#2-mongo常用操作" class="headerlink" title="2.mongo常用操作"></a>2.mongo常用操作</h2><pre><code>1.增删操作
-   db.user.insert({name:&apos;aaaa&apos;,age:30});
-   db.user.save({name:&apos;aaaa&apos;,age:30});
-   db.collection.insertOne({});(3.2新特性)
-   db.collection.deleteOne(&lt;filter&gt;,{});(3.2新特性)
-   db.collection.remove({name:&apos;aaa&apos;});
-   db.collection.remove();(删除全部)
-
-2.更新操作
-  db.users.update ({   &quot; name&quot;   :   &quot;joe&quot;   },   joe );
-  db.users.update ({   &quot; name&quot;   :   &quot;joe&quot;   },   joe,  true );------upsert模式
-  db.users.update ({   &quot; name&quot;   :   &quot;joe&quot;   },   joe,  true ，true);------MULTI模式
-</code></pre><blockquote>
+</code></pre><h2 id="2-mongo常用操作"><a href="#2-mongo常用操作" class="headerlink" title="2.mongo常用操作"></a>2.mongo常用操作</h2><h3 id="增删操作"><a href="#增删操作" class="headerlink" title="增删操作"></a>增删操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">db.user.insert(&#123;name:<span class="string">'aaaa'</span>,age:<span class="number">30</span>&#125;);</div><div class="line">db.user.save(&#123;name:<span class="string">'aaaa'</span>,age:<span class="number">30</span>&#125;);</div><div class="line">db.collection.insertOne(&#123;&#125;);<span class="comment">//(3.2新特性)</span></div><div class="line">db.collection.deleteOne(&#123;&#125;,&#123;&#125;);<span class="comment">//(3.2新特性)</span></div><div class="line">db.collection.remove(&#123;name:<span class="string">'aaa'</span>&#125;);</div><div class="line">db.collection.remove();<span class="comment">//(删除全部)</span></div></pre></td></tr></table></figure>
+<h3 id="更新操作"><a href="#更新操作" class="headerlink" title="更新操作"></a>更新操作</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">db.users.update(&#123;<span class="string">"name"</span>: <span class="string">"joe"</span>&#125;, joe );</div><div class="line"><span class="comment">//upsert模式</span></div><div class="line">db.users.update(&#123;<span class="string">"name"</span>: <span class="string">"joe"</span>&#125;, joe,  <span class="literal">true</span> );</div><div class="line"><span class="comment">//MULTI模式</span></div><div class="line">db.users.update(&#123;<span class="string">"name"</span>: <span class="string">"joe"</span>&#125;, joe,  <span class="literal">true</span> ，<span class="literal">true</span>);</div></pre></td></tr></table></figure>
+<blockquote>
 <p>update是对文档替换，而不是局部修改默认情况update更新匹配的第一条文档，multi模式更新所有匹配的  </p>
 </blockquote>
-<pre><code>3.查询操作
-  -- 普通查询
-  db.user.find();
-  db.user.find({name:&apos;aaa&apos;});
-  db.user.findOne({name:&apos;aaa&apos;});
-
-  -- 模糊查询
-  db.UserInfo.find({userName :/A/}) （名称%A%）
-  db.UserInfo.find({userName :/^A/}) (名称A%)
-
-4.操作符
-    1.$lt, $lte,$gt, $gte(&lt;, &lt;=, &gt;, &gt;= )     
-    2.$all    数组中的元素是否完全匹配  db.things.find( { a: { $all: [ 2, 3 ] } } );
-    3.$exists  可选：true，false  db.things.find( { a : { $exists : true } } );
-    4.$mod  取模：a % 10 == 1  db.things.find( { a : { $mod : [ 10 , 1 ] } } );
-    5.$ne 取反：即not equals  db.things.find( { x : { $ne : 3 } } );
-    6.$in 类似于SQL的IN操作  db.things.find({j:{$in: [2,4,6]}});
-    7.$nin $in的反操作，即SQL的  NOT IN  db.things.find({j:{$nin: [2,4,6]}});
-    8.$nor $or的反操作，即不匹配(a或b)  db.things.find( { name : &quot;bob&quot;, $nor : [ { a : 1 },{ b : 2 }]})
-    9.$or Or子句，注意$or不能嵌套使用  db.things.find( { name : &quot;bob&quot; , $or : [ { a : 1 },{ b : 2 }]})
-    10.$size  匹配数组长度  db.things.find( { a : { $size: 1 } } );
-    11.$type  匹配子键的数据类型，详情请看  db.things.find( { a : { $type : 2 } } );
-
-5.数组查询
-    $size 用来匹配数组长度（即最大下标）  
-    // 返回comments包含5个元素的文档   
-    db.posts.find({}, {comments:{‘$size’: 5}});  
-    // 使用冗余字段来实现  
-    db.posts.find({}, {‘commentCount’: { ‘$gt’: 5 }});   
-    $slice 操作符类似于子键筛选，只不过它筛选的是数组中的项  
-    // 仅返回数组中的前5项  
-    db.posts.find({}, {comments:{‘$slice’: 5}});  
-    // 仅返回数组中的最后5项  
-    db.posts.find({}, {comments:{‘$slice’: -5}});  
-    // 跳过数组中的前20项，返回接下来的10项  
-    db.posts.find({}, {comments:{‘$slice’: [20, 10]}});  
-    // 跳过数组中的最后20项，返回接下来的10项  
-    db.posts.find({}, {comments:{‘$slice’: [-20, 10]}});  
-    MongoDB 允许在查询中指定数组的下标，以实现更加精确的匹配  
-    // 返回comments中第1项的by子键为Abe的所有文档  
-    db.posts.find( { &quot;comments.0.by&quot; : &quot;Abe&quot; } );   
-</code></pre><h2 id="3-索引的使用"><a href="#3-索引的使用" class="headerlink" title="3.索引的使用"></a>3.索引的使用</h2><pre><code>1.创建索引
-    db.things.ensureIndex ({&apos;j&apos;: 1});
-    创建子文档 索引
-    db.things.ensureIndex ({&apos;user.Name&apos; : - 1});
-    创建 复合 索引
-    db.things.ensureIndex ({
-    &apos;j&apos; : 1 ,   //  升序
-    &apos;x&apos; : - 1   //  降序
-    });
-    如果 您的 find 操作只用到了一个键，那么索引方向是无关紧要的  
-    当创建复合索引的时候，一定要谨慎斟酌每个键的排序方向
-
-2.修改索引
-    修改索引，只需要重新 运行索引 命令即可  
-    如果索引已经存在则会 重建， 不存在的索引会被 添加  
-    db . things . ensureIndex ({
-        --- 原来的索引会 重建
-        &apos;user.Name &apos; :   - 1 ,
-        --- 新增一个升序 索引
-        &apos;user.Name &apos; :   1 ,
-        ---  为 Age 新建降序 索引
-        &apos;user.Age &apos; :   - 1
-    },
-    打开后台执行
-    {    ‘background&apos; :   true}
-    );
-    重建索引
-    db. things .reIndex();
-3.删除索引
-    删除集合中的所有 索引
-    db . things . dropIndexes ();  
-    删除指定键的索引  
-    db.things.dropIndex ({
-        x :   1 ,
-        y :   - 1
-    });  
-    使用 command 删除指定键的 索引
-    db.runCommand ({
-        dropIndexes : &apos;foo &apos; ,
-        index  :   {   y :   1   }
-    });  
-    使用 command 删除所有 索引
-    db . runCommand ({dropIndexes : &apos;foo &apos; ,index  :   &apos;*‘})
-    如果是删除集合中所有的文档（remove）则不会影响索引，当有新文档插入时，索引就会重建。
-4.唯一索引
-    创建唯一索引，同时这也是一个符合唯一索引  
-    db.things.ensureIndex (
-    {
-        &apos;firstName &apos; :   1 ,
-        &apos;lastName &apos; :   1
-    },   {
-    指定为唯一索引
-    &apos;unique &apos; :   true ,
-    删除重复 记录
-    &apos;dropDups &apos; :   true
-    });
-
-5、强制使用索引
-  强制使用索引 a 和 b
-    db.collection.find ({
-        &apos;a &apos; :   4 ,
-        &apos;b &apos; :   5 ,
-        &apos;c &apos; :   6
-    }). hint ({
-        &apos;a &apos; :   1 ,
-        &apos;b &apos; :   1
-    });
-    强制不使用任何 索引
-    db.collection.find ().hint ({
-        &apos;$ natural&apos; :   1
-    });
-</code></pre><hr>
-<p>索引总结:<br>        索引可以加速查询；<br>        单个索引无需在意其索引方向；<br>        多键索引需要慎重考虑每个索引的方向；<br>        做海量数据更新时应当先卸载所有索引，待数据更新完成后再重建索引；<br>        不要试图为每个键都创建索引，应考虑实际需要，并不是索引越多越好；<br>        唯一索引可以用来消除重复记录；<br>        地理空间索引是没有单位的，其内部实现是基本的勾股定理算法</p>
-<h2 id="4-mongo数据库管理"><a href="#4-mongo数据库管理" class="headerlink" title="4.mongo数据库管理"></a>4.mongo数据库管理</h2><pre><code>- 安全与认证
-1、 默认为无认证，启动用登录 shell ；
-2、 添加账号；
-3、 关闭 shell 、关闭 MongoDB ；
-4、 为 MongoDB 增加 — auth 参数；
-5、 重 启 MongoDB ；
-6、 登录 shell ，此时就需要认证了
-
-- 冷备份
-1、关闭MongoDB引擎
-2、拷贝数据库文件夹及文件
-3、恢复时反向操作即可        
-    -- 优点：可以完全保证数据完整性；
-    -- 缺点：需要数据库引擎离线     
-- 热备份
-1、 保持MongoDB为运行状态
-2、使用mongodump备份数据
-3、使用mongorestore恢复数据
-    --    优点：数据库引擎无须离线
-    --缺点：不能保证数据完整性，操作时会降低MongoDB性能
-
-- 主从复制备份
-1、创建主从复制机制
-2、配置完成后数据会自动同步
-3、恢复途径很多
-    -- 优点：可以保持MongoDB处于联机状态，不影响性能
-    -- 缺点：在数据写入密集的情况下可能无法保证数据完整性
-
-- 修复
-db.repairDatabase();
-  修复数据库还可以起到压缩数据的作用；
-  修复数据库的操作相当耗时，万不得已请不要使用；
-  建议经常做数据备份；
-</code></pre><h2 id="5-mongo复制-集群"><a href="#5-mongo复制-集群" class="headerlink" title="5.mongo复制(集群)"></a>5.mongo复制(集群)</h2><pre><code>1、主从复制
-    选项      说明
-    --only  作用是限定仅复制指定的某个数据库
-    --slavedelay  为复制设置操作延迟，单位为秒
-    --fastsync  以主节点的数据快照为基础启动从节点。
-    --autoresync  当主从节点数据不一致时，是否自动重新同步
-    --oplogSize  设定主节点中的oplog的容量，单位是MB
-
-2、副本集
-    与普通主从复制集群相比，具有自动检测机制
-    需要使用—replSet 选项指定副本同伴
-    任何时候，副本集当中最多只允许有1个活跃节点
-
-3、读写分离
-    将密集的读取操作分流到从节点上，降低主节点的负载
-    默认情况下，从节点是不允许处理
-    客户端请求的，需要使用—slaveOkay打开
-    不适用于实时性要求非常高的应用
-
-4、工作原理—— OPLOG
-    oplog保存在local数据库中，oplog就在其中的
-    oplog.$main集合内保存。该集合的每个文档都记录了主节点上执行的一个操作，其键定义如下：
-     ts：操作时间戳，占用4字节
-     op：操作类型，占用1字节
-     ns：操作对象的命名空间（或理解为集合全名）
-     o：进一步指定所执行的操作，例如插入
-
-5、工作原理—— 同步
-     从节点首次启动时，做完整同步
-     主节点数据发生变化时，做增量同步
-     从节点与主节点数据严重不一致时，做完整同步
-
-6、复制管理—— 诊断
-    db.printReplicationInfo()
-    在主节点上使用
-     返回信息是oplog的大小以及各种操作的耗时、空间占用等数据
-    在从节点上使用
-    db.printSlaveReplicationInfo()
-     返回信息是从节点的数据源列表、同步延迟时间等
-
-7、复制管理—— 变更OPLOG 容量
-    在主节点上使用
-      设定—oplogSize参数
-      重启MongoDB
-
-8、复制管理—— 复制认证
-    主从节点皆须配置
-     存储在local.system.users
-     优先尝试repl用户
-     主从节点的用户配置必须保持一致
-</code></pre><h2 id="6-MONGODB分片"><a href="#6-MONGODB分片" class="headerlink" title="6.MONGODB分片"></a>6.MONGODB分片</h2><pre><code>- 1、分片与自动分片
-      分片是指将数据拆分，分散到不同的实例上进行负载分流的做法。我们常说的“分表”、“分
-        库”、“分区”等概念都属于分片的实际体现。
-      传统分片做法是手工分表、分库。自动分片技术是根据指定的“片键”自动拆分数据并维护数据
-    请求路由的过程。
-
-    递增片键--连续 不均匀 写入集中 分流较差
-    随机片键--不连续 均匀 写入分散 分流较好
-    三个组成部分
-    --片
-      保存子集数据的容器
-    --mongos
-      MongoDB的路由器进程
-    --配置服务器
-      分片集群的配置信息
-- 2、创建分片
-    --启动配置服务器
-      可以创建一个或多个
-    --添加片
-      每个片都应该是副本集
-    --物理服务器
-      性能、安全和稳定性
-- 3、管理分片
-    --查询分片
-      db.shards.find();
-    --数据库
-      db.databases.find();
-    --块
-      db.chunks.find();
-    --分片状态
-      db.printShardingStatus();
-    --删除片
-      db.runCommand({ “removeshard” : “ip:port” });
-</code></pre><hr>
+<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>普通查询<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">db.user.find();</div><div class="line">db.user.find(&#123;name:<span class="string">'aaa'</span>&#125;);</div><div class="line">db.user.findOne(&#123;name:<span class="string">'aaa'</span>&#125;);</div></pre></td></tr></table></figure></p>
+<p>模糊查询<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.UserInfo.find(&#123;userName :<span class="string">'/A/'</span>&#125;) <span class="comment">//（名称%A%）</span></div><div class="line">db.UserInfo.find(&#123;userName :<span class="string">'/^A/'</span>&#125;) <span class="comment">//(名称A%)</span></div></pre></td></tr></table></figure></p>
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ol>
+<li>$lt, $lte,$gt, $gte(&lt;, &lt;=, &gt;, &gt;= )     </li>
+<li>$all    数组中的元素是否完全匹配  db.things.find( { a: { $all: [ 2, 3 ] } } );</li>
+<li>$exists  可选：true，false  db.things.find( { a : { $exists : true } } );</li>
+<li>$mod  取模：a % 10 == 1  db.things.find( { a : { $mod : [ 10 , 1 ] } } );</li>
+<li>$ne 取反：即not equals  db.things.find( { x : { $ne : 3 } } );</li>
+<li>$in 类似于SQL的IN操作  db.things.find({j:{$in: [2,4,6]}});</li>
+<li>$nin $in的反操作，即SQL的  NOT IN  db.things.find({j:{$nin: [2,4,6]}});</li>
+<li>$nor $or的反操作，即不匹配(a或b)  db.things.find( { name : “bob”, $nor : [ { a : 1 },{ b : 2 }]})</li>
+<li>$or Or子句，注意$or不能嵌套使用  db.things.find( { name : “bob” , $or : [ { a : 1 },{ b : 2 }]})</li>
+<li>$size  匹配数组长度  db.things.find( { a : { $size: 1 } } );</li>
+<li>$type  匹配子键的数据类型，详情请看  db.things.find( { a : { $type : 2 } } );</li>
+</ol>
+<h3 id="数组查询"><a href="#数组查询" class="headerlink" title="数组查询"></a>数组查询</h3><p>$size 用来匹配数组长度（即最大下标）<br>// 返回comments包含5个元素的文档<br>db.posts.find({}, {comments:{‘$size’: 5}});<br>// 使用冗余字段来实现<br>db.posts.find({}, {‘commentCount’: { ‘$gt’: 5 }});<br>$slice 操作符类似于子键筛选，只不过它筛选的是数组中的项<br>// 仅返回数组中的前5项<br>db.posts.find({}, {comments:{‘$slice’: 5}});<br>// 仅返回数组中的最后5项<br>db.posts.find({}, {comments:{‘$slice’: -5}});<br>// 跳过数组中的前20项，返回接下来的10项<br>db.posts.find({}, {comments:{‘$slice’: [20, 10]}});<br>// 跳过数组中的最后20项，返回接下来的10项<br>db.posts.find({}, {comments:{‘$slice’: [-20, 10]}});<br>MongoDB 允许在查询中指定数组的下标，以实现更加精确的匹配<br>// 返回comments中第1项的by子键为Abe的所有文档<br>db.posts.find( { “comments.0.by” : “Abe” } );   </p>
+<h2 id="3-索引的使用"><a href="#3-索引的使用" class="headerlink" title="3.索引的使用"></a>3.索引的使用</h2><h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">db.things.ensureIndex(&#123;<span class="string">'j'</span>: <span class="number">1</span>&#125;);</div><div class="line"><span class="comment">//创建子文档 索引</span></div><div class="line">db.things.ensureIndex(&#123;<span class="string">'user.Name'</span> : - <span class="number">1</span>&#125;);</div><div class="line"><span class="comment">//创建 复合 索引</span></div><div class="line">db.things.ensureIndex(&#123;</div><div class="line"><span class="string">'j'</span> : <span class="number">1</span> ,   <span class="comment">//  升序</span></div><div class="line"><span class="string">'x'</span> : - <span class="number">1</span>   <span class="comment">//  降序</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>如果 您的 find 操作只用到了一个键，那么索引方向是无关紧要的<br>        当创建复合索引的时候，一定要谨慎斟酌每个键的排序方向</p>
+<h3 id="修改索引"><a href="#修改索引" class="headerlink" title="修改索引"></a>修改索引</h3><p>修改索引，只需要重新 运行索引 命令即可<br>如果索引已经存在则会 重建， 不存在的索引会被 添加<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">db.things.ensureIndex (&#123;</div><div class="line">	<span class="comment">//原来的索引会 重建</span></div><div class="line">	<span class="string">'user.Name '</span> : - <span class="number">1</span> ,</div><div class="line">	<span class="comment">//新增一个升序 索引</span></div><div class="line">	<span class="string">'user.Name '</span> : <span class="number">1</span> ,</div><div class="line">	<span class="comment">//为 Age 新建降序 索引</span></div><div class="line">	<span class="string">'user.Age '</span> :  - <span class="number">1</span></div><div class="line">	<span class="comment">//打开后台执行</span></div><div class="line">&#125;,&#123;	<span class="string">'background'</span> :   <span class="literal">true</span>&#125;);</div><div class="line"><span class="comment">//重建索引</span></div><div class="line">db.things.reIndex();</div></pre></td></tr></table></figure></p>
+<h3 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//删除集合中的所有 索引</span></div><div class="line">db.things.dropIndexes ();  </div><div class="line"><span class="comment">//删除指定键的索引  </span></div><div class="line">db.things.dropIndex (&#123;</div><div class="line">	x :   <span class="number">1</span> ,</div><div class="line">	y :   - <span class="number">1</span></div><div class="line">&#125;);  </div><div class="line"><span class="comment">//使用 command 删除指定键的 索引</span></div><div class="line">db.runCommand (&#123;</div><div class="line">	dropIndexes : <span class="string">'foo '</span> ,</div><div class="line">	index:&#123; y : <span class="number">1</span> &#125;</div><div class="line">&#125;);  </div><div class="line"><span class="comment">//使用 command 删除所有 索引</span></div><div class="line">db.runCommand (&#123;dropIndexes : <span class="string">'foo '</span>,index: <span class="string">'*'</span>&#125;)</div></pre></td></tr></table></figure>
+<p>如果是删除集合中所有的文档（remove）则不会影响索引，当有新文档插入时，索引就会重建。</p>
+<h3 id="唯一索引"><a href="#唯一索引" class="headerlink" title="唯一索引"></a>唯一索引</h3><p>创建唯一索引，同时这也是一个符合唯一索引<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">db.things.ensureIndex (</div><div class="line">&#123;</div><div class="line">	<span class="string">'firstName '</span> :   <span class="number">1</span> ,</div><div class="line">	<span class="string">'lastName '</span> :   <span class="number">1</span></div><div class="line">&#125;,   &#123;</div><div class="line"><span class="comment">//指定为唯一索引</span></div><div class="line"><span class="string">'unique'</span>: <span class="literal">true</span> ,</div><div class="line"><span class="comment">//删除重复 记录</span></div><div class="line"><span class="string">'dropDups'</span>: <span class="literal">true</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="强制使用索引"><a href="#强制使用索引" class="headerlink" title="强制使用索引"></a>强制使用索引</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//强制使用索引 a 和 b</span></div><div class="line">db.collection.find(&#123;</div><div class="line">	<span class="string">'a'</span> :   <span class="number">4</span> ,</div><div class="line">	<span class="string">'b'</span> :   <span class="number">5</span> ,</div><div class="line">	<span class="string">'c'</span> :   <span class="number">6</span></div><div class="line">&#125;).hint(&#123;</div><div class="line">	<span class="string">'a'</span> :   <span class="number">1</span> ,</div><div class="line">	<span class="string">'b'</span> :   <span class="number">1</span></div><div class="line">&#125;);</div><div class="line"><span class="comment">//强制不使用任何 索引</span></div><div class="line">db.collection.find().hint(&#123;</div><div class="line">	<span class="string">'$natural'</span> :   <span class="number">1</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<p>索引总结:</p>
+<ul>
+<li>索引可以加速查询；</li>
+<li>单个索引无需在意其索引方向；</li>
+<li>多键索引需要慎重考虑每个索引的方向；</li>
+<li>做海量数据更新时应当先卸载所有索引，待数据更新完成后再重建索引；</li>
+<li>不要试图为每个键都创建索引，应考虑实际需要，并不是索引越多越好；</li>
+<li>唯一索引可以用来消除重复记录；</li>
+<li>地理空间索引是没有单位的，其内部实现是基本的勾股定理算法</li>
+</ul>
+<h2 id="4-mongo数据库管理"><a href="#4-mongo数据库管理" class="headerlink" title="4.mongo数据库管理"></a>4.mongo数据库管理</h2><h3 id="安全与认证"><a href="#安全与认证" class="headerlink" title="安全与认证"></a>安全与认证</h3><ol>
+<li>默认为无认证，启动用登录 shell ；</li>
+<li>添加账号；</li>
+<li>关闭 shell .关闭 MongoDB ；</li>
+<li>为 MongoDB 增加 — auth 参数；</li>
+<li>重 启 MongoDB ；</li>
+<li>登录 shell ，此时就需要认证了</li>
+</ol>
+<h3 id="冷备份"><a href="#冷备份" class="headerlink" title="冷备份"></a>冷备份</h3><ol>
+<li>关闭MongoDB引擎</li>
+<li>拷贝数据库文件夹及文件</li>
+<li>恢复时反向操作即可        </li>
+</ol>
+<ul>
+<li>优点：可以完全保证数据完整性；</li>
+<li>缺点：需要数据库引擎离线     <h3 id="热备份"><a href="#热备份" class="headerlink" title="热备份"></a>热备份</h3></li>
+</ul>
+<ol>
+<li>保持MongoDB为运行状态</li>
+<li>使用mongodump备份数据</li>
+<li>使用mongorestore恢复数据</li>
+</ol>
+<ul>
+<li>优点：数据库引擎无须离线</li>
+<li>缺点：不能保证数据完整性，操作时会降低MongoDB性能</li>
+</ul>
+<h3 id="主从复制备份"><a href="#主从复制备份" class="headerlink" title="主从复制备份"></a>主从复制备份</h3><ol>
+<li>创建主从复制机制</li>
+<li>配置完成后数据会自动同步</li>
+<li>恢复途径很多</li>
+</ol>
+<ul>
+<li>优点：可以保持MongoDB处于联机状态，不影响性能</li>
+<li>缺点：在数据写入密集的情况下可能无法保证数据完整性</li>
+</ul>
+<h3 id="修复db-repairDatabase"><a href="#修复db-repairDatabase" class="headerlink" title="修复db.repairDatabase();"></a>修复db.repairDatabase();</h3><ul>
+<li>修复数据库还可以起到压缩数据的作用；</li>
+<li>修复数据库的操作相当耗时，万不得已请不要使用；</li>
+<li>建议经常做数据备份；<h2 id="5-mongo复制-集群"><a href="#5-mongo复制-集群" class="headerlink" title="5.mongo复制(集群)"></a>5.mongo复制(集群)</h2></li>
+</ul>
+<ol>
+<li><p>主从复制<br>选项      说明<br>–only  作用是限定仅复制指定的某个数据库<br>–slavedelay  为复制设置操作延迟，单位为秒<br>–fastsync  以主节点的数据快照为基础启动从节点。<br>–autoresync  当主从节点数据不一致时，是否自动重新同步<br>–oplogSize  设定主节点中的oplog的容量，单位是MB</p>
+</li>
+<li><p>副本集<br>与普通主从复制集群相比，具有自动检测机制<br>需要使用—replSet 选项指定副本同伴<br>任何时候，副本集当中最多只允许有1个活跃节点</p>
+</li>
+<li><p>读写分离<br>将密集的读取操作分流到从节点上，降低主节点的负载<br>默认情况下，从节点是不允许处理<br>客户端请求的，需要使用—slaveOkay打开<br>不适用于实时性要求非常高的应用</p>
+</li>
+<li><p>工作原理—— OPLOG<br>oplog保存在local数据库中，oplog就在其中的<br>oplog.$main集合内保存。该集合的每个文档都记录了主节点上执行的一个操作，其键定义如下：<br> ts：操作时间戳，占用4字节<br> op：操作类型，占用1字节<br> ns：操作对象的命名空间（或理解为集合全名）<br> o：进一步指定所执行的操作，例如插入</p>
+</li>
+<li><p>工作原理—— 同步<br> 从节点首次启动时，做完整同步<br> 主节点数据发生变化时，做增量同步<br> 从节点与主节点数据严重不一致时，做完整同步</p>
+</li>
+<li><p>复制管理—— 诊断<br>db.printReplicationInfo()<br>在主节点上使用<br> 返回信息是oplog的大小以及各种操作的耗时. 空间占用等数据<br>在从节点上使用<br>db.printSlaveReplicationInfo()<br> 返回信息是从节点的数据源列表. 同步延迟时间等</p>
+</li>
+<li><p>复制管理—— 变更OPLOG 容量<br>在主节点上使用<br> 设定—oplogSize参数<br> 重启MongoDB</p>
+</li>
+<li><p>复制管理—— 复制认证<br>主从节点皆须配置<br> 存储在local.system.users<br> 优先尝试repl用户<br> 主从节点的用户配置必须保持一致</p>
+<h2 id="6-MONGODB分片"><a href="#6-MONGODB分片" class="headerlink" title="6.MONGODB分片"></a>6.MONGODB分片</h2><h3 id="分片与自动分片"><a href="#分片与自动分片" class="headerlink" title="分片与自动分片"></a>分片与自动分片</h3><p>分片是指将数据拆分，分散到不同的实例上进行负载分流的做法。我们常说的“分表”、“分库”、“分区”等概念都属于分片的实际体现。<br>传统分片做法是手工分表、分库。自动分片技术是根据指定的“片键”自动拆分数据并维护数据请求路由的过程。</p>
+</li>
+</ol>
+<ul>
+<li>递增片键–连续 不均匀 写入集中 分流较差</li>
+<li>随机片键–不连续 均匀 写入分散 分流较好</li>
+</ul>
+<h3 id="三个组成部分"><a href="#三个组成部分" class="headerlink" title="三个组成部分"></a>三个组成部分</h3><ul>
+<li>片,保存子集数据的容器</li>
+<li>mongos,MongoDB的路由器进程</li>
+<li>配置服务器,分片集群的配置信息<h3 id="创建分片"><a href="#创建分片" class="headerlink" title="创建分片"></a>创建分片</h3></li>
+<li>–启动配置服务器,可以创建一个或多个</li>
+<li>–添加片,每个片都应该是副本集</li>
+<li>–物理服务器,性能、安全和稳定性<h3 id="管理分片"><a href="#管理分片" class="headerlink" title="管理分片"></a>管理分片</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//查询分片</span></div><div class="line">db.shards.find();</div><div class="line"><span class="comment">//数据库</span></div><div class="line">db.databases.find();</div><div class="line"><span class="comment">//块</span></div><div class="line">db.chunks.find();</div><div class="line"><span class="comment">//分片状态</span></div><div class="line">db.printShardingStatus();</div><div class="line"><span class="comment">//删除片</span></div><div class="line">db.runCommand(&#123; removeshard : <span class="string">'ip:port'</span> &#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -584,8 +449,8 @@ db.repairDatabase();
     <div class="copyright">
         <p><span>本文标题:</span><a  href="/mongodb-study.html">Mongodb从入门到精通</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
-        <p><span>发布时间:</span>2015年12月19日 - 23时21分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
+        <p><span>发布时间:</span>2017年05月26日 - 23时21分</p>
+        <p><span>最后更新:</span>2017年05月28日 - 08时30分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/mongodb-study.html" title="Mongodb从入门到精通">http://geeksblog.cc/mongodb-study.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/mongodb-study.html　　作者: 山不转水转" title=""></span>
@@ -599,18 +464,9 @@ db.repairDatabase();
 
 <nav id="article-nav">
   
-    <a  href="/hexo-githup-blog.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hexo和github打造个人博客
-        
-      </div>
-    </a>
   
-  
-    <a  href="/node-study.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Node学习</div>
+    <a  href="/hexo-theme.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo自用黑色主题</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -622,7 +478,7 @@ db.repairDatabase();
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb学习"><span class="toc-number">1.</span> <span class="toc-text">mongodb学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-mongodb特性"><span class="toc-number">2.</span> <span class="toc-text">1.mongodb特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-mongo常用操作"><span class="toc-number">3.</span> <span class="toc-text">2.mongo常用操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-索引的使用"><span class="toc-number">4.</span> <span class="toc-text">3.索引的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mongo数据库管理"><span class="toc-number">5.</span> <span class="toc-text">4.mongo数据库管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mongo复制-集群"><span class="toc-number">6.</span> <span class="toc-text">5.mongo复制(集群)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-MONGODB分片"><span class="toc-number">7.</span> <span class="toc-text">6.MONGODB分片</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb学习"><span class="toc-number">1.</span> <span class="toc-text">mongodb学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-mongodb特性"><span class="toc-number">2.</span> <span class="toc-text">1.mongodb特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-mongo常用操作"><span class="toc-number">3.</span> <span class="toc-text">2.mongo常用操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#增删操作"><span class="toc-number">3.1.</span> <span class="toc-text">增删操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#更新操作"><span class="toc-number">3.2.</span> <span class="toc-text">更新操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询操作"><span class="toc-number">3.3.</span> <span class="toc-text">查询操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#操作符"><span class="toc-number">3.4.</span> <span class="toc-text">操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组查询"><span class="toc-number">3.5.</span> <span class="toc-text">数组查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-索引的使用"><span class="toc-number">4.</span> <span class="toc-text">3.索引的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建索引"><span class="toc-number">4.1.</span> <span class="toc-text">创建索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改索引"><span class="toc-number">4.2.</span> <span class="toc-text">修改索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除索引"><span class="toc-number">4.3.</span> <span class="toc-text">删除索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#唯一索引"><span class="toc-number">4.4.</span> <span class="toc-text">唯一索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强制使用索引"><span class="toc-number">4.5.</span> <span class="toc-text">强制使用索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mongo数据库管理"><span class="toc-number">5.</span> <span class="toc-text">4.mongo数据库管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安全与认证"><span class="toc-number">5.1.</span> <span class="toc-text">安全与认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#冷备份"><span class="toc-number">5.2.</span> <span class="toc-text">冷备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#热备份"><span class="toc-number">5.3.</span> <span class="toc-text">热备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主从复制备份"><span class="toc-number">5.4.</span> <span class="toc-text">主从复制备份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修复db-repairDatabase"><span class="toc-number">5.5.</span> <span class="toc-text">修复db.repairDatabase();</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-mongo复制-集群"><span class="toc-number">6.</span> <span class="toc-text">5.mongo复制(集群)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-MONGODB分片"><span class="toc-number">7.</span> <span class="toc-text">6.MONGODB分片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分片与自动分片"><span class="toc-number">7.1.</span> <span class="toc-text">分片与自动分片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三个组成部分"><span class="toc-number">7.2.</span> <span class="toc-text">三个组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建分片"><span class="toc-number">7.3.</span> <span class="toc-text">创建分片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#管理分片"><span class="toc-number">7.4.</span> <span class="toc-text">管理分片</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -693,18 +549,16 @@ db.repairDatabase();
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/hexo-githup-blog.html" title="上一篇: Hexo和github打造个人博客">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/node-study.html" title="下一篇: Node学习">
+            <a  href="/hexo-theme.html" title="下一篇: Hexo自用黑色主题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/hexo-theme.html">Hexo自用黑色主题</a></li><li class="post-list-item"><a class="post-list-link" href="/digital-info.html">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/cognition-deep.html">谈一谈认知</a></li><li class="post-list-item"><a class="post-list-link" href="/eggjs-action.html">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/bestblog.html">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-config.html">Redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One配置入门</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">Mybooks</a></li><li class="post-list-item"><a class="post-list-link" href="/async-dev.html">异步那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器私人定制</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/code-resource.html">程序员编程资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime-config.html">Sublime详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/js-study.html">Js秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-theme.html">Hexo自用黑色主题</a></li><li class="post-list-item"><a class="post-list-link" href="/digital-info.html">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/cognition-deep.html">谈一谈认知</a></li><li class="post-list-item"><a class="post-list-link" href="/eggjs-action.html">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/bestblog.html">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-config.html">Redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One配置入门</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">Mybooks</a></li><li class="post-list-item"><a class="post-list-link" href="/async-dev.html">异步那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器私人定制</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/code-resource.html">程序员编程资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/sublime-config.html">Sublime详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/js-study.html">Js秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

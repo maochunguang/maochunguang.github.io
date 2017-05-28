@@ -1,3 +1,4 @@
+http://geeksblog.cc/mongodb-study.html
 http://geeksblog.cc/hexo-theme.html
 http://geeksblog.cc/digital-info.html
 http://geeksblog.cc/cognition-deep.html
@@ -38,5 +39,4 @@ http://geeksblog.cc/dream.html
 http://geeksblog.cc/js-study.html
 http://geeksblog.cc/coder-study.html
 http://geeksblog.cc/hexo-githup-blog.html
-http://geeksblog.cc/mongodb-study.html
 http://geeksblog.cc/node-study.html
