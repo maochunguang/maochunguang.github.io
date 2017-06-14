@@ -7,18 +7,18 @@
   
   
   
-  <title>Ajax简单教程 | 山不转水转</title>
+  <title>程序员入门指南 | 山不转水转</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ajax简单教程：     ajax常用的方法，一些容易出错的地方">
+  <meta name="description" content="程序员入门指南： 在新踏入一个新的行业的时候，总是充满了困惑和不安。正所谓万事开头难，一旦有了好的开头，就会事半功倍，希望这篇文章，能为初学者解答一些困惑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax简单教程">
-<meta property="og:url" content="http://geeksblog.cc/ajax-study.html">
+<meta property="og:title" content="程序员入门指南">
+<meta property="og:url" content="http://geeksblog.cc/how-study-coding.html">
 <meta property="og:site_name" content="山不转水转">
-<meta property="og:description" content="ajax简单教程：     ajax常用的方法，一些容易出错的地方">
-<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
+<meta property="og:description" content="程序员入门指南： 在新踏入一个新的行业的时候，总是充满了困惑和不安。正所谓万事开头难，一旦有了好的开头，就会事半功倍，希望这篇文章，能为初学者解答一些困惑。">
+<meta property="og:updated_time" content="2017-06-14T03:23:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax简单教程">
-<meta name="twitter:description" content="ajax简单教程：     ajax常用的方法，一些容易出错的地方">
+<meta name="twitter:title" content="程序员入门指南">
+<meta name="twitter:description" content="程序员入门指南： 在新踏入一个新的行业的时候，总是充满了困惑和不安。正所谓万事开头难，一旦有了好的开头，就会事半功倍，希望这篇文章，能为初学者解答一些困惑。">
   
     <link rel="alternative" href="/atom.xml" title="山不转水转" type="application/atom+xml">
   
@@ -273,11 +273,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ajax-study" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-how-study-coding" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/ajax-study.html" class="article-date">
-      <time datetime="2016-07-06T12:53:11.000Z" itemprop="datePublished">2016-07-06</time>
+      <a  href="/how-study-coding.html" class="article-date">
+      <time datetime="2017-06-14T02:59:28.000Z" itemprop="datePublished">2017-06-14</time>
 </a>
 
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ajax简单教程
+      程序员入门指南
     </h1>
   
 
@@ -301,13 +301,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    <a class="article-category-link" href="/categories/cognition/">cognition</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/认知提升/">认知提升</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,70 +317,63 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> ajax简单教程：</strong> <Excerpt in index | 首页摘要><br>    ajax常用的方法，一些容易出错的地方<br><a id="more"></a></p>
+        <p><strong> 程序员入门指南：</strong> <Excerpt in index | 首页摘要><br>在新踏入一个新的行业的时候，总是充满了困惑和不安。正所谓万事开头难，一旦有了好的开头，就会事半功倍，希望这篇文章，能为初学者解答一些困惑。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h2 id="ajax原理"><a href="#ajax原理" class="headerlink" title="ajax原理"></a>ajax原理</h2><p>Ajax的原理简单来说通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。要清楚这个过程和原理，我们必须对 XMLHttpRequest有所了解。<br>XMLHttpRequest是ajax的核心机制，它是在IE5中首先引入的，是一种支持异步请求的技术。简单的说，也就是javascript可以及时向服务器提出请求和处理响应，而不阻塞用户。达到无刷新的效果。<br>所以我们先从XMLHttpRequest讲起，来看看它的工作原理。首先，我们先来看看XMLHttpRequest这个对象的属性。<br>它的属性有：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">onreadystatechange</th>
-<th style="text-align:left">responseText</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">每次状态改变所触发事件的事件处理程序</td>
-<td style="text-align:left">从服务器进程返回数据的字符串形式</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">responseXML</th>
-<th style="text-align:left">status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">从服务器进程返回的DOM兼容的文档数据对象</td>
-<td style="text-align:left">从服务器返回的数字代码，比如常见的404</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">status Text</th>
-<th style="text-align:left">readyState</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">伴随状态码的字符串信息</td>
-<td style="text-align:left">对象状态值</td>
-</tr>
-</tbody>
-</table>
-<p>readyState 对象状态值</p>
-<ul>
-<li>0 (未初始化) 对象已建立，但是尚未初始化（尚未调用open方法）</li>
-<li>1 (初始化) 对象已建立，尚未调用send方法</li>
-<li>2 (发送数据) send方法已调用，但是当前的状态及http头未知</li>
-<li>3 (数据传送中) 已接收部分数据，因为响应及http头不全，这时通过responseBody和responseText获取部分数据会出现错误，</li>
-<li>4 (完成) 数据接收完毕,此时可以通过通过responseXml和responseText获取完整的回应数据</li>
-</ul>
-<h2 id="ajax的使用"><a href="#ajax的使用" class="headerlink" title="ajax的使用"></a>ajax的使用</h2><ol>
-<li>原生的ajax</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateXmlHttp</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">//非IE浏览器创建XmlHttpRequest对象</span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XmlHttpRequest) &#123;</div><div class="line">        xmlhttp = <span class="keyword">new</span> XmlHttpRequest();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//IE浏览器创建XmlHttpRequest对象</span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">catch</span> (e) &#123;</div><div class="line">            <span class="keyword">try</span> &#123;</div><div class="line">                xmlhttp = <span class="keyword">new</span> ActiveXObject(<span class="string">"msxml2.XMLHTTP"</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">catch</span> (ex) &#123; &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Ustbwuyi</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> data = <span class="built_in">document</span>.getElementById(<span class="string">"username"</span>).value;</div><div class="line">    CreateXmlHttp();</div><div class="line">    <span class="keyword">if</span> (!xmlhttp) &#123;</div><div class="line">        alert(<span class="string">"创建xmlhttp对象异常！"</span>);</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    xmlhttp.open(<span class="string">"POST"</span>, url, <span class="literal">false</span>);</div><div class="line">    xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (xmlhttp.readyState == <span class="number">4</span>) &#123;</div><div class="line">            <span class="built_in">document</span>.getElementById(<span class="string">"user1"</span>).innerHTML = <span class="string">"数据正在加载..."</span>;</div><div class="line">            <span class="keyword">if</span> (xmlhttp.status == <span class="number">200</span>) &#123;</div><div class="line">                <span class="built_in">document</span>.write(xmlhttp.responseText);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    xmlhttp.send();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="程序员究竟干什么"><a href="#程序员究竟干什么" class="headerlink" title="程序员究竟干什么"></a>程序员究竟干什么</h2><p>我有个消极的看法是：程序员是帮别人实现梦想的人，帮产品经理，帮老板，帮资本家实现梦想！<br>我们平常工作就是把一个一个整理好的需求，实现到软件里，实现到网站上。<br>如果你是创业，做自己的软件，网站什么的，就是为自己实现梦想，</p>
+<h2 id="程序员的未来"><a href="#程序员的未来" class="headerlink" title="程序员的未来"></a>程序员的未来</h2><p>据说21世纪的蓝领将会是程序员，也不知道是哪个经济学家分析的。不过按照目前程序员的数量和发展来看的话，倒是很有这个趋势。所以对于程序员来说，要保持不断学习，不断进步的习惯。</p>
+<h2 id="1-我该学习什么语言？"><a href="#1-我该学习什么语言？" class="headerlink" title="1.我该学习什么语言？"></a>1.我该学习什么语言？</h2><p>这个问题困扰了几乎所有的程序员，比如java应用广好就业，比如php入门简单，ios待遇高，python是万能语言，HTML和js前端缺人才等等</p>
+<p>个人见解：先学习难度小，大众化的编程语言，比如java，php，python，javascript,c/c++,这几个学哪一种其实差不多，入门以后看自己兴趣在进行其它语言的学习。</p>
+<h2 id="2-我该怎么学习编程？"><a href="#2-我该怎么学习编程？" class="headerlink" title="2.我该怎么学习编程？"></a>2.我该怎么学习编程？</h2><p>这个问题是所有的程序员都有的，我也经常会疑问，到底该怎么学习呢？<br>个人见解：</p>
 <ol>
-<li>jquery调用ajax</li>
+<li>先了解语言的特性，适用的范围场景，比如是适合web开发，还是适合客户端程序，有的适合并发多线程，有的适合异步，还有的比较稳定，适合构建大型项目，有的开发效率高，等等。</li>
+<li>了解语言的语法和常用api的使用，比如变量的声明，循环的使用，io的读取，http服务的创建，把这些基本的语法搞清楚，在进行下一步的学习。</li>
+<li>学习web开发之前的准备，数据库的学习，http协议的学习，html，css和javacript的常用知识了解</li>
+<li>学习常用框架，比如java学习常用的ssh三大框架，node的学习express，一定要做2个项目练习，把自己的之前学习的知识都巩固一下，</li>
+<li>总结一下自己学习的过程，明白编程的思想在哪里，思路在哪里，学习编程，首先应该培养的是编程的思维和思想，有个正确的思维后面都简单多了。</li>
+<li>养成写博客或者学习笔记的习惯，推荐写博客，</li>
+<li>熟悉项目管理工具，svn，git之类的必须要会，工作中这些都是必须的</li>
+<li>准备面试，通过面试题进一步巩固自己的知识，夯实基础。</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    type: <span class="string">"get"</span>,</div><div class="line">    url: <span class="string">"http://www.cnblogs.com/rss"</span>,</div><div class="line">    beforeSend: <span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest</span>)</span>&#123;</div><div class="line">    <span class="comment">//ShowLoading();</span></div><div class="line">    &#125;,</div><div class="line">    success: <span class="function"><span class="keyword">function</span>(<span class="params">data, textStatus</span>)</span>&#123;</div><div class="line">        $(<span class="string">".ajax.ajaxResult"</span>).html(<span class="string">""</span>);</div><div class="line">        $(<span class="string">"item"</span>,data).each(<span class="function"><span class="keyword">function</span>(<span class="params">i, domEle</span>)</span>&#123;</div><div class="line">        $(<span class="string">".ajax.ajaxResult"</span>).append(<span class="string">"&lt;li&gt;"</span>+$(domEle).children(<span class="string">"title"</span>).text()+<span class="string">"&lt;/li&gt;"</span>);</div><div class="line">        &#125;);</div><div class="line"></div><div class="line">    &#125;,</div><div class="line">    complete: <span class="function"><span class="keyword">function</span>(<span class="params">XMLHttpRequest, textStatus</span>)</span>&#123;</div><div class="line">    <span class="comment">//HideLoading();</span></div><div class="line">    &#125;,</div><div class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//请求出错处理</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="3-我应该去哪里学习编程？"><a href="#3-我应该去哪里学习编程？" class="headerlink" title="3.我应该去哪里学习编程？"></a>3.我应该去哪里学习编程？</h2><p>其实这个看个人，如果自学能力强，自控能力强，自学挺好的，下面我列举几个程序员常用的网站  </p>
+<ol>
+<li><a href="http://study.163.com/">网易云课堂</a>，很多免费的视频课程，适合入门学习</li>
+<li><a href="http://www.imooc.com/">慕课网</a>，很多it入门教学视频，资源也不错</li>
+<li><a href="http://www.jikexueyuan.com/">极客学院</a>，和前两个网站差不多，</li>
+<li><a href="http://www.ibeifeng.com/">北风网</a>，类似的教学网站，其它的就不说了</li>
+</ol>
+<h2 id="4-编程遇到问题怎么办？"><a href="#4-编程遇到问题怎么办？" class="headerlink" title="4.编程遇到问题怎么办？"></a>4.编程遇到问题怎么办？</h2><ul>
+<li>先自己试着分析，看看是不是自己的代码有明显的逻辑问题，或者语法问题</li>
+<li>去stackoverflow搜索关键词，关键句应该是最有效的了</li>
+<li>百度或者谷歌看看网上有没有类似的问题，一回生，二回熟，很快就明白了</li>
+<li>去官网查看api文档查找原因</li>
+<li>自己要学会debug代码，查找原因</li>
+<li>去各大论坛逛逛，说不定早有人提问此类问题了</li>
+</ul>
+<h2 id="5-我想看编程的书籍去哪找呢？"><a href="#5-我想看编程的书籍去哪找呢？" class="headerlink" title="5.我想看编程的书籍去哪找呢？"></a>5.我想看编程的书籍去哪找呢？</h2><p>经典书籍还是买纸质的，买正版的，支持正版！</p>
+<ol>
+<li><a href="http://vdisk.weibo.com/">新浪微盘</a>，非常多的it书籍  </li>
+<li><a href="http://www.jb51.net/">脚本之家</a>，非常多的pdf书籍，可惜大多数不是文字版pdf  </li>
+<li><a href="http://www.salttiger.com/">英文原版书籍</a>，都是高清文字版pdf，强烈推荐，都是英文原版的  </li>
+<li><a href="http://bestcbooks.com/">计算机书控</a>，都是免费的pdf文档，大多数不是文字版pdf</li>
+</ol>
+<h2 id="6-学习心态"><a href="#6-学习心态" class="headerlink" title="6.学习心态"></a>6.学习心态</h2><ol>
+<li>不要老是折腾工具，ide工具和文本编辑器一样一个就够了</li>
+<li>不要自满，编程的东西学一辈子也学不会，要谦虚好学</li>
+<li>不要急躁，既然知识学不完，我们应该掌握学习方法，指定计划去学习</li>
+<li>要持之以恒，学习是一辈子的事，如果你没有这个打算，还是不要做程序员的好</li>
+<li>切忌眼高手低，必须要敲代码才能达到效果</li>
+</ol>
+<h2 id="7-编程进阶之路"><a href="#7-编程进阶之路" class="headerlink" title="7.编程进阶之路"></a>7.编程进阶之路</h2><p>当有了一定的编程基础之后,最大的问题是确定自己的方向,这个时候最容易迷茫和困惑,学习什么技术?<br>怎么去学,这些真的很难<br>个人建议如下:  </p>
+<ol>
+<li>技术型方向:提高自己的编程能力和语言造诣,最有效的是”造轮子”,量变引起质变 ，写插件,写框架,写爬虫,写数据库,自制编程语言,等等.</li>
+<li>业务型方向:提高自己的业务能力,和客户的沟通能力,分析需求,解决客户的难题，多出去见客户,去现场,了解需求,分析需求,把需求整理为功能</li>
+<li>多总结，把专业知识结构化，系统化，形成自己的思维体系，提升自己的认知能力</li>
+<li><strong>持续学习</strong>，对于程序员来说，这个最重要，你一懒惰就跟不上技术的脚步，失业就说不准了</li>
+</ol>
+<hr>
 <blockquote>
-<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
+<p>如果文章对你有帮助,请去我的博客留个言吧!  <a href="http://geeksblog.cc/">我的博客</a> </p>
 </blockquote>
 
       
@@ -390,13 +383,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/ajax-study.html">Ajax简单教程</a></p>
+        <p><span>本文标题:</span><a  href="/how-study-coding.html">程序员入门指南</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
-        <p><span>发布时间:</span>2016年07月06日 - 20时53分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
+        <p><span>发布时间:</span>2017年06月14日 - 10时59分</p>
+        <p><span>最后更新:</span>2017年06月14日 - 11时23分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/ajax-study.html" title="Ajax简单教程">http://geeksblog.cc/ajax-study.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/ajax-study.html　　作者: 山不转水转" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/how-study-coding.html" title="程序员入门指南">http://geeksblog.cc/how-study-coding.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/how-study-coding.html　　作者: 山不转水转" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -407,18 +400,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/ajax-jsonp.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Ajax和jsonp区别
-        
-      </div>
-    </a>
   
-  
-    <a  href="/mysql-optimize.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mysql优化</div>
+    <a  href="/mysql-collation.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Illegal Mix of Collations</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -430,7 +414,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax原理"><span class="toc-number">1.</span> <span class="toc-text">ajax原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax的使用"><span class="toc-number">2.</span> <span class="toc-text">ajax的使用</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#程序员究竟干什么"><span class="toc-number">1.</span> <span class="toc-text">程序员究竟干什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#程序员的未来"><span class="toc-number">2.</span> <span class="toc-text">程序员的未来</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-我该学习什么语言？"><span class="toc-number">3.</span> <span class="toc-text">1.我该学习什么语言？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-我该怎么学习编程？"><span class="toc-number">4.</span> <span class="toc-text">2.我该怎么学习编程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-我应该去哪里学习编程？"><span class="toc-number">5.</span> <span class="toc-text">3.我应该去哪里学习编程？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-编程遇到问题怎么办？"><span class="toc-number">6.</span> <span class="toc-text">4.编程遇到问题怎么办？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-我想看编程的书籍去哪找呢？"><span class="toc-number">7.</span> <span class="toc-text">5.我想看编程的书籍去哪找呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-学习心态"><span class="toc-number">8.</span> <span class="toc-text">6.学习心态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-编程进阶之路"><span class="toc-number">9.</span> <span class="toc-text">7.编程进阶之路</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -501,13 +485,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/ajax-jsonp.html" title="上一篇: Ajax和jsonp区别">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/mysql-optimize.html" title="下一篇: Mysql优化">
+            <a  href="/mysql-collation.html" title="下一篇: Illegal Mix of Collations">
                 <i class="fa fa-angle-right"></i>
             </a>
         

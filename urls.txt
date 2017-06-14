@@ -1,3 +1,4 @@
+http://geeksblog.cc/how-study-coding.html
 http://geeksblog.cc/mysql-collation.html
 http://geeksblog.cc/buy-computer.html
 http://geeksblog.cc/mongodb-study.html
@@ -36,7 +37,6 @@ http://geeksblog.cc/ghost-blog.html
 http://geeksblog.cc/sort-study.html
 http://geeksblog.cc/git-config-study.html
 http://geeksblog.cc/ubuntu-dev-config.html
-http://geeksblog.cc/sublime-config.html
 http://geeksblog.cc/dream.html
 http://geeksblog.cc/js-study.html
 http://geeksblog.cc/coder-study.html
