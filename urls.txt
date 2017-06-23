@@ -5,7 +5,6 @@ http://geeksblog.cc/buy-computer.html
 http://geeksblog.cc/mongodb-study.html
 http://geeksblog.cc/hexo-theme.html
 http://geeksblog.cc/digital-info.html
-http://geeksblog.cc/cognition-deep.html
 http://geeksblog.cc/eggjs-action.html
 http://geeksblog.cc/bestblog.html
 http://geeksblog.cc/redis-config.html
