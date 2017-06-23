@@ -1,3 +1,4 @@
+http://geeksblog.cc/kobo-config.html
 http://geeksblog.cc/how-study-coding.html
 http://geeksblog.cc/mysql-collation.html
 http://geeksblog.cc/buy-computer.html
@@ -11,7 +12,6 @@ http://geeksblog.cc/redis-config.html
 http://geeksblog.cc/spider-koa2.html
 http://geeksblog.cc/wechat-dev.html
 http://geeksblog.cc/mac-shortcut.html
-http://geeksblog.cc/kobo-config.html
 http://geeksblog.cc/mybooks.html
 http://geeksblog.cc/async-dev.html
 http://geeksblog.cc/fullprj-desc.html
