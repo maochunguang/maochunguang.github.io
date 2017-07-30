@@ -24,6 +24,7 @@ http://geeksblog.cc/npm-detail.html
 http://geeksblog.cc/node-notes.html
 http://geeksblog.cc/best-js-snippet.html
 http://geeksblog.cc/code-resource.html
+http://geeksblog.cc/sort-study.html
 http://geeksblog.cc/ajax-jsonp.html
 http://geeksblog.cc/ajax-study.html
 http://geeksblog.cc/mysql-optimize.html
@@ -35,7 +36,6 @@ http://geeksblog.cc/git-svn.html
 http://geeksblog.cc/java-date.html
 http://geeksblog.cc/study-goals.html
 http://geeksblog.cc/ghost-blog.html
-http://geeksblog.cc/sort-study.html
 http://geeksblog.cc/git-config-study.html
 http://geeksblog.cc/ubuntu-dev-config.html
 http://geeksblog.cc/dream.html
