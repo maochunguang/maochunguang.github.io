@@ -7,17 +7,17 @@
   
   
   
-  <title>Ubuntu16开发环境配置 | 山不转水转</title>
+  <title>Ubuntu16服务器环境配置 | 山不转水转</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu16开发环境配置">
+<meta property="og:title" content="Ubuntu16服务器环境配置">
 <meta property="og:url" content="http://geeksblog.cc/ubuntu-dev-config.html">
 <meta property="og:site_name" content="山不转水转">
 <meta property="og:description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
-<meta property="og:updated_time" content="2017-06-14T02:39:11.000Z">
+<meta property="og:updated_time" content="2017-08-04T14:39:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu16开发环境配置">
+<meta name="twitter:title" content="Ubuntu16服务器环境配置">
 <meta name="twitter:description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
   
     <link rel="alternative" href="/atom.xml" title="山不转水转" type="application/atom+xml">
@@ -194,7 +194,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/javacript/" style="font-size: 10px;">javacript</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mac/" style="font-size: 12px;">mac</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 16px;">mysql</a> <a href="/tags/node/" style="font-size: 18px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/others/" style="font-size: 20px;">others</a> <a href="/tags/redis/" style="font-size: 12px;">redis</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/开发工具/" style="font-size: 12px;">开发工具</a> <a href="/tags/数码产品/" style="font-size: 12px;">数码产品</a> <a href="/tags/算法/" style="font-size: 12px;">算法</a> <a href="/tags/编程语言/" style="font-size: 10px;">编程语言</a> <a href="/tags/认知提升/" style="font-size: 10px;">认知提升</a>
+                        <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/java/" style="font-size: 14px;">java</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mac/" style="font-size: 12px;">mac</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 16px;">mysql</a> <a href="/tags/node/" style="font-size: 18px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/others/" style="font-size: 20px;">others</a> <a href="/tags/redis/" style="font-size: 12px;">redis</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/数码产品/" style="font-size: 12px;">数码产品</a> <a href="/tags/算法/" style="font-size: 12px;">算法</a> <a href="/tags/编程语言/" style="font-size: 10px;">编程语言</a>
                     </div>
                 </section>
                 
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ubuntu16开发环境配置
+      Ubuntu16服务器环境配置
     </h1>
   
 
@@ -320,15 +320,20 @@
         <p><strong> ubuntu开发环境配置：</strong> <Excerpt in index | 首页摘要><br>    ubuntu16下node,java开发环境配置<br> <a id="more"></a></p>
 <The rest of contents | 余下全文>
 
+<h2 id="ubuntu14升级到ubuntu16"><a href="#ubuntu14升级到ubuntu16" class="headerlink" title="ubuntu14升级到ubuntu16"></a>ubuntu14升级到ubuntu16</h2><ol>
+<li>终端下执行命令<br><code>sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade</code></li>
+<li>重启系统以完成更新的安装<br><code>sudo init 6</code></li>
+<li>用命令安装更新管理器核心update-manager-core，如果服务器已安装则可以跳过<br><code>sudo apt-get install update-manager-core</code></li>
+<li>编辑/etc/update-manager/release-upgrades配置文件，设置Prompt=lts<br><code>sudo vi /etc/update-manager/release-upgrades</code></li>
+<li>启动升级进程<br><code>sudo do-release-upgrade -d</code></li>
+</ol>
 <h2 id="安装系统软件"><a href="#安装系统软件" class="headerlink" title="安装系统软件"></a>安装系统软件</h2><ol>
 <li><p>更新系统和软件</p>
 <figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> upgade</div></pre></td></tr></table></figure>
 </li>
 <li><p>谷歌浏览器，火狐浏览器，atom编辑器，sublime编辑器，webstome,idea,eclipse</p>
 </li>
-<li>安装搜狗输入法（官网），安装fcitx配置搜狗输入法</li>
-</ol>
-<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><ol>
+<li>安装搜狗输入法（官网），安装fcitx配置搜狗输入法<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2></li>
 <li><p>下载jdk并新建一个文件夹</p>
  <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">jvm</span></span></div></pre></td></tr></table></figure>
 </li>
@@ -420,12 +425,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></p>
+        <p><span>本文标题:</span><a  href="/ubuntu-dev-config.html">Ubuntu16服务器环境配置</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
         <p><span>发布时间:</span>2016年04月26日 - 18时48分</p>
-        <p><span>最后更新:</span>2017年06月14日 - 10时39分</p>
+        <p><span>最后更新:</span>2017年08月04日 - 22时39分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/ubuntu-dev-config.html" title="Ubuntu16开发环境配置">http://geeksblog.cc/ubuntu-dev-config.html</a>
+            <span>原始链接:</span><a class="post-url" href="/ubuntu-dev-config.html" title="Ubuntu16服务器环境配置">http://geeksblog.cc/ubuntu-dev-config.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/ubuntu-dev-config.html　　作者: 山不转水转" title=""></span>
         </p>
         <p>
@@ -460,7 +465,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装系统软件"><span class="toc-number">1.</span> <span class="toc-text">安装系统软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jdk"><span class="toc-number">2.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">3.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mongodb"><span class="toc-number">4.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装redis"><span class="toc-number">5.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量配置"><span class="toc-number">6.</span> <span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装开发工具"><span class="toc-number">7.</span> <span class="toc-text">安装开发工具</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu14升级到ubuntu16"><span class="toc-number">1.</span> <span class="toc-text">ubuntu14升级到ubuntu16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装系统软件"><span class="toc-number">2.</span> <span class="toc-text">安装系统软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jdk"><span class="toc-number">3.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">4.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mongodb"><span class="toc-number">5.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装redis"><span class="toc-number">6.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量配置"><span class="toc-number">7.</span> <span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装开发工具"><span class="toc-number">8.</span> <span class="toc-text">安装开发工具</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -542,7 +547,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/num2Chinese.html">阿拉伯数字转汉字写法</a></li><li class="post-list-item"><a class="post-list-link" href="/java-interview.html">Java面试大全自制版</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One导出笔记高级配置</a></li><li class="post-list-item"><a class="post-list-link" href="/how-study-coding.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-collation.html">Illegal Mix of Collations</a></li><li class="post-list-item"><a class="post-list-link" href="/buy-computer.html">如何选购合适的电脑</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-theme.html">Hexo自用黑色主题</a></li><li class="post-list-item"><a class="post-list-link" href="/digital-info.html">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/eggjs-action.html">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/bestblog.html">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-config.html">Redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">那些年读的书</a></li><li class="post-list-item"><a class="post-list-link" href="/async-dev.html">异步那些事</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/code-resource.html">程序员编程资源汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">常用排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/js-study.html">Js秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/num2Chinese.html">阿拉伯数字转汉字写法</a></li><li class="post-list-item"><a class="post-list-link" href="/java-interview.html">Java面试大全自制版</a></li><li class="post-list-item"><a class="post-list-link" href="/kobo-config.html">Kobo Aura One导出笔记高级配置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-collation.html">Illegal Mix of Collations</a></li><li class="post-list-item"><a class="post-list-link" href="/buy-computer.html">如何选购合适的电脑</a></li><li class="post-list-item"><a class="post-list-link" href="/mongodb-study.html">Mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-theme.html">Hexo自用黑色主题</a></li><li class="post-list-item"><a class="post-list-link" href="/digital-info.html">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/eggjs-action.html">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/bestblog.html">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-config.html">Redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/spider-koa2.html">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/wechat-dev.html">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-shortcut.html">Mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/mybooks.html">那些年读的书</a></li><li class="post-list-item"><a class="post-list-link" href="/fullprj-desc.html">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/free-books.html">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-config.html">Hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/server-config.html">Ubuntu服务器详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-dev.html">Mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/npm-detail.html">Npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/node-notes.html">深入浅出Nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/best-js-snippet.html">Atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/sort-study.html">常用排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-jsonp.html">Ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/ajax-study.html">Ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-optimize.html">Mysql优化的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/mysql-study.html">Mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/node-develop.html">Nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/redis-study.html">Redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/git-svn.html">Git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/java-date.html">Java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/study-goals.html">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/ghost-blog.html">使用Ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/git-config-study.html">Git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/ubuntu-dev-config.html">Ubuntu16服务器环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/dream.html">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/coder-study.html">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/hexo-githup-blog.html">Hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/node-study.html">Node学习</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

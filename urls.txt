@@ -1,7 +1,6 @@
 http://geeksblog.cc/num2Chinese.html
 http://geeksblog.cc/java-interview.html
 http://geeksblog.cc/kobo-config.html
-http://geeksblog.cc/how-study-coding.html
 http://geeksblog.cc/mysql-collation.html
 http://geeksblog.cc/buy-computer.html
 http://geeksblog.cc/mongodb-study.html
@@ -14,7 +13,6 @@ http://geeksblog.cc/spider-koa2.html
 http://geeksblog.cc/wechat-dev.html
 http://geeksblog.cc/mac-shortcut.html
 http://geeksblog.cc/mybooks.html
-http://geeksblog.cc/async-dev.html
 http://geeksblog.cc/fullprj-desc.html
 http://geeksblog.cc/free-books.html
 http://geeksblog.cc/hexo-config.html
@@ -23,7 +21,6 @@ http://geeksblog.cc/mac-dev.html
 http://geeksblog.cc/npm-detail.html
 http://geeksblog.cc/node-notes.html
 http://geeksblog.cc/best-js-snippet.html
-http://geeksblog.cc/code-resource.html
 http://geeksblog.cc/sort-study.html
 http://geeksblog.cc/ajax-jsonp.html
 http://geeksblog.cc/ajax-study.html
@@ -39,7 +36,6 @@ http://geeksblog.cc/ghost-blog.html
 http://geeksblog.cc/git-config-study.html
 http://geeksblog.cc/ubuntu-dev-config.html
 http://geeksblog.cc/dream.html
-http://geeksblog.cc/js-study.html
 http://geeksblog.cc/coder-study.html
 http://geeksblog.cc/hexo-githup-blog.html
 http://geeksblog.cc/node-study.html
