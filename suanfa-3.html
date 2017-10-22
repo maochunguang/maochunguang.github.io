@@ -7,18 +7,20 @@
   
   
   
-  <title>Ubuntu16服务器环境配置 | 山不转水转</title>
+  <title>突破算法第三天-希尔排序 | 山不转水转</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
+  <meta name="description" content="：     希尔排序平常用的比较少，主要是基于插入排序的改进。但是希尔排序的性能很高，数组越大，性能优势越明显。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu16服务器环境配置">
-<meta property="og:url" content="http://geeksblog.cc/ubuntu-dev-config.html">
+<meta property="og:title" content="突破算法第三天-希尔排序">
+<meta property="og:url" content="http://geeksblog.cc/suanfa-3.html">
 <meta property="og:site_name" content="山不转水转">
-<meta property="og:description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
-<meta property="og:updated_time" content="2017-08-04T14:39:46.000Z">
+<meta property="og:description" content="：     希尔排序平常用的比较少，主要是基于插入排序的改进。但是希尔排序的性能很高，数组越大，性能优势越明显。">
+<meta property="og:image" content="http://o7kalf5h3.bkt.clouddn.com/shellSort.jpg">
+<meta property="og:updated_time" content="2017-10-22T16:20:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu16服务器环境配置">
-<meta name="twitter:description" content="ubuntu开发环境配置：     ubuntu16下node,java开发环境配置">
+<meta name="twitter:title" content="突破算法第三天-希尔排序">
+<meta name="twitter:description" content="：     希尔排序平常用的比较少，主要是基于插入排序的改进。但是希尔排序的性能很高，数组越大，性能优势越明显。">
+<meta name="twitter:image" content="http://o7kalf5h3.bkt.clouddn.com/shellSort.jpg">
   
     <link rel="alternative" href="/atom.xml" title="山不转水转" type="application/atom+xml">
   
@@ -273,11 +275,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-ubuntu-dev-config" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-suanfa-3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/ubuntu-dev-config.html" class="article-date">
-      <time datetime="2016-04-26T10:48:11.000Z" itemprop="datePublished">2016-04-26</time>
+      <a  href="/suanfa-3.html" class="article-date">
+      <time datetime="2017-10-22T13:51:03.000Z" itemprop="datePublished">2017-10-22</time>
 </a>
 
     </div>
@@ -291,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ubuntu16服务器环境配置
+      突破算法第三天-希尔排序
     </h1>
   
 
@@ -301,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,106 +319,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> ubuntu开发环境配置：</strong> <Excerpt in index | 首页摘要><br>    ubuntu16下node,java开发环境配置<br> <a id="more"></a></p>
+        <p><strong> ：</strong> <Excerpt in index | 首页摘要><br>    希尔排序平常用的比较少，主要是基于插入排序的改进。但是希尔排序的性能很高，数组越大，性能优势越明显。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h2 id="ubuntu14升级到ubuntu16"><a href="#ubuntu14升级到ubuntu16" class="headerlink" title="ubuntu14升级到ubuntu16"></a>ubuntu14升级到ubuntu16</h2><ol>
-<li>终端下执行命令<br><code>sudo apt-get update &amp;&amp; sudo apt-get dist-upgrade</code></li>
-<li>重启系统以完成更新的安装<br><code>sudo init 6</code></li>
-<li>用命令安装更新管理器核心update-manager-core，如果服务器已安装则可以跳过<br><code>sudo apt-get install update-manager-core</code></li>
-<li>编辑/etc/update-manager/release-upgrades配置文件，设置Prompt=lts<br><code>sudo vi /etc/update-manager/release-upgrades</code></li>
-<li>启动升级进程<br><code>sudo do-release-upgrade -d</code></li>
-</ol>
-<h2 id="安装系统软件"><a href="#安装系统软件" class="headerlink" title="安装系统软件"></a>安装系统软件</h2><ol>
-<li><p>更新系统和软件</p>
-<figure class="highlight q"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></div><div class="line">sudo apt-<span class="built_in">get</span> upgade</div></pre></td></tr></table></figure>
-</li>
-<li><p>谷歌浏览器，火狐浏览器，atom编辑器，sublime编辑器，webstome,idea,eclipse</p>
-</li>
-<li>安装搜狗输入法（官网），安装fcitx配置搜狗输入法<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2></li>
-<li><p>下载jdk并新建一个文件夹</p>
- <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mkdir /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">jvm</span></span></div></pre></td></tr></table></figure>
-</li>
-<li><p>解压文件</p>
- <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo tar zxvf jdk-<span class="number">7</span>u71-linux-x64.tar.gz -C /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">jvm</span>/<span class="title">jdk1</span>.7</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>设置环境变量,设置~/.zshrc文件,或者编辑/etc/profile（全局）文件</p>
- <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">export JAVA_HOME=<span class="regexp">/usr/lib</span><span class="regexp">/jvm/jdk</span>1.<span class="number">7</span></div><div class="line">export JRE_HOME=$&#123;JAVA_HOME&#125;/jre  </div><div class="line">export CLASSPATH=.:$&#123;JAVA_HOME&#125;/<span class="class"><span class="keyword">lib</span>:$&#123;<span class="title">JRE_HOME</span>&#125;/<span class="title">lib</span>  </span></div><div class="line">export PATH=$&#123;JAVA_HOME&#125;/<span class="symbol">bin:</span>$PATH</div></pre></td></tr></table></figure>
-</li>
-<li><p>检查是否安装成功<br> 打开shell,</p>
- <figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java <span class="comment">--version</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><ol>
-<li>nodejs版本迭代较快，有时候需要检查在不同版本下的兼容性问题，用nvm来控制版本</li>
-<li><p>安装nvm,source的时候根据自己的shell版本，~/.bashrc, ~/.profile, 或者 ~/.zshrc</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash</div><div class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></div><div class="line">[ <span class="_">-s</span> <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; . <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> <span class="comment"># This loads nvm</span></div><div class="line"><span class="built_in">source</span> ~/.profile</div></pre></td></tr></table></figure>
-</li>
-<li><p>安装不同版本的nodejs<br>　　<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">nvm ls-remote</div><div class="line">nvm install v0<span class="number">.12</span><span class="number">.9</span></div><div class="line">nvm install <span class="number">5.0</span></div><div class="line">nvm use <span class="number">0.12</span><span class="number">.9</span></div><div class="line">nvm alias <span class="section">default</span> <span class="number">0.12</span><span class="number">.9</span></div></pre></td></tr></table></figure></p>
-</li>
-</ol>
-<h2 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h2><ol>
-<li><p>配置公钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10</div><div class="line"><span class="built_in">echo</span> <span class="string">"deb http://repo.mongodb.org/apt/ubuntu "</span>$(lsb_release -sc)<span class="string">"/mongodb-org/3.0 multiverse"</span> | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list</div></pre></td></tr></table></figure>
-</li>
-<li><p>更新软件列表</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install -y mongodb-org</div></pre></td></tr></table></figure>
-</li>
-<li><p>完成上面的安装步骤配置mongodb的数据库的位置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo mongod --dbpath /data/db</div></pre></td></tr></table></figure>
-</li>
-<li><p>启动mongod</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo service mongod start</div><div class="line">sudo service mongod stop</div><div class="line">sudo service mongod restart</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h2><ol>
-<li><p>下载软件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget http://download.redis.io/releases/redis-2.8.11.tar.gz</div></pre></td></tr></table></figure>
-</li>
-<li><p>解压安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tar xvfz redis-2.8.11.tar.gz</div><div class="line"><span class="built_in">cd</span> redis-2.8.11 &amp;&amp; sudo make &amp;&amp; sudo make install</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置使用</p>
+<h2 id="希尔排序的基本原理"><a href="#希尔排序的基本原理" class="headerlink" title="希尔排序的基本原理"></a>希尔排序的基本原理</h2><p>基本思想：先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行依次直接插入排序。<br>操作方法：</p>
 <ol>
-<li><p>下载配置文件和init启动脚本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/ijonas/dotfiles/raw/master/etc/init.d/redis-server</div><div class="line">wget https://github.com/ijonas/dotfiles/raw/master/etc/redis.conf</div><div class="line">sudo mv redis-server /etc/init.d/redis-server</div><div class="line">sudo chmod +x /etc/init.d/redis-server</div><div class="line">sudo mv redis.conf /etc/redis.conf</div></pre></td></tr></table></figure>
-</li>
-<li><p>初始化用户和日志路径</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo useradd redis</div><div class="line">sudo mkdir -p /var/lib/redis</div><div class="line">sudo mkdir -p /var/<span class="built_in">log</span>/redis</div><div class="line">sudo chown redis.redis /var/lib/redis</div><div class="line">sudo chown redis.redis /var/<span class="built_in">log</span>/redis</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置开机自动启动，关机自动关闭</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo update-rc.d redis-server defaults</div></pre></td></tr></table></figure>
-</li>
+<li>选择一个增量序列t1，t2，…，tk，其中ti&gt;tj，tk=1； </li>
+<li>按增量序列个数k，对序列进行k 趟排序； </li>
+<li>每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子表进行直接插入排序。仅增量因子为1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
 </ol>
-</li>
-</ol>
-<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><ol>
-<li>认识环境变量相关的文件</li>
-</ol>
-<ul>
-<li>/etc/profile —— 此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置；</li>
-<li>/etc/environment —— 在登录时操作系统使用的第二个文件,系统在读取你自己的profile前,设置环境文件的环境变量；</li>
-<li>/etc/bashrc —— 为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取；</li>
-<li>~/.profile —— 每个用户都可使用该文件输入专用于自己使用的shell信息，当用户登录时，该文件仅仅执行一次！默认情况下,它设置一些环境变量,执行用户的.bashrc文件；</li>
-<li>~/.bashrc —— 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该文件被读取；</li>
-</ul>
-<ol>
-<li>配置环境变量</li>
-</ol>
-<ul>
-<li><p>在Ubuntu14.04的~/.bashrc中添加的环境变量,在文件添加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/home/qtcreator-2.6.1/bin</div></pre></td></tr></table></figure>
-</li>
-<li><p>修改profile文件,vim编辑/etc/profile</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/profile</div><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="安装开发工具"><a href="#安装开发工具" class="headerlink" title="安装开发工具"></a>安装开发工具</h2><ol>
-<li>zsh命令行工具</li>
-<li>mysql客户端workbench，mongo客户端工具robomongo</li>
-<li>安装git,svn版本控制工具<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div><div class="line">sudo apt-get install subversion</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<p><img src="http://o7kalf5h3.bkt.clouddn.com/shellSort.jpg" alt="希尔排序原理图"></p>
+<h2 id="希尔排序java实现"><a href="#希尔排序java实现" class="headerlink" title="希尔排序java实现"></a>希尔排序java实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> n = a.length;</div><div class="line">    <span class="keyword">int</span> h = <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (h &lt; n/<span class="number">3</span>) h = <span class="number">3</span>*h + <span class="number">1</span>;</div><div class="line">    <span class="keyword">while</span> (h &gt;= <span class="number">1</span>) &#123;</div><div class="line">        <span class="comment">// h-sort the array</span></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = h; i &lt; n; i++) &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt;= h &amp;&amp; (a[j]&lt; a[j-h]); j -= h) &#123;</div><div class="line">                swap(a, j, j-h);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        h /= <span class="number">3</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> swap = a[i];</div><div class="line">    a[i] = a[j];</div><div class="line">    a[j] = swap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><p>希尔排序时效分析很难，关键码的比较次数与记录移动次数依赖于增量因子序列d的选取，是一个不稳定排序算法</p>
+<h2 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h2><blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
+</blockquote>
 
       
     </div>
@@ -425,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/ubuntu-dev-config.html">Ubuntu16服务器环境配置</a></p>
+        <p><span>本文标题:</span><a  href="/suanfa-3.html">突破算法第三天-希尔排序</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
-        <p><span>发布时间:</span>2016年04月26日 - 18时48分</p>
-        <p><span>最后更新:</span>2017年08月04日 - 22时39分</p>
+        <p><span>发布时间:</span>2017年10月22日 - 21时51分</p>
+        <p><span>最后更新:</span>2017年10月23日 - 00时20分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/ubuntu-dev-config.html" title="Ubuntu16服务器环境配置">http://geeksblog.cc/ubuntu-dev-config.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/ubuntu-dev-config.html　　作者: 山不转水转" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/suanfa-3.html" title="突破算法第三天-希尔排序">http://geeksblog.cc/suanfa-3.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/suanfa-3.html　　作者: 山不转水转" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -442,18 +359,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/git-config-study.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Git学习笔记
-        
-      </div>
-    </a>
   
-  
-    <a  href="/dream.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的梦想</div>
+    <a  href="/suanfa-2.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">突破算法第二天-插入排序</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -465,7 +373,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu14升级到ubuntu16"><span class="toc-number">1.</span> <span class="toc-text">ubuntu14升级到ubuntu16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装系统软件"><span class="toc-number">2.</span> <span class="toc-text">安装系统软件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装jdk"><span class="toc-number">3.</span> <span class="toc-text">安装jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装nodejs"><span class="toc-number">4.</span> <span class="toc-text">安装nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装mongodb"><span class="toc-number">5.</span> <span class="toc-text">安装mongodb</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装redis"><span class="toc-number">6.</span> <span class="toc-text">安装redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境变量配置"><span class="toc-number">7.</span> <span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装开发工具"><span class="toc-number">8.</span> <span class="toc-text">安装开发工具</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#希尔排序的基本原理"><span class="toc-number">1.</span> <span class="toc-text">希尔排序的基本原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#希尔排序java实现"><span class="toc-number">2.</span> <span class="toc-text">希尔排序java实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法复杂度"><span class="toc-number">3.</span> <span class="toc-text">算法复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#适用场景"><span class="toc-number">4.</span> <span class="toc-text">适用场景</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -536,13 +444,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/git-config-study.html" title="上一篇: Git学习笔记">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/dream.html" title="下一篇: 我的梦想">
+            <a  href="/suanfa-2.html" title="下一篇: 突破算法第二天-插入排序">
                 <i class="fa fa-angle-right"></i>
             </a>
         
