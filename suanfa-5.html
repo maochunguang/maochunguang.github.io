@@ -7,18 +7,20 @@
   
   
   
-  <title>Redis后台启动详细配置 | 山不转水转</title>
+  <title>突破算法第五天-选择排序 | 山不转水转</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Redis后台启动详细配置：   redis启动的时候有多种模式，后台启动，集群启动等等。">
+  <meta name="description" content="突破算法第五天-选择排序： 选择排序很简单，属于交换排序算法。通过比较找到最大值或最小值，然后进行交换。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redis后台启动详细配置">
-<meta property="og:url" content="http://geeksblog.cc/redis-config.html">
+<meta property="og:title" content="突破算法第五天-选择排序">
+<meta property="og:url" content="http://geeksblog.cc/suanfa-5.html">
 <meta property="og:site_name" content="山不转水转">
-<meta property="og:description" content="Redis后台启动详细配置：   redis启动的时候有多种模式，后台启动，集群启动等等。">
-<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
+<meta property="og:description" content="突破算法第五天-选择排序： 选择排序很简单，属于交换排序算法。通过比较找到最大值或最小值，然后进行交换。">
+<meta property="og:image" content="http://o7kalf5h3.bkt.clouddn.com/selectSort.jpg">
+<meta property="og:updated_time" content="2017-10-24T15:51:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redis后台启动详细配置">
-<meta name="twitter:description" content="Redis后台启动详细配置：   redis启动的时候有多种模式，后台启动，集群启动等等。">
+<meta name="twitter:title" content="突破算法第五天-选择排序">
+<meta name="twitter:description" content="突破算法第五天-选择排序： 选择排序很简单，属于交换排序算法。通过比较找到最大值或最小值，然后进行交换。">
+<meta name="twitter:image" content="http://o7kalf5h3.bkt.clouddn.com/selectSort.jpg">
   
     <link rel="alternative" href="/atom.xml" title="山不转水转" type="application/atom+xml">
   
@@ -273,11 +275,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-redis-config" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-suanfa-5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/redis-config.html" class="article-date">
-      <time datetime="2017-05-15T14:58:07.000Z" itemprop="datePublished">2017-05-15</time>
+      <a  href="/suanfa-5.html" class="article-date">
+      <time datetime="2017-10-24T13:46:33.000Z" itemprop="datePublished">2017-10-24</time>
 </a>
 
     </div>
@@ -291,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Redis后台启动详细配置
+      突破算法第五天-选择排序
     </h1>
   
 
@@ -301,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+    <a class="article-category-link" href="/categories/algorithm/">algorithm</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,14 +319,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> Redis后台启动详细配置：</strong> <Excerpt in index | 首页摘要><br>  redis启动的时候有多种模式，后台启动，集群启动等等。<br><a id="more"></a></p>
+        <p><strong> 突破算法第五天-选择排序：</strong> <Excerpt in index | 首页摘要><br>选择排序很简单，属于交换排序算法。通过比较找到最大值或最小值，然后进行交换。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>在开发中一般都是在命令行中直接运行<code>redis-server</code>,但是这样命令行关闭，服务就停止了。<br>如果要在后台运行redis服务，需要制定配置文件。这里以<strong>ubuntu14</strong>为例子</p>
-<h2 id="准备配置文件"><a href="#准备配置文件" class="headerlink" title="准备配置文件"></a>准备配置文件</h2><p>查看‘/etc/redis/redis.conf’,没有可以创建一个，或者下载一个，配置文件位置没有要求</p>
-<h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><p>把daemonize设置为yes，<br>然后<code>redis-server /etc/redis/redis.conf</code>启动服务，</p>
-<h2 id="查看服务"><a href="#查看服务" class="headerlink" title="查看服务"></a>查看服务</h2><p><code>ps -ef|grep redis-server</code>查看是否有redis进程存在</p>
-<h2 id="更多配置，在conf文件有说明"><a href="#更多配置，在conf文件有说明" class="headerlink" title="更多配置，在conf文件有说明"></a>更多配置，在conf文件有说明</h2><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"># 是否以后台daemon方式运行，默认是 no，一般我们会改为 yes</div><div class="line">daemonize no</div><div class="line">pidfile /var/run/redis.pid</div><div class="line"># 只允许本机访问</div><div class="line">bind <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></div><div class="line"># 端口设置</div><div class="line">port <span class="number">6379</span></div><div class="line">tcp-backlog <span class="number">511</span></div><div class="line">timeout <span class="number">0</span></div><div class="line">tcp-keepalive <span class="number">0</span></div><div class="line">loglevel notice</div><div class="line"># 日志文件</div><div class="line">logfile <span class="string">""</span></div><div class="line"># 开启数据库的数量，Redis 是有数据库概念的，默认是 <span class="number">16</span> 个，数字从 <span class="number">0</span> ~ <span class="number">15</span></div><div class="line">databases <span class="number">16</span></div><div class="line">save <span class="number">900</span> <span class="number">1</span></div><div class="line">save <span class="number">300</span> <span class="number">10</span></div><div class="line">save <span class="number">60</span> <span class="number">10000</span></div><div class="line">stop-writes-on-bgsave-error yes</div><div class="line">rdbcompression yes</div><div class="line">rdbchecksum yes</div><div class="line">dbfilename dump.rdb</div><div class="line">dir ./</div><div class="line">slave-serve-stale-data yes</div><div class="line">slave-read-only yes</div><div class="line">repl-diskless-sync no</div><div class="line">repl-diskless-sync-delay <span class="number">5</span></div><div class="line">repl-disable-tcp-nodelay no</div><div class="line"># 密码设置，需要设置密码打开</div><div class="line">requirepass <span class="number">123455</span></div><div class="line">slave-priority <span class="number">100</span></div><div class="line">appendonly no</div><div class="line">appendfilename <span class="string">"appendonly.aof"</span></div><div class="line">appendfsync everysec</div><div class="line">no-appendfsync-on-rewrite no</div><div class="line">auto-aof-rewrite-percentage <span class="number">100</span></div><div class="line">auto-aof-rewrite-min-size <span class="number">64</span>mb</div><div class="line">aof-load-truncated yes</div><div class="line">lua-time-limit <span class="number">5000</span></div><div class="line">slowlog-log-slower-than <span class="number">10000</span></div><div class="line">slowlog-max-len <span class="number">128</span></div><div class="line">latency-monitor-threshold <span class="number">0</span></div><div class="line">notify-keyspace-events <span class="string">""</span></div><div class="line">hash-max-ziplist-entries <span class="number">512</span></div><div class="line">hash-max-ziplist-value <span class="number">64</span></div><div class="line"><span class="type">list</span>-max-ziplist-entries <span class="number">512</span></div><div class="line"><span class="type">list</span>-max-ziplist-value <span class="number">64</span></div><div class="line">set-max-intset-entries <span class="number">512</span></div><div class="line">zset-max-ziplist-entries <span class="number">128</span></div><div class="line">zset-max-ziplist-value <span class="number">64</span></div><div class="line">hll-sparse-max-bytes <span class="number">3000</span></div><div class="line">activerehashing yes</div><div class="line">client-output-buffer-limit normal <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></div><div class="line">client-output-buffer-limit slave <span class="number">256</span>mb <span class="number">64</span>mb <span class="number">60</span></div><div class="line">client-output-buffer-limit pubsub <span class="number">32</span>mb <span class="number">8</span>mb <span class="number">60</span></div><div class="line">hz <span class="number">10</span></div><div class="line">aof-rewrite-incremental-fsync yes</div></pre></td></tr></table></figure>
+<h2 id="选择排序的原理"><a href="#选择排序的原理" class="headerlink" title="选择排序的原理"></a>选择排序的原理</h2><p>首先找到数组中最小的元素，与数组第一个元素交换，然后在剩下的元素中选择最小的，与第二个元素交换，以此类推，直到排序完成。<br><img src="http://o7kalf5h3.bkt.clouddn.com/selectSort.jpg" alt="选择排序图"></p>
+<h2 id="选择排序的java实现"><a href="#选择排序的java实现" class="headerlink" title="选择排序的java实现"></a>选择排序的java实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> len = a.length;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; <span class="number">0</span> &amp;&amp; (a[j] &lt; a[j - <span class="number">1</span>]); j--) &#123;</div><div class="line">            swap(a, j, j - <span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> swap = a[i];</div><div class="line">    a[i] = a[j];</div><div class="line">    a[j] = swap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><p>选择排序的算法复杂度是O(n^2)</p>
+<h2 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h2><ol>
+<li>每次选择的时候把最大值和最小值都比较出来，双向进行交换排序</li>
+</ol>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
 </blockquote>
@@ -336,13 +339,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/redis-config.html">Redis后台启动详细配置</a></p>
+        <p><span>本文标题:</span><a  href="/suanfa-5.html">突破算法第五天-选择排序</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
-        <p><span>发布时间:</span>2017年05月15日 - 22时58分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
+        <p><span>发布时间:</span>2017年10月24日 - 21时46分</p>
+        <p><span>最后更新:</span>2017年10月24日 - 23时51分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/redis-config.html" title="Redis后台启动详细配置">http://geeksblog.cc/redis-config.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/redis-config.html　　作者: 山不转水转" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/suanfa-5.html" title="突破算法第五天-选择排序">http://geeksblog.cc/suanfa-5.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/suanfa-5.html　　作者: 山不转水转" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -353,18 +356,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/bestblog.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/suanfa-6.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          如何写一篇好博客？
+          突破算法第六天-冒泡排序
         
       </div>
     </a>
   
   
-    <a  href="/spider-koa2.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">用koa2.x写下载漫画的爬虫</div>
+    <a  href="/suanfa-4.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">突破算法第一天-归并排序</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -376,7 +379,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-number">1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备配置文件"><span class="toc-number">2.</span> <span class="toc-text">准备配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置文件"><span class="toc-number">3.</span> <span class="toc-text">修改配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看服务"><span class="toc-number">4.</span> <span class="toc-text">查看服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更多配置，在conf文件有说明"><span class="toc-number">5.</span> <span class="toc-text">更多配置，在conf文件有说明</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序的原理"><span class="toc-number">1.</span> <span class="toc-text">选择排序的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序的java实现"><span class="toc-number">2.</span> <span class="toc-text">选择排序的java实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法复杂度"><span class="toc-number">3.</span> <span class="toc-text">算法复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#改进"><span class="toc-number">4.</span> <span class="toc-text">改进</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -447,13 +450,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/bestblog.html" title="上一篇: 如何写一篇好博客？">
+            <a  href="/suanfa-6.html" title="上一篇: 突破算法第六天-冒泡排序">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/spider-koa2.html" title="下一篇: 用koa2.x写下载漫画的爬虫">
+            <a  href="/suanfa-4.html" title="下一篇: 突破算法第一天-归并排序">
                 <i class="fa fa-angle-right"></i>
             </a>
         
