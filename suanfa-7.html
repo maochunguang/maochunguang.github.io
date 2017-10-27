@@ -7,18 +7,18 @@
   
   
   
-  <title>mac下mysql5.6字符集设置 | 山不转水转</title>
+  <title>突破算法第七天-堆排序 | 山不转水转</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mac下mysql5.6字符集设置：     在mac下设置mysql5.6字符集时踩过的坑，百分百保证有效">
+  <meta name="description" content="突破算法第七天-堆排序： 堆排序是利用二叉树的原理实现的一种排序，难点在于要构建堆,构建堆一般可以采用下沉或者上浮的算法进行。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mac下mysql5.6字符集设置">
-<meta property="og:url" content="http://geeksblog.cc/mac-mysql-unicode.html">
+<meta property="og:title" content="突破算法第七天-堆排序">
+<meta property="og:url" content="http://geeksblog.cc/suanfa-7.html">
 <meta property="og:site_name" content="山不转水转">
-<meta property="og:description" content="mac下mysql5.6字符集设置：     在mac下设置mysql5.6字符集时踩过的坑，百分百保证有效">
-<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
+<meta property="og:description" content="突破算法第七天-堆排序： 堆排序是利用二叉树的原理实现的一种排序，难点在于要构建堆,构建堆一般可以采用下沉或者上浮的算法进行。">
+<meta property="og:updated_time" content="2017-10-27T00:12:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mac下mysql5.6字符集设置">
-<meta name="twitter:description" content="mac下mysql5.6字符集设置：     在mac下设置mysql5.6字符集时踩过的坑，百分百保证有效">
+<meta name="twitter:title" content="突破算法第七天-堆排序">
+<meta name="twitter:description" content="突破算法第七天-堆排序： 堆排序是利用二叉树的原理实现的一种排序，难点在于要构建堆,构建堆一般可以采用下沉或者上浮的算法进行。">
   
     <link rel="alternative" href="/atom.xml" title="山不转水转" type="application/atom+xml">
   
@@ -273,11 +273,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-mac-mysql-unicode" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-suanfa-7" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/mac-mysql-unicode.html" class="article-date">
-      <time datetime="2016-05-28T15:10:37.000Z" itemprop="datePublished">2016-05-28</time>
+      <a  href="/suanfa-7.html" class="article-date">
+      <time datetime="2017-10-26T14:50:57.000Z" itemprop="datePublished">2017-10-26</time>
 </a>
 
     </div>
@@ -291,7 +291,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mac下mysql5.6字符集设置
+      突破算法第七天-堆排序
     </h1>
   
 
@@ -301,13 +301,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/数据库/">数据库</a>
+    <a class="article-category-link" href="/categories/算法/">算法</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,23 +317,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> mac下mysql5.6字符集设置：</strong> <Excerpt in index | 首页摘要><br>    在mac下设置mysql5.6字符集时踩过的坑，百分百保证有效<br><a id="more"></a></p>
-<p><The rest of contents | 余下全文></p>
-<h2 id="为什么要设置字符集"><a href="#为什么要设置字符集" class="headerlink" title="为什么要设置字符集"></a>为什么要设置字符集</h2><ol>
-<li>设置字符集主要是解决乱码问题，由于中文和英文编码不同导致，中文出现乱码，所以一般都设置为utf8格式</li>
-<li>不同的字符集和编码占用的字节不同，选择适合的编码会提高数据库性能</li>
+        <p><strong> 突破算法第七天-堆排序：</strong> <Excerpt in index | 首页摘要><br>堆排序是利用二叉树的原理实现的一种排序，难点在于要构建堆,构建堆一般可以采用下沉或者上浮的算法进行。<br><a id="more"></a></p>
+<The rest of contents | 余下全文>
+
+<h2 id="堆排序的基本原理"><a href="#堆排序的基本原理" class="headerlink" title="堆排序的基本原理"></a>堆排序的基本原理</h2><p>初始时把要排序的n个数的序列看作是一棵顺序存储的二叉树（一维数组存储二叉树），调整它们的存储序，使之成为一个堆，将堆顶元素输出，得到n 个元素中最小(或最大)的元素，这时堆的根节点的数最小（或者最大）。然后对前面(n-1)个元素重新调整使之成为堆，输出堆顶元素，得到n 个元素中次小(或次大)的元素。依此类推，直到只有两个节点的堆，并对它们作交换，最后得到有n个节点的有序序列。称这个过程为堆排序。<br>因此，实现堆排序需解决两个问题：</p>
+<ol>
+<li>如何将n 个待排序的数建成堆；</li>
+<li>输出堆顶元素后，怎样调整剩余n-1 个元素，使其成为一个新堆。</li>
 </ol>
-<h2 id="mac下设置"><a href="#mac下设置" class="headerlink" title="mac下设置"></a>mac下设置</h2><ul>
-<li>在/etc/my.cnf文件进行设置，如果没有此文件可以从/usr/local/mysql/support-files/拷贝，命令如下<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">cd</span> /usr/local/mysql/support-<span class="keyword">files</span></div><div class="line">sudo <span class="keyword">cp</span> my.<span class="keyword">cnf</span> /etc/my.<span class="keyword">cnf</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>查看文件的读写权限，如果为644（rw- r– r–）则改为(664) (rw- rw- r–)<br>如果改为(666)(rw- rw- rw-)则修改以后配置文件不会生效<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chmod <span class="number">664</span> /etc/<span class="keyword">my</span>.cnf</div></pre></td></tr></table></figure></p>
-<ul>
-<li>my.cnf设置如下：<figure class="highlight ini"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section">[client]</span></div><div class="line"><span class="attr">default-character-set</span>=utf8</div><div class="line"><span class="section">[mysqld]</span></div><div class="line"><span class="attr">collation-server</span> = utf8_unicode_ci</div><div class="line"><span class="attr">init-connect</span>=<span class="string">'SET NAMES utf8'</span></div><div class="line"><span class="attr">character-set-server</span> = utf8</div><div class="line"><span class="section">[mysql]</span></div><div class="line"><span class="attr">default-character-set</span>=utf8</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="查看设置是否成功"><a href="#查看设置是否成功" class="headerlink" title="查看设置是否成功"></a>查看设置是否成功</h2><p>在命令行输入mysql，如果提示没有命令的话，在bash或者zsh的文件里修改，我用的是zsh，设置~/.zshrc,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> MYSQL=<span class="string">"/usr/local/mysql/bin/"</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:<span class="variable">$MYSQL</span>"</span></div></pre></td></tr></table></figure></p>
-<p>在命令行输入mysql,进入mysql命令行后，输入<code>status;</code>或者<code>show variables like &#39;%char%&#39;;</code><br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">|<span class="string"> character_set_client     </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_connection </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_database   </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_filesystem </span>|<span class="string"> binary                                                  </span>|</div><div class="line">|<span class="string"> character_set_results    </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_server     </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_system     </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_sets_dir       </span>|<span class="string"> /usr/local/mysql-5.6.30-osx10.11-x86_64/share/charsets/</span></div></pre></td></tr></table></figure></p>
+<h2 id="堆排序java实现"><a href="#堆排序java实现" class="headerlink" title="堆排序java实现"></a>堆排序java实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = a.length;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = n / <span class="number">2</span>; k &gt;= <span class="number">1</span>; k--)</div><div class="line">            sink(a, k, n);</div><div class="line">        <span class="keyword">while</span> (n &gt; <span class="number">1</span>) &#123;</div><div class="line">            swap(a, <span class="number">1</span>, n--);</div><div class="line">            sink(a, <span class="number">1</span>, n);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sink</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> k, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">    <span class="keyword">while</span> (<span class="number">2</span> * k &lt;= n) &#123;</div><div class="line">        <span class="keyword">int</span> j = <span class="number">2</span> * k;</div><div class="line">        <span class="keyword">if</span> (j &lt; n &amp;&amp; a[j - <span class="number">1</span>] &lt; a[j + <span class="number">1</span> - <span class="number">1</span>]) j++;</div><div class="line">        <span class="keyword">if</span> (a[k - <span class="number">1</span>] &gt;= a[j - <span class="number">1</span>]) <span class="keyword">break</span>;</div><div class="line">        swap(a, k, j);</div><div class="line">        k = j;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> swap = a[i - <span class="number">1</span>];</div><div class="line">    a[i - <span class="number">1</span>] = a[j - <span class="number">1</span>];</div><div class="line">    a[j - <span class="number">1</span>] = swap;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span>[] arr = &#123;<span class="number">49</span>, <span class="number">38</span>, <span class="number">65</span>, <span class="number">97</span>, <span class="number">76</span>, <span class="number">13</span>, <span class="number">27</span>, <span class="number">4</span>, <span class="number">78</span>, <span class="number">34</span>, <span class="number">12</span>, <span class="number">64</span>, <span class="number">1</span>, <span class="number">8</span>&#125;;</div><div class="line">    sort(arr);</div><div class="line">    System.out.println(<span class="string">"排序之后："</span>);</div><div class="line">    System.out.println(Arrays.toString(arr));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h2><p>堆排序的平均时间复杂度为Ο(nlogn)</p>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
 </blockquote>
@@ -345,13 +338,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></p>
+        <p><span>本文标题:</span><a  href="/suanfa-7.html">突破算法第七天-堆排序</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 山不转水转 的个人博客">山不转水转</a></p>
-        <p><span>发布时间:</span>2016年05月28日 - 23时10分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
+        <p><span>发布时间:</span>2017年10月26日 - 22时50分</p>
+        <p><span>最后更新:</span>2017年10月27日 - 08时12分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/mac-mysql-unicode.html" title="mac下mysql5.6字符集设置">http://geeksblog.cc/mac-mysql-unicode.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/mac-mysql-unicode.html　　作者: 山不转水转" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/suanfa-7.html" title="突破算法第七天-堆排序">http://geeksblog.cc/suanfa-7.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/suanfa-7.html　　作者: 山不转水转" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -362,18 +355,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/mysql-optimize.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/suanfa-8.html" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Mysql优化的常用方法
+          突破算法第八天-桶排序
         
       </div>
     </a>
   
   
-    <a  href="/mysql-study.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mysql学习笔记</div>
+    <a  href="/suanfa-6.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">突破算法第六天-冒泡排序</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -385,7 +378,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么要设置字符集"><span class="toc-number">1.</span> <span class="toc-text">为什么要设置字符集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mac下设置"><span class="toc-number">2.</span> <span class="toc-text">mac下设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看设置是否成功"><span class="toc-number">3.</span> <span class="toc-text">查看设置是否成功</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序的基本原理"><span class="toc-number">1.</span> <span class="toc-text">堆排序的基本原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#堆排序java实现"><span class="toc-number">2.</span> <span class="toc-text">堆排序java实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法复杂度"><span class="toc-number">3.</span> <span class="toc-text">算法复杂度</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -456,13 +449,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/mysql-optimize.html" title="上一篇: Mysql优化的常用方法">
+            <a  href="/suanfa-8.html" title="上一篇: 突破算法第八天-桶排序">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/mysql-study.html" title="下一篇: Mysql学习笔记">
+            <a  href="/suanfa-6.html" title="下一篇: 突破算法第六天-冒泡排序">
                 <i class="fa fa-angle-right"></i>
             </a>
         
