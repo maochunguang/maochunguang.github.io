@@ -1,3 +1,4 @@
+http://geeksblog.cc/suanfa-9.html
 http://geeksblog.cc/suanfa-8.html
 http://geeksblog.cc/suanfa-7.html
 http://geeksblog.cc/suanfa-6.html
@@ -47,4 +48,3 @@ http://geeksblog.cc/git-config-study.html
 http://geeksblog.cc/ubuntu-dev-config.html
 http://geeksblog.cc/dream.html
 http://geeksblog.cc/coder-study.html
-http://geeksblog.cc/hexo-githup-blog.html
