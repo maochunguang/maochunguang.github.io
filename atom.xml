@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://geeksblog.cc/"/>
-  <updated>2017-10-30T14:40:29.130Z</updated>
+  <updated>2018-01-28T09:40:39.000Z</updated>
   <id>http://geeksblog.cc/</id>
   
   <author>
@@ -16,26 +16,105 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mybatis-Generator</title>
+    <link href="http://geeksblog.cc/mybatis-generator.html"/>
+    <id>http://geeksblog.cc/mybatis-generator.html</id>
+    <published>2018-01-28T09:30:19.000Z</published>
+    <updated>2018-01-28T09:40:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> Mybatis-Generator：</strong> <Excerpt in index | 首页摘要><br>mybatis反向生成器，根据数据库表，自动创建pojo，mapper以及mybatis配置文件，能极大的提高开发效率。<br><a id="more"></a></p>
+<The rest of contents | 余下全文>
+
+<h2 id="插件介绍"><a href="#插件介绍" class="headerlink" title="插件介绍"></a>插件介绍</h2><p>本插件fork自<a href="http://link">mybatis-generator-gui</a>,在此基础上加了批量生成表。</p>
+<h2 id="插件特性"><a href="#插件特性" class="headerlink" title="插件特性"></a>插件特性</h2><ol>
+<li>保存数据库配置</li>
+<li>根据表生成pojo，mapper以及mybatis配置文件</li>
+<li>批量生成</li>
+<li>其它功能（待开发）</li>
+</ol>
+<h2 id="插件使用"><a href="#插件使用" class="headerlink" title="插件使用"></a>插件使用</h2><h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>本工具由于使用了Java 8的众多特性，所以要求JDK <strong>1.8.0.60</strong>以上版本，对于JDK版本还没有升级的童鞋表示歉意。</p>
+<h3 id="启动本软件"><a href="#启动本软件" class="headerlink" title="启动本软件"></a>启动本软件</h3><ul>
+<li>方法一: 自助构建</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/maochunguang/mybatis-generator-gui</div><div class="line"><span class="built_in">cd</span> mybatis-generator-gui</div><div class="line">mvn jfx:jar</div><div class="line"><span class="built_in">cd</span> target/jfx/app/</div><div class="line">java -jar mybatis-generator-gui.jar</div></pre></td></tr></table></figure>
+<ul>
+<li>方法二: IDE中运行Eclipse or IntelliJ IDEA中启动, 找到<code>com.zzg.mybatis.generator.MainUI</code>类并运行就可以了</li>
+</ul>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p>更多详细文档请参考本库的Wiki</p>
+<ul>
+<li><a href="https://github.com/maochunguang/mybatis-generator-gui/wiki">Usage</a></li>
+</ul>
+<h2 id="截图参考"><a href="#截图参考" class="headerlink" title="截图参考"></a>截图参考</h2><p><img src="http://o7kalf5h3.bkt.clouddn.com/mybatis.png" alt="MainUI"></p>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; Mybatis-Generator：&lt;/strong&gt; &lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;mybatis反向生成器，根据数据库表，自动创建pojo，mapper以及mybatis配置文件，能极大的提高开发效率。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="开发工具" scheme="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="mysql" scheme="http://geeksblog.cc/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
     <title>突破算法第11天-红黑树</title>
     <link href="http://geeksblog.cc/suanfa-11.html"/>
     <id>http://geeksblog.cc/suanfa-11.html</id>
     <published>2017-10-30T14:35:37.000Z</published>
-    <updated>2017-10-30T14:40:29.130Z</updated>
+    <updated>2018-01-28T09:25:15.224Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 突破算法第11天-红黑树：</strong> <Excerpt in index | 首页摘要><br>红黑树<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-
-
-
-
-
-
-
-
-
-
+<h2 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h2><p>本文的主要内容：</p>
+<ol>
+<li>红黑树的基本概念以及最重要的 5 点规则。</li>
+<li>红黑树的左旋转、右旋转、重新着色的原理与 Java 实现；</li>
+<li>红黑树的增加结点、删除结点过程解析；</li>
+</ol>
+<h2 id="红黑树的基本概念与数据结构表示"><a href="#红黑树的基本概念与数据结构表示" class="headerlink" title="红黑树的基本概念与数据结构表示"></a>红黑树的基本概念与数据结构表示</h2><p>首先红黑树来个定义：</p>
 <blockquote>
+<p>红黑树定义：红黑树又称红 - 黑二叉树，它首先是一颗二叉树，它具体二叉树所有的特性。同时红黑树更是一颗自平衡的排序二叉树 (平衡二叉树的一种实现方式)。</p>
+</blockquote>
+<p>我们知道一颗基本的二叉排序树他们都需要满足一个基本性质：即树中的任何节点的值大于它的左子节点，且小于它的右子节点。</p>
+<p>按照这个基本性质使得树的检索效率大大提高。我们知道在生成二叉排序树的过程是非常容易失衡的，最坏的情况就是一边倒（只有右 / 左子树），这样势必会导致二叉树的检索效率大大降低（O(n)），所以为了维持二叉排序树的平衡，大牛们提出了各种平衡二叉树的实现算法，如：AVL，SBT，伸展树，TREAP ，红黑树等等。</p>
+<blockquote>
+<p>平衡二叉树必须具备如下特性：它是一棵空树或它的左右两个子树的高度差的绝对值不超过 1，并且左右两个子树都是一棵平衡二叉树。也就是说该二叉树的任何一个子节点，其左右子树的高度都相近。下面给出平衡二叉树的几个示意图：</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20170110134212154?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="红黑树"></p>
+<p>红黑树顾名思义就是结点是红色或者是黑色的平衡二叉树，它通过颜色的约束来维持着二叉树的平衡。对于一棵有效的红黑树而言我们必须增加如下规则，这也是红黑树最重要的 5 点规则：</p>
+<ol>
+<li>每个结点都只能是红色或者黑色中的一种。</li>
+<li>根结点是黑色的。</li>
+<li>每个叶结点（NIL 节点，空节点）是黑色的。</li>
+<li>如果一个结点是红的，则它两个子节点都是黑的。也就是说在一条路径上不能出现相邻的两个红色结点。</li>
+<li>从任一结点到其每个叶子的所有路径都包含相同数目的黑色结点。</li>
+</ol>
+<p>这些约束强制了红黑树的关键性质: 从根到叶子最长的可能路径不多于最短的可能路径的两倍长。结果是这棵树大致上是平衡的。因为操作比如插入、删除和查找某个值的最坏情况时间都要求与树的高度成比例，这个在高度上的理论上限允许红黑树在最坏情况下都是高效的，而不同于普通的二叉查找树。所以红黑树它是复杂而高效的，其检索效率 O(lg n)。下图为一颗典型的红黑二叉树：<br><img src="http://img.blog.csdn.net/20170110134903553?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>上面关于红黑树的概念基本已经说得很清楚了，下面给出红黑树的结点用 Java 表示数据结构：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> RED = <span class="keyword">true</span>;</div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">boolean</span> BLACK = <span class="keyword">false</span>;</div><div class="line"><span class="keyword">private</span> Node root;<span class="comment">//二叉查找树的根节点</span></div><div class="line"></div><div class="line"><span class="comment">//结点数据结构</span></div><div class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</div><div class="line">    <span class="keyword">private</span> Key key;<span class="comment">//键</span></div><div class="line">    <span class="keyword">private</span> Value value;<span class="comment">//值</span></div><div class="line">    <span class="keyword">private</span> Node left, right;<span class="comment">//指向子树的链接:左子树和右子树.</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> N;<span class="comment">//以该节点为根的子树中的结点总数</span></div><div class="line">    <span class="keyword">boolean</span> color;<span class="comment">//由其父结点指向它的链接的颜色也就是结点颜色.</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(Key key, Value value, <span class="keyword">int</span> N, <span class="keyword">boolean</span> color)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.key = key;</div><div class="line">        <span class="keyword">this</span>.value = value;</div><div class="line">        <span class="keyword">this</span>.N = N;</div><div class="line">        <span class="keyword">this</span>.color = color;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</div><div class="line"> * 获取整个二叉查找树的大小</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">return</span> size(root);</div><div class="line">&#125;</div><div class="line"><span class="comment">/**</div><div class="line"> * 获取某一个结点为根结点的二叉查找树的大小</div><div class="line"> * <span class="doctag">@param</span> x</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">(Node x)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(x == <span class="keyword">null</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">return</span> x.N;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isRed</span><span class="params">(Node x)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(x == <span class="keyword">null</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x.color == RED;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="红黑树的三个基本操作"><a href="#红黑树的三个基本操作" class="headerlink" title="红黑树的三个基本操作"></a>红黑树的三个基本操作</h2><p>红黑树在插入，删除过程中可能会破坏原本的平衡条件导致不满足红黑树的性质，这时候一般情况下要通过左旋、右旋和重新着色这个三个操作来使红黑树重新满足平衡化条件。</p>
+<h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><p>旋转分为左旋和右旋。在我们实现某些操作中可能会出现红色右链接或则两个连续的红链接，这时候就要通过旋转修复。</p>
+<p>通常左旋操作用于将一个向右倾斜的红色链接 (这个红色链接链连接的两个结点均是红色结点) 旋转为向左链接。对比操作前后，可以看出，该操作实际上是将红线链接的两个结点中的一个较大的结点移动到根结点上。</p>
+<p>左旋的示意图如下：<br><img src="http://img.blog.csdn.net/20170110141248765?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p><img src="http://img.blog.csdn.net/20170110141309245?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>左旋的 Java 实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</div><div class="line"> * 左旋转</div><div class="line"> * <span class="doctag">@param</span> h</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</span></div><div class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">rotateLeft</span><span class="params">(Node h)</span></span>&#123;</div><div class="line">    Node x = h.right;</div><div class="line">    <span class="comment">//把x的左结点赋值给h的右结点</span></div><div class="line">    h.right = x.left;</div><div class="line">    <span class="comment">//把h赋值给x的左结点</span></div><div class="line">    x.left = h;</div><div class="line">    <span class="comment">//</span></div><div class="line">    x.color = h.color;</div><div class="line">    h.color = RED;</div><div class="line">    x.N = h.N;</div><div class="line">    h.N = <span class="number">1</span>+ size(h.left) + size(h.right);</div><div class="line"></div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>左旋的动画效果如下：<br><img src="http://img.blog.csdn.net/20170110142027660?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>右旋其实就是左旋的逆操作：<br><img src="http://img.blog.csdn.net/20170110142230957?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br><img src="http://img.blog.csdn.net/20170110142252648?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>右旋的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</div><div class="line"> * 右旋转</div><div class="line"> * <span class="doctag">@param</span> h</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> */</span></div><div class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">rotateRight</span><span class="params">(Node h)</span></span>&#123;</div><div class="line">    Node x = h.left;</div><div class="line">    h.left = x.right;</div><div class="line">    x.right = h;</div><div class="line"></div><div class="line">    x.color = h.color;</div><div class="line">    h.color = RED;</div><div class="line">    x.N = h.N;</div><div class="line">    h.N = <span class="number">1</span>+ size(h.left) + size(h.right);</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>右旋的动态示意图：<br><img src="http://img.blog.csdn.net/20170110142410322?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h2 id="颜色反转"><a href="#颜色反转" class="headerlink" title="颜色反转"></a><a></a>颜色反转</h2><p>当出现一个临时的 4-node 的时候，即一个节点的两个子节点均为红色，如下图：<br><img src="http://img.blog.csdn.net/20170110143015321?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>我们需要将 E 提升至父节点，操作方法很简单，就是把 E 对子节点的连线设置为黑色，自己的颜色设置为红色。颜色反转之后颜色如下：<br><img src="http://img.blog.csdn.net/20170110143225712?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMDg1MzI2MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</div><div class="line"> * 颜色转换</div><div class="line"> * <span class="doctag">@param</span> h</div><div class="line"> */</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">flipColors</span><span class="params">(Node h)</span></span>&#123;</div><div class="line">    h.color = RED;<span class="comment">//父结点颜色变红</span></div><div class="line">    h.left.color = BLACK;<span class="comment">//子结点颜色变黑</span></div><div class="line">    h.right.color = BLACK;<span class="comment">//子结点颜色变黑</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：以上的旋转和颜色反转操作都是针对单一结点的，反转或则颜色反转操作之后可能引起其父结点又不满足平衡性质。</p>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
 </blockquote>
 ]]></content>
@@ -889,71 +968,6 @@
     
     
       <category term="mongodb" scheme="http://geeksblog.cc/tags/mongodb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo自用黑色主题</title>
-    <link href="http://geeksblog.cc/hexo-theme.html"/>
-    <id>http://geeksblog.cc/hexo-theme.html</id>
-    <published>2017-05-23T03:32:59.000Z</published>
-    <updated>2017-11-03T13:48:29.709Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong> hexo和coding打造静态博客 ：</strong> <Excerpt in index | 首页摘要\><br>使用hexo一年有余，对所有主题都感觉有所缺陷，便修改了一个自用黑色主题，本主题以黑色和蓝色为主，色彩鲜明，主题明确。<br><a id="more"></a></p>
-<The rest of contents | 余下全文\>
-
-<h2 id="主题图片"><a href="#主题图片" class="headerlink" title="主题图片"></a>主题图片</h2><p><img src="http://o7kalf5h3.bkt.clouddn.com/blog-index.png" alt="主题首页"> </p>
-<h2 id="black-blue主题来源"><a href="#black-blue主题来源" class="headerlink" title="black-blue主题来源"></a>black-blue主题来源</h2><p>本主题修改自<strong>spfk</strong>主题，但之前spfk主题有很多问题，本主题改进如下：</p>
-<ol>
-<li>压缩js，css提高性能</li>
-<li>代码段样式显示更完美</li>
-<li>增加本地搜索</li>
-<li>设置更合适的字体大小</li>
-<li>颜色以黑色和蓝色为主，色彩鲜明</li>
-<li>seo适当优化</li>
-<li>删除多说，有言，增加畅言评论</li>
-<li>删除stylus，全部改用css方便修改</li>
-</ol>
-<h2 id="主题地址"><a href="#主题地址" class="headerlink" title="主题地址"></a>主题地址</h2><p><a href="https://github.com/maochunguang/black-blue">black-blue</a></p>
-<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>大家使用主题的时候，把<strong>主题配置文件_config.yml</strong>以下几项必须修改，项目里实用的是我博客的正式代码，请大家修改成自己的！<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attr">google_analytics:</span> xxx</div><div class="line"><span class="attr">baidu_analytics:</span> xxxxxxx</div><div class="line"><span class="attr">disqus:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  shortname:</span> xxxx</div><div class="line"><span class="comment"># 畅言评论</span></div><div class="line"><span class="attr">changyan:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  appid:</span> xxxx</div><div class="line"><span class="attr">  conf:</span> xxxxx</div></pre></td></tr></table></figure></p>
-<h2 id="black-blue主题配置"><a href="#black-blue主题配置" class="headerlink" title="black-blue主题配置"></a>black-blue主题配置</h2><h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>复制主题到themes目录下<code>cd themes &amp;&amp; git clone https://github.com/maochunguang/black-blue</code>，修改_config.yml <code>theme: black-blue</code></p>
-<h3 id="安装常用插件，建议全部安装"><a href="#安装常用插件，建议全部安装" class="headerlink" title="安装常用插件，建议全部安装"></a>安装常用插件，建议全部安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## rss插件</span></div><div class="line">npm install hexo-generator-feed --save</div><div class="line"><span class="comment">## 站点sitemap生成插件</span></div><div class="line">npm install hexo-generator-sitemap --save</div><div class="line">npm install hexo-generator-baidu-sitemap --save</div><div class="line"><span class="comment">## 百度url提交</span></div><div class="line">npm install hexo-baidu-url-submit --save</div><div class="line"><span class="comment">## 本地搜索插件集成</span></div><div class="line">npm install hexo-generator-search --save</div></pre></td></tr></table></figure>
-<h3 id="博客全局配置，修改根目录下-config-yml"><a href="#博客全局配置，修改根目录下-config-yml" class="headerlink" title="博客全局配置，修改根目录下_config.yml"></a>博客全局配置，修改根目录下_config.yml</h3><p>插件配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">Plugins:</span></div><div class="line"><span class="bullet">-</span> hexo-generator-feed</div><div class="line"><span class="bullet">-</span> hexo-generator-sitemap</div><div class="line"><span class="bullet">-</span> hexo-generator-baidu-sitemap</div></pre></td></tr></table></figure></p>
-<p>rss设置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">feed:</span></div><div class="line"><span class="attr">  type:</span> atom</div><div class="line"><span class="attr">  path:</span> atom.xml</div><div class="line"><span class="attr">  limit:</span> <span class="number">20</span></div></pre></td></tr></table></figure></p>
-<p>本地搜索配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">search:</span></div><div class="line"><span class="attr">  path:</span> search.json</div><div class="line"><span class="attr">  field:</span> post</div></pre></td></tr></table></figure></p>
-<p>站点地图，seo搜索引擎需要<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sitemap:</span></div><div class="line"><span class="attr">  path:</span> sitemap.xml</div><div class="line"><span class="attr">baidusitemap:</span></div><div class="line"><span class="attr">  path:</span> baidusitemap.xml</div></pre></td></tr></table></figure></p>
-<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>菜单配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 添加单独的页面:hexo new page about，about是页面的路径，也是名称</span></div><div class="line"><span class="comment">## Tags Cloud Page: `hexo new page tags`</span></div><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="comment"># 主页: /archives/</span></div><div class="line">  所有文章: /archives/</div><div class="line">  玩转开发工具: /categories/开发工具/</div><div class="line">  玩转数码: /categories/digital</div><div class="line">  认知提升: /categories/cognition</div><div class="line">  关于我: /about/</div></pre></td></tr></table></figure></p>
-<p>评论配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 是否开启畅言评论，</span></div><div class="line"><span class="attr">changyan:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  appid:</span> xxxx</div><div class="line"><span class="attr">  conf:</span> xxxxxxxxxxxx</div><div class="line"><span class="comment"># 是否开启disqus，</span></div><div class="line"><span class="attr">disqus:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  shortname:</span> mmmmmm</div></pre></td></tr></table></figure></p>
-<h3 id="其他配置，详细的配置请下载主题，都有注释"><a href="#其他配置，详细的配置请下载主题，都有注释" class="headerlink" title="其他配置，详细的配置请下载主题，都有注释"></a>其他配置，<strong>详细的配置请下载主题，都有注释</strong></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 数学公式支持</span></div><div class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></div><div class="line"><span class="comment"># Socail Share | 是否开启分享</span></div><div class="line"><span class="attr">baidushare:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 谷歌分析，百度分析，seo分析很有用</span></div><div class="line"><span class="attr">google_analytics:</span> xxxxxx</div><div class="line"><span class="attr">baidu_analytics:</span> xxcxcxcsdsf</div></pre></td></tr></table></figure>
-<h2 id="自定义配置（对前端技术有了解即可）"><a href="#自定义配置（对前端技术有了解即可）" class="headerlink" title="自定义配置（对前端技术有了解即可）"></a>自定义配置（对前端技术有了解即可）</h2><h3 id="显示更多和折叠文章"><a href="#显示更多和折叠文章" class="headerlink" title="显示更多和折叠文章"></a>显示更多和折叠文章</h3><p>你的md文件格式需要按下面的来：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> 突破算法第<span class="number">11</span>天-红黑树</div><div class="line"><span class="attr">date:</span> <span class="number">2017</span><span class="bullet">-10</span><span class="bullet">-30</span> <span class="number">22</span>:<span class="number">35</span>:<span class="number">37</span></div><div class="line"><span class="attr">tags:</span> 算法</div><div class="line"><span class="attr">categories:</span> algorithm</div><div class="line"><span class="meta">---</span></div><div class="line">** &#123;&#123; title &#125;&#125;：** &lt;Excerpt in index | 首页摘要<span class="string">&gt;</div><div class="line">红黑树</div><div class="line">&lt;!-- more --&gt;</div><div class="line">&lt;The rest of contents | 余下全文&gt;</div><div class="line">正文……</span></div></pre></td></tr></table></figure></p>
-<h3 id="头像配置"><a href="#头像配置" class="headerlink" title="头像配置"></a>头像配置</h3><p>在themes/black-blue/source/img/avatar.png,替换此头像即可实现自定义头像</p>
-<h3 id="背景图片配置"><a href="#背景图片配置" class="headerlink" title="背景图片配置"></a>背景图片配置</h3><p>在themes/black-blue/source/background/,替换为自己喜欢的图片，图片名称不能改</p>
-<h3 id="添加评论插件"><a href="#添加评论插件" class="headerlink" title="添加评论插件"></a>添加评论插件</h3><p>比如把畅言替换为有言</p>
-<ol>
-<li><p>先修改themes/black-blue/_config.yml文件</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">changyan:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  uid:</span> xxxxxxx</div></pre></td></tr></table></figure>
-</li>
-<li><p>修改themes/black-blue/layout/_partial/comments/changyan.ejs</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"changyan"</span> id=<span class="string">"comments"</span>&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"uyan_frame"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://v2.uyan.cc/code/uyan.js?uid=&lt;%= uid%&gt;"</span>&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;<span class="regexp">/section&gt;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>修改themes/black-blue/layout/_partial/article.ejs</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(<span class="string">'comments/changyan'</span>, &#123;</div><div class="line">  uid: theme.changyan.uid</div><div class="line">&#125;) %&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>重新生成页面<code>hexo g</code></p>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt; hexo和coding打造静态博客 ：&lt;/strong&gt; &lt;Excerpt in index | 首页摘要\&gt;&lt;br&gt;使用hexo一年有余，对所有主题都感觉有所缺陷，便修改了一个自用黑色主题，本主题以黑色和蓝色为主，色彩鲜明，主题明确。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="开发工具" scheme="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="hexo" scheme="http://geeksblog.cc/tags/hexo/"/>
     
   </entry>
   

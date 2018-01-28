@@ -7,18 +7,20 @@
   
   
   
-  <title>Java和javascript日期详解 | 业余文艺架构师之路</title>
+  <title>Mybatis-Generator | 业余文艺架构师之路</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java，js日期转换：     java的各种日期转换">
+  <meta name="description" content="Mybatis-Generator： mybatis反向生成器，根据数据库表，自动创建pojo，mapper以及mybatis配置文件，能极大的提高开发效率。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java和javascript日期详解">
-<meta property="og:url" content="http://geeksblog.cc/java-date.html">
+<meta property="og:title" content="Mybatis-Generator">
+<meta property="og:url" content="http://geeksblog.cc/mybatis-generator.html">
 <meta property="og:site_name" content="业余文艺架构师之路">
-<meta property="og:description" content="java，js日期转换：     java的各种日期转换">
-<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
+<meta property="og:description" content="Mybatis-Generator： mybatis反向生成器，根据数据库表，自动创建pojo，mapper以及mybatis配置文件，能极大的提高开发效率。">
+<meta property="og:image" content="http://o7kalf5h3.bkt.clouddn.com/mybatis.png">
+<meta property="og:updated_time" content="2018-01-28T09:40:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java和javascript日期详解">
-<meta name="twitter:description" content="java，js日期转换：     java的各种日期转换">
+<meta name="twitter:title" content="Mybatis-Generator">
+<meta name="twitter:description" content="Mybatis-Generator： mybatis反向生成器，根据数据库表，自动创建pojo，mapper以及mybatis配置文件，能极大的提高开发效率。">
+<meta name="twitter:image" content="http://o7kalf5h3.bkt.clouddn.com/mybatis.png">
   
     <link rel="alternative" href="/atom.xml" title="业余文艺架构师之路" type="application/atom+xml">
   
@@ -273,11 +275,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-java-date" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-mybatis-generator" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/java-date.html" class="article-date">
-      <time datetime="2016-05-13T13:48:00.000Z" itemprop="datePublished">2016-05-13</time>
+      <a  href="/mybatis-generator.html" class="article-date">
+      <time datetime="2018-01-28T09:30:19.000Z" itemprop="datePublished">2018-01-28</time>
 </a>
 
     </div>
@@ -291,7 +293,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Java和javascript日期详解
+      Mybatis-Generator
     </h1>
   
 
@@ -301,13 +303,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    <a class="article-category-link" href="/categories/开发工具/">开发工具</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -317,42 +319,32 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong> java，js日期转换：</strong> <Excerpt in index | 首页摘要><br>    java的各种日期转换<br><a id="more"></a></p>
+        <p><strong> Mybatis-Generator：</strong> <Excerpt in index | 首页摘要><br>mybatis反向生成器，根据数据库表，自动创建pojo，mapper以及mybatis配置文件，能极大的提高开发效率。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h2 id="日期表示类型"><a href="#日期表示类型" class="headerlink" title="日期表示类型"></a>日期表示类型</h2><ol>
-<li><p>获取long类型的日期格式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> time = System.currentTimeMillis();</div><div class="line">System.out.printf(time+<span class="string">""</span>);</div><div class="line">Date date =<span class="keyword">new</span> Date();</div><div class="line">System.out.println(date.getTime());</div></pre></td></tr></table></figure>
-</li>
-<li><p>获取制定格式的日期</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</div><div class="line">Date date =<span class="keyword">new</span> Date();</div><div class="line">System.out.println(sdf.format(date) );</div></pre></td></tr></table></figure>
-</li>
-<li><p>把制定格式的日期转为date或者毫秒值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd hh:mm:ss"</span>);</div><div class="line">Date date = sdf.parse(<span class="string">"2016-05-22 10:15:21"</span>);</div><div class="line"><span class="keyword">long</span> mills = date.getTime();</div></pre></td></tr></table></figure>
-</li>
+<h2 id="插件介绍"><a href="#插件介绍" class="headerlink" title="插件介绍"></a>插件介绍</h2><p>本插件fork自<a href="http://link">mybatis-generator-gui</a>,在此基础上加了批量生成表。</p>
+<h2 id="插件特性"><a href="#插件特性" class="headerlink" title="插件特性"></a>插件特性</h2><ol>
+<li>保存数据库配置</li>
+<li>根据表生成pojo，mapper以及mybatis配置文件</li>
+<li>批量生成</li>
+<li>其它功能（待开发）</li>
 </ol>
-<ul>
-<li>说明:System.currentTimeMillis()并不能精确到1ms的级别,它取决于运行的系统,你再windows,mac,linux精确的范围都有差异,对于有高精度时间的要求,不能使用这个</li>
+<h2 id="插件使用"><a href="#插件使用" class="headerlink" title="插件使用"></a>插件使用</h2><h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><p>本工具由于使用了Java 8的众多特性，所以要求JDK <strong>1.8.0.60</strong>以上版本，对于JDK版本还没有升级的童鞋表示歉意。</p>
+<h3 id="启动本软件"><a href="#启动本软件" class="headerlink" title="启动本软件"></a>启动本软件</h3><ul>
+<li>方法一: 自助构建</li>
 </ul>
-<h2 id="日期计算"><a href="#日期计算" class="headerlink" title="日期计算"></a>日期计算</h2><ol>
-<li>最方便的方式是将时间转为毫秒值进行计算<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Date from =<span class="keyword">new</span> Date();</div><div class="line">Thread.sleep(<span class="number">200</span>);<span class="comment">//线程休眠2ms</span></div><div class="line">Date to =<span class="keyword">new</span> Date();</div><div class="line">System.out.println(to.getTime()-from.getTime());</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="高精度时间"><a href="#高精度时间" class="headerlink" title="高精度时间"></a>高精度时间</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">long</span> time1 =System.nanoTime();</div><div class="line">System.out.printf(time1+<span class="string">""</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/maochunguang/mybatis-generator-gui</div><div class="line"><span class="built_in">cd</span> mybatis-generator-gui</div><div class="line">mvn jfx:jar</div><div class="line"><span class="built_in">cd</span> target/jfx/app/</div><div class="line">java -jar mybatis-generator-gui.jar</div></pre></td></tr></table></figure>
 <ul>
-<li>说明:System.nanoTime()提高了ns级别的精度,1ms=1000000ns,</li>
+<li>方法二: IDE中运行Eclipse or IntelliJ IDEA中启动, 找到<code>com.zzg.mybatis.generator.MainUI</code>类并运行就可以了</li>
 </ul>
-<h2 id="javascript日期"><a href="#javascript日期" class="headerlink" title="javascript日期"></a>javascript日期</h2><ol>
-<li><p>获取时间的毫秒值，获取月份，时间</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">myDate.getYear(); <span class="comment">//获取当前年份(2位)</span></div><div class="line">myDate.getFullYear(); <span class="comment">//获取完整的年份(4位,1970-????)</span></div><div class="line">myDate.getMonth(); <span class="comment">//获取当前月份(0-11,0代表1月)</span></div><div class="line">myDate.getDate(); <span class="comment">//获取当前日(1-31)</span></div><div class="line">myDate.getDay(); <span class="comment">//获取当前星期X(0-6,0代表星期天)</span></div><div class="line">myDate.getTime(); <span class="comment">//获取当前时间(从1970.1.1开始的毫秒数)</span></div><div class="line">myDate.getHours(); <span class="comment">//获取当前小时数(0-23)</span></div><div class="line">myDate.getMinutes(); <span class="comment">//获取当前分钟数(0-59)</span></div><div class="line">myDate.getSeconds(); <span class="comment">//获取当前秒数(0-59)</span></div><div class="line">myDate.getMilliseconds(); <span class="comment">//获取当前毫秒数(0-999)</span></div><div class="line">myDate.toLocaleDateString(); <span class="comment">//获取当前日期</span></div><div class="line"><span class="keyword">var</span> mytime=myDate.toLocaleTimeString(); <span class="comment">//获取当前时间</span></div><div class="line">myDate.toLocaleString( ); <span class="comment">//获取日期与时间</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>时间戳获取<br>注意，java，php等生成的时间戳是秒，不是毫秒，所以需要签名时间戳的时候，需要转为秒时间戳</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> timestamp = <span class="built_in">parseInt</span>(time.getTime()/<span class="number">1000</span>);</div></pre></td></tr></table></figure>
-</li>
-<li><p>格式化时间</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取当前时间，格式YYYY-MM-DD</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNowFormatDate</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">var</span> seperator1 = <span class="string">"-"</span>;</div><div class="line">    <span class="keyword">var</span> year = date.getFullYear();</div><div class="line">    <span class="keyword">var</span> month = date.getMonth() + <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> strDate = date.getDate();</div><div class="line">    <span class="keyword">if</span> (month &gt;= <span class="number">1</span> &amp;&amp; month &lt;= <span class="number">9</span>) &#123;</div><div class="line">        month = <span class="string">"0"</span> + month;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (strDate &gt;= <span class="number">0</span> &amp;&amp; strDate &lt;= <span class="number">9</span>) &#123;</div><div class="line">        strDate = <span class="string">"0"</span> + strDate;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">var</span> currentdate = year + seperator1 + month + seperator1 + strDate;</div><div class="line">    <span class="keyword">return</span> currentdate;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p>更多详细文档请参考本库的Wiki</p>
+<ul>
+<li><a href="https://github.com/maochunguang/mybatis-generator-gui/wiki">Usage</a></li>
+</ul>
+<h2 id="截图参考"><a href="#截图参考" class="headerlink" title="截图参考"></a>截图参考</h2><p><img src="http://o7kalf5h3.bkt.clouddn.com/mybatis.png" alt="MainUI"></p>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
+</blockquote>
 
       
     </div>
@@ -361,13 +353,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/java-date.html">Java和javascript日期详解</a></p>
+        <p><span>本文标题:</span><a  href="/mybatis-generator.html">Mybatis-Generator</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 业余文艺架构师 的个人博客">业余文艺架构师</a></p>
-        <p><span>发布时间:</span>2016年05月13日 - 21时48分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
+        <p><span>发布时间:</span>2018年01月28日 - 17时30分</p>
+        <p><span>最后更新:</span>2018年01月28日 - 17时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/java-date.html" title="Java和javascript日期详解">http://geeksblog.cc/java-date.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/java-date.html　　作者: 业余文艺架构师" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/mybatis-generator.html" title="Mybatis-Generator">http://geeksblog.cc/mybatis-generator.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://geeksblog.cc/mybatis-generator.html　　作者: 业余文艺架构师" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -378,18 +370,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/git-svn.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Git比svn的优势
-        
-      </div>
-    </a>
   
-  
-    <a  href="/study-goals.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">制定学习目标和计划</div>
+    <a  href="/suanfa-11.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">突破算法第11天-红黑树</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -401,7 +384,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#日期表示类型"><span class="toc-number">1.</span> <span class="toc-text">日期表示类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日期计算"><span class="toc-number">2.</span> <span class="toc-text">日期计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高精度时间"><span class="toc-number">3.</span> <span class="toc-text">高精度时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript日期"><span class="toc-number">4.</span> <span class="toc-text">javascript日期</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件介绍"><span class="toc-number">1.</span> <span class="toc-text">插件介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件特性"><span class="toc-number">2.</span> <span class="toc-text">插件特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件使用"><span class="toc-number">3.</span> <span class="toc-text">插件使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#要求"><span class="toc-number">3.1.</span> <span class="toc-text">要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动本软件"><span class="toc-number">3.2.</span> <span class="toc-text">启动本软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档"><span class="toc-number">3.3.</span> <span class="toc-text">文档</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#截图参考"><span class="toc-number">4.</span> <span class="toc-text">截图参考</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -472,13 +455,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/git-svn.html" title="上一篇: Git比svn的优势">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/study-goals.html" title="下一篇: 制定学习目标和计划">
+            <a  href="/suanfa-11.html" title="下一篇: 突破算法第11天-红黑树">
                 <i class="fa fa-angle-right"></i>
             </a>
         
