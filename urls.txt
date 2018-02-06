@@ -1,3 +1,4 @@
+http://geeksblog.cc/sprigmvc2boot.html
 http://geeksblog.cc/mybatis-generator.html
 http://geeksblog.cc/suanfa-11.html
 http://geeksblog.cc/suanfa-10.html
@@ -47,4 +48,3 @@ http://geeksblog.cc/git-svn.html
 http://geeksblog.cc/java-date.html
 http://geeksblog.cc/study-goals.html
 http://geeksblog.cc/ghost-blog.html
-http://geeksblog.cc/git-config-study.html
