@@ -1,3 +1,6 @@
+http://geeksblog.cc/dslock.html
+http://geeksblog.cc/dsbasic.html
+http://geeksblog.cc/zookeeper.html
 http://geeksblog.cc/descNode.html
 http://geeksblog.cc/sprigmvc2boot.html
 http://geeksblog.cc/mybatis-generator.html
@@ -45,6 +48,3 @@ http://geeksblog.cc/mac-mysql-unicode.html
 http://geeksblog.cc/mysql-study.html
 http://geeksblog.cc/node-develop.html
 http://geeksblog.cc/redis-study.html
-http://geeksblog.cc/git-svn.html
-http://geeksblog.cc/java-date.html
-http://geeksblog.cc/study-goals.html
