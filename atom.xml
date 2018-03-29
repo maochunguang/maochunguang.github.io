@@ -63,12 +63,61 @@
     <link href="http://geeksblog.cc/dsbasic.html"/>
     <id>http://geeksblog.cc/dsbasic.html</id>
     <published>2018-02-26T14:31:40.000Z</published>
-    <updated>2018-03-26T14:43:48.716Z</updated>
+    <updated>2018-03-29T00:30:51.561Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 分布式系统理论基础：</strong> <Excerpt in index | 首页摘要><br>分布式系统不是万能，不能解决所有痛点。在高可用，一致性，分区容错性必须有所权衡。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
-<h2 id="cap理论"><a href="#cap理论" class="headerlink" title="cap理论"></a>cap理论</h2><h2 id="base理论"><a href="#base理论" class="headerlink" title="base理论"></a>base理论</h2><h2 id="paxos协议"><a href="#paxos协议" class="headerlink" title="paxos协议"></a>paxos协议</h2><h2 id="zab协议"><a href="#zab协议" class="headerlink" title="zab协议"></a>zab协议</h2><h2 id="raft协议"><a href="#raft协议" class="headerlink" title="raft协议"></a>raft协议</h2><blockquote>
+<h2 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h2><p>定理：任何分布式架构都只能同时满足两点，无法三者兼顾。</p>
+<ul>
+<li>Consistency（一致性），数据一致更新，所有的数据变动都是同步的。</li>
+<li>Availability（可用性），好的响应性能。</li>
+<li>Partition tolerance（分区容忍性）可靠性，机器宕机是否影响使用。</li>
+</ul>
+<p>关系数据库的ACID模型拥有 高一致性 + 可用性 很难进行分区：</p>
+<ol>
+<li>Atomicity原子性：一个事务中所有操作都必须全部完成，要么全部不完成。</li>
+<li>Consistency一致性. 在事务开始或结束时，数据库应该在一致状态。</li>
+<li>Isolation隔离性. 事务将假定只有它自己在操作数据库，彼此不知晓。</li>
+<li>Durability持久性 一旦事务完成，就不能返回。<br>跨数据库两段提交事务：2PC (two-phase commit)， 2PC is the anti-scalability pattern (Pat Helland)<br>是反可伸缩模式的，JavaEE中的JTA事务可以支持2PC。因为2PC是反模式，尽量不要使用2PC，使用BASE来回避。</li>
+</ol>
+<h2 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h2><ul>
+<li>Basically Available 基本可用，支持分区失败</li>
+<li>Soft state 软状态，允许状态某个时间短不同步，或者异步</li>
+<li>Eventually consistent 最终一致性，要求数据最终结果一致，而不是时刻高度一致。</li>
+</ul>
+<h2 id="paxos协议"><a href="#paxos协议" class="headerlink" title="paxos协议"></a>paxos协议</h2><p>Paxos算法的目的是为了解决分布式环境下一致性的问题。多个节点并发操纵数据，如何保证在读写过程中数据的一致性，并且解决方案要能适应分布式环境下的不可靠性（系统如何就一个值达到统一）。</p>
+<h3 id="Paxos的两个组件"><a href="#Paxos的两个组件" class="headerlink" title="Paxos的两个组件:"></a>Paxos的两个组件:</h3><ul>
+<li>Proposer：提议发起者，处理客户端请求，将客户端的请求发送到集群中，以便决定这个值是否可以被批准。</li>
+<li>Acceptor:提议批准者，负责处理接收到的提议，他们的回复就是一次投票。会存储一些状态来决定是否接收一个值</li>
+</ul>
+<h3 id="Paxos有两个原则"><a href="#Paxos有两个原则" class="headerlink" title="Paxos有两个原则"></a>Paxos有两个原则</h3><ol>
+<li>安全原则—保证不能做错的事<ul>
+<li>a） 针对某个实例的表决只能有一个值被批准，不能出现一个被批准的值被另一个值覆盖的情况；(假设有一个值被多数Acceptor批准了，那么这个值就只能被学习)</li>
+<li>b） 每个节点只能学习到已经被批准的值，不能学习没有被批准的值。</li>
+</ul>
+</li>
+<li>存活原则—只要有多数服务器存活并且彼此间可以通信，最终都要做到的下列事情：<ul>
+<li>a）最终会批准某个被提议的值；</li>
+<li>b）一个值被批准了，其他服务器最终会学习到这个值。</li>
+</ul>
+</li>
+</ol>
+<h2 id="zab协议-ZooKeeper-Atomic-broadcast-protocol"><a href="#zab协议-ZooKeeper-Atomic-broadcast-protocol" class="headerlink" title="zab协议(ZooKeeper Atomic broadcast protocol)"></a>zab协议(ZooKeeper Atomic broadcast protocol)</h2><p>ZAB协议是为分布式协调服务 ZooKeeper 专门设计的一种支持崩溃恢复的原子广播协议。在 ZooKeeper 中，主要依赖 ZAB 协议来实现分布式数据一致性，基于该协议，ZooKeeper 实现了一种主备模式的系统架构来保持集群中各个副本之间的数据一致性。</p>
+<h3 id="Phase-0-Leader-election（选举阶段）"><a href="#Phase-0-Leader-election（选举阶段）" class="headerlink" title="Phase 0: Leader election（选举阶段）"></a>Phase 0: Leader election（选举阶段）</h3><p>节点在一开始都处于选举阶段，只要有一个节点得到超半数节点的票数，它就可以当选准 leader。只有到达 Phase 3 准 leader 才会成为真正的 leader。这一阶段的目的是就是为了选出一个准 leader，然后进入下一个阶段。</p>
+<h3 id="Phase-1-Discovery（发现阶段）"><a href="#Phase-1-Discovery（发现阶段）" class="headerlink" title="Phase 1: Discovery（发现阶段）"></a>Phase 1: Discovery（发现阶段）</h3><p>在这个阶段，followers 跟准 leader 进行通信，同步 followers 最近接收的事务提议。这个一阶段的主要目的是发现当前大多数节点接收的最新提议，并且准 leader 生成新的 epoch，让 followers 接受，更新它们的 acceptedEpoch。<br>一个 follower 只会连接一个 leader，如果有一个节点 f 认为另一个 follower p 是 leader，f 在尝试连接 p 时会被拒绝，f 被拒绝之后，就会进入 Phase 0。</p>
+<h3 id="Phase-2-Synchronization（同步阶段）"><a href="#Phase-2-Synchronization（同步阶段）" class="headerlink" title="Phase 2: Synchronization（同步阶段）"></a>Phase 2: Synchronization（同步阶段）</h3><p>同步阶段主要是利用 leader 前一阶段获得的最新提议历史，同步集群中所有的副本。只有当 quorum 都同步完成，准 leader 才会成为真正的 leader。follower 只会接收 zxid 比自己的 lastZxid 大的提议。</p>
+<h3 id="Phase-3-Broadcast（广播阶段）"><a href="#Phase-3-Broadcast（广播阶段）" class="headerlink" title="Phase 3: Broadcast（广播阶段）"></a>Phase 3: Broadcast（广播阶段）</h3><p>到了这个阶段，Zookeeper 集群才能正式对外提供事务服务，并且 leader 可以进行消息广播。同时如果有新的节点加入，还需要对新节点进行同步。</p>
+<h2 id="raft协议"><a href="#raft协议" class="headerlink" title="raft协议"></a>raft协议</h2><p>在Raft中，每个结点会处于下面三种状态中的一种：</p>
+<h3 id="follower"><a href="#follower" class="headerlink" title="follower"></a>follower</h3><p>所有结点都以follower的状态开始。如果没收到leader消息则会变成candidate状态。</p>
+<h3 id="candidate"><a href="#candidate" class="headerlink" title="candidate"></a>candidate</h3><p>会向其他结点“拉选票”，如果得到大部分的票则成为leader。这个过程就叫做Leader选举(Leader Election)</p>
+<h3 id="leader"><a href="#leader" class="headerlink" title="leader"></a>leader</h3><p>所有对系统的修改都会先经过leader。每个修改都会写一条日志(log entry)。leader收到修改请求后的过程如下，这个过程叫做日志复制(Log Replication)：</p>
+<pre><code>1. 复制日志到所有follower结点(replicate entry)
+2. 大部分结点响应时才提交日志
+3. 通知所有follower结点日志已提交
+4. 所有follower也提交日志
+5. 现在整个系统处于一致的状态
+</code></pre><blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
 </blockquote>
 ]]></content>
@@ -87,13 +136,13 @@
   </entry>
   
   <entry>
-    <title>Zookeeper</title>
+    <title>为什么使用Zookeeper？</title>
     <link href="http://geeksblog.cc/zookeeper.html"/>
     <id>http://geeksblog.cc/zookeeper.html</id>
     <published>2018-02-18T14:15:44.000Z</published>
-    <updated>2018-03-26T14:44:59.955Z</updated>
+    <updated>2018-03-29T00:31:27.016Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> Zookeeper：</strong> <Excerpt in index | 首页摘要><br>随着大型互联网的发展，分布式系统应用越来越来越广泛，zookeeper成了分布式系统的标配。集群容错，动态负载均衡，动态扩容，异地多活等架构都依赖于zookeeper而搭建。<br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p><strong> 为什么使用Zookeeper？：</strong> <Excerpt in index | 首页摘要><br>随着大型互联网的发展，分布式系统应用越来越来越广泛，zookeeper成了分布式系统的标配。集群容错，动态负载均衡，动态扩容，异地多活等架构都依赖于zookeeper而搭建。<br><a id="more"></a></p>
 <The rest of contents | 余下全文>
 
 <h2 id="zookeeper是什么？"><a href="#zookeeper是什么？" class="headerlink" title="zookeeper是什么？"></a>zookeeper是什么？</h2><p>zookeeper是由雅虎创建的，基于google chubby,一个开源的分布式协调服务，是分布式数据一致性的解决方案。</p>
@@ -142,7 +191,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; Zookeeper：&lt;/strong&gt; &lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;随着大型互联网的发展，分布式系统应用越来越来越广泛，zookeeper成了分布式系统的标配。集群容错，动态负载均衡，动态扩容，异地多活等架构都依赖于zookeeper而搭建。&lt;br&gt;
+      &lt;p&gt;&lt;strong&gt; 为什么使用Zookeeper？：&lt;/strong&gt; &lt;Excerpt in index | 首页摘要&gt;&lt;br&gt;随着大型互联网的发展，分布式系统应用越来越来越广泛，zookeeper成了分布式系统的标配。集群容错，动态负载均衡，动态扩容，异地多活等架构都依赖于zookeeper而搭建。&lt;br&gt;
     
     </summary>
     
