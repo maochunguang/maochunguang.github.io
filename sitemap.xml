@@ -233,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/node-develop.html</loc>
+    <loc>http://geeksblog.cc/mysql-study.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/git-svn.html</loc>
+    <loc>http://geeksblog.cc/git-config-study.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -282,13 +282,6 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/spider-koa2.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
@@ -296,7 +289,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/dream.html</loc>
+    <loc>http://geeksblog.cc/spider-koa2.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -304,6 +297,13 @@
   
   <url>
     <loc>http://geeksblog.cc/study-goals.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://geeksblog.cc/dream.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/git-config-study.html</loc>
+    <loc>http://geeksblog.cc/git-svn.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -394,7 +394,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/mysql-study.html</loc>
+    <loc>http://geeksblog.cc/node-develop.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
