@@ -885,26 +885,6 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ajax和jsonp区别</title>
-        <pubTime>2016-07-06T12:54:16.000Z</pubTime>
-        
-        <tag>http</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程语言" url="http://geeksblog.cc/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://geeksblog.cc/digital-info.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
@@ -918,6 +898,26 @@
            
              
               <breadCrumb title="digital" url="http://geeksblog.cc/categories/digital/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://geeksblog.cc/ajax-study.html</loc>
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ajax简单教程</title>
+        <pubTime>2016-07-06T12:53:11.000Z</pubTime>
+        
+        <tag>http</tag>
+         
+         
+           
+             
+              <breadCrumb title="编程语言" url="http://geeksblog.cc/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -945,26 +945,6 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/mac-shortcut.html</loc>
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Mac最实用快捷键</title>
-        <pubTime>2017-04-21T02:53:08.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://geeksblog.cc/mac-mysql-unicode.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
@@ -978,6 +958,26 @@
            
              
               <breadCrumb title="数据库" url="http://geeksblog.cc/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://geeksblog.cc/mac-shortcut.html</loc>
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac最实用快捷键</title>
+        <pubTime>2017-04-21T02:53:08.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -1085,12 +1085,12 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/ajax-study.html</loc>
+    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Ajax简单教程</title>
-        <pubTime>2016-07-06T12:53:11.000Z</pubTime>
+        <title>Ajax和jsonp区别</title>
+        <pubTime>2016-07-06T12:54:16.000Z</pubTime>
         
         <tag>http</tag>
          
@@ -1144,7 +1144,6 @@
     </url>
 
     
-    
   <url>
     <loc>http://geeksblog.cc/best-js-snippet.html</loc>
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
@@ -1164,6 +1163,7 @@
     </data>
     </url>
 
+    
     
     
   <url>
