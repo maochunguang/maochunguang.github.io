@@ -437,12 +437,12 @@
 
 
     
-        <div id="container"></div>
+        <section id="comments">
 <link rel="stylesheet" href="/css/gitment.min.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-//   id: '使用Ghost搭建个人博客', // 可选。默认为 location.href
+  id: '使用Ghost搭建个人博客', // 可选。默认为 location.href
   owner: 'maochunguang',
   repo: 'maochunguang.github.io',
   oauth: {
@@ -450,8 +450,9 @@ var gitment = new Gitment({
     client_secret: '87a15e1ddb65b4abc0685c4a8de7b617f31e5185',
   },
 })
-gitment.render('container')
+gitment.render('comments')
 </script>
+</section>
     
 
 
