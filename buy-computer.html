@@ -449,17 +449,21 @@
 
 
     
-        <section class="changyan" id="comments">
-  <!--<div id="uyan_frame"></div>-->
-  <div id="SOHUCS"></div>
-  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
-  <script type="text/javascript">
-    window.changyan.api.config({
-      appid: 'cysUyjKoQ',
-      conf: 'prod_bc19196c7a2a5953894965521361b2db'
-    });
-  </script>
-</section>
+        <div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+//   id: id', // 可选。默认为 location.href
+  owner: 'maochunguang',
+  repo: 'https://github.com/maochunguang/myComments.git',
+  oauth: {
+    client_id: '937e1f339fe136727e71',
+    client_secret: '87a15e1ddb65b4abc0685c4a8de7b617f31e5185',
+  },
+})
+gitment.render('container')
+</script>
     
 
 
