@@ -282,7 +282,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/dream.html</loc>
+    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -296,7 +296,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
+    <loc>http://geeksblog.cc/dream.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
+    <loc>http://geeksblog.cc/ajax-study.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -359,13 +359,6 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/fullprj-desc.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://geeksblog.cc/free-books.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
@@ -373,7 +366,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/git-config-study.html</loc>
+    <loc>http://geeksblog.cc/fullprj-desc.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -387,7 +380,14 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/ajax-study.html</loc>
+    <loc>http://geeksblog.cc/git-config-study.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     

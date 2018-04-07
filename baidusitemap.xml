@@ -785,19 +785,19 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/dream.html</loc>
+    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>我的梦想</title>
-        <pubTime>2016-04-24T14:07:27.000Z</pubTime>
+        <title>Hexo和github打造个人博客</title>
+        <pubTime>2015-12-20T14:35:04.000Z</pubTime>
         
-        <tag>others</tag>
+        <tag>hexo</tag>
          
          
            
              
-              <breadCrumb title="个人随笔" url="http://geeksblog.cc/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
+              <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
           
         </display>
     </data>
@@ -825,19 +825,19 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
+    <loc>http://geeksblog.cc/dream.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo和github打造个人博客</title>
-        <pubTime>2015-12-20T14:35:04.000Z</pubTime>
+        <title>我的梦想</title>
+        <pubTime>2016-04-24T14:07:27.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>others</tag>
          
          
            
              
-              <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+              <breadCrumb title="个人随笔" url="http://geeksblog.cc/categories/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E7%AC%94/"/>
           
         </display>
     </data>
@@ -885,12 +885,12 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
+    <loc>http://geeksblog.cc/ajax-study.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Ajax和jsonp区别</title>
-        <pubTime>2016-07-06T12:54:16.000Z</pubTime>
+        <title>Ajax简单教程</title>
+        <pubTime>2016-07-06T12:53:11.000Z</pubTime>
         
         <tag>http</tag>
          
@@ -1005,26 +1005,6 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/fullprj-desc.html</loc>
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>一个完整项目的得失</title>
-        <pubTime>2017-04-11T02:18:22.000Z</pubTime>
-        
-        <tag>java</tag>
-         
-         
-           
-             
-              <breadCrumb title="编程语言" url="http://geeksblog.cc/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://geeksblog.cc/free-books.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
@@ -1045,19 +1025,19 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/git-config-study.html</loc>
+    <loc>http://geeksblog.cc/fullprj-desc.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Git学习笔记</title>
-        <pubTime>2016-05-01T00:24:45.000Z</pubTime>
+        <title>一个完整项目的得失</title>
+        <pubTime>2017-04-11T02:18:22.000Z</pubTime>
         
-        <tag>others</tag>
+        <tag>java</tag>
          
          
            
              
-              <breadCrumb title="学习笔记" url="http://geeksblog.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+              <breadCrumb title="编程语言" url="http://geeksblog.cc/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
           
         </display>
     </data>
@@ -1085,12 +1065,32 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/ajax-study.html</loc>
+    <loc>http://geeksblog.cc/git-config-study.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Ajax简单教程</title>
-        <pubTime>2016-07-06T12:53:11.000Z</pubTime>
+        <title>Git学习笔记</title>
+        <pubTime>2016-05-01T00:24:45.000Z</pubTime>
+        
+        <tag>others</tag>
+         
+         
+           
+             
+              <breadCrumb title="学习笔记" url="http://geeksblog.cc/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://geeksblog.cc/ajax-jsonp.html</loc>
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ajax和jsonp区别</title>
+        <pubTime>2016-07-06T12:54:16.000Z</pubTime>
         
         <tag>http</tag>
          
