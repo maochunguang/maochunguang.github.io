@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/hexo-config.html</loc>
+    <loc>http://geeksblog.cc/git-svn.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -275,14 +275,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/git-svn.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
+    <loc>http://geeksblog.cc/hexo-config.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -296,7 +289,7 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/dream.html</loc>
+    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -304,6 +297,13 @@
   
   <url>
     <loc>http://geeksblog.cc/study-goals.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://geeksblog.cc/dream.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -359,13 +359,6 @@
   </url>
   
   <url>
-    <loc>http://geeksblog.cc/free-books.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://geeksblog.cc/fullprj-desc.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
@@ -374,6 +367,13 @@
   
   <url>
     <loc>http://geeksblog.cc/ghost-blog.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://geeksblog.cc/free-books.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     

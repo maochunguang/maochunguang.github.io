@@ -705,14 +705,14 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/hexo-config.html</loc>
+    <loc>http://geeksblog.cc/git-svn.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo配置和优化记录</title>
-        <pubTime>2016-11-28T15:07:12.000Z</pubTime>
+        <title>Git比svn的优势</title>
+        <pubTime>2016-05-22T03:13:00.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>others</tag>
          
          
            
@@ -765,32 +765,12 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/git-svn.html</loc>
+    <loc>http://geeksblog.cc/hexo-config.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>Git比svn的优势</title>
-        <pubTime>2016-05-22T03:13:00.000Z</pubTime>
-        
-        <tag>others</tag>
-         
-         
-           
-             
-              <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo和github打造个人博客</title>
-        <pubTime>2015-12-20T14:35:04.000Z</pubTime>
+        <title>Hexo配置和优化记录</title>
+        <pubTime>2016-11-28T15:07:12.000Z</pubTime>
         
         <tag>hexo</tag>
          
@@ -825,12 +805,32 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/dream.html</loc>
+    <loc>http://geeksblog.cc/hexo-githup-blog.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>我的梦想</title>
-        <pubTime>2016-04-24T14:07:27.000Z</pubTime>
+        <title>Hexo和github打造个人博客</title>
+        <pubTime>2015-12-20T14:35:04.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://geeksblog.cc/study-goals.html</loc>
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>制定学习目标和计划</title>
+        <pubTime>2016-05-06T02:20:45.000Z</pubTime>
         
         <tag>others</tag>
          
@@ -845,12 +845,12 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/study-goals.html</loc>
+    <loc>http://geeksblog.cc/dream.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
         <display>
-        <title>制定学习目标和计划</title>
-        <pubTime>2016-05-06T02:20:45.000Z</pubTime>
+        <title>我的梦想</title>
+        <pubTime>2016-04-24T14:07:27.000Z</pubTime>
         
         <tag>others</tag>
          
@@ -1005,26 +1005,6 @@
 
     
   <url>
-    <loc>http://geeksblog.cc/free-books.html</loc>
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>免费的开源书籍</title>
-        <pubTime>2016-11-28T16:15:52.000Z</pubTime>
-        
-        <tag>book</tag>
-         
-         
-           
-             
-              <breadCrumb title="资源分享" url="http://geeksblog.cc/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://geeksblog.cc/fullprj-desc.html</loc>
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     <data>
@@ -1058,6 +1038,26 @@
            
              
               <breadCrumb title="开发工具" url="http://geeksblog.cc/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://geeksblog.cc/free-books.html</loc>
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>免费的开源书籍</title>
+        <pubTime>2016-11-28T16:15:52.000Z</pubTime>
+        
+        <tag>book</tag>
+         
+         
+           
+             
+              <breadCrumb title="资源分享" url="http://geeksblog.cc/categories/%E8%B5%84%E6%BA%90%E5%88%86%E4%BA%AB/"/>
           
         </display>
     </data>
