@@ -233,70 +233,7 @@
   </url>
   
   <url>
-    <loc>https://geeksblog.cc/node-notes.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/node-study.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/git-svn.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/wechat-dev.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/redis-config.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/redis-study.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/git-config-study.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/hexo-githup-blog.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://geeksblog.cc/spider-koa2.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/hexo-config.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -310,28 +247,7 @@
   </url>
   
   <url>
-    <loc>https://geeksblog.cc/dream.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/ajax-study.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/java-date.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/digital-info.html</loc>
+    <loc>https://geeksblog.cc/mac-dev.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -345,35 +261,14 @@
   </url>
   
   <url>
-    <loc>https://geeksblog.cc/mac-shortcut.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/mac-dev.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/eggjs-action.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/fullprj-desc.html</loc>
-    
-    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://geeksblog.cc/free-books.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/git-config-study.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -387,6 +282,13 @@
   </url>
   
   <url>
+    <loc>https://geeksblog.cc/git-svn.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://geeksblog.cc/mysql-study.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
@@ -394,7 +296,63 @@
   </url>
   
   <url>
-    <loc>https://geeksblog.cc/ajax-jsonp.html</loc>
+    <loc>https://geeksblog.cc/hexo-config.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/hexo-githup-blog.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/java-date.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/dream.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/redis-study.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/redis-config.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/node-study.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/digital-info.html</loc>
+    
+    <lastmod>2017-05-26T06:12:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://geeksblog.cc/wechat-dev.html</loc>
     
     <lastmod>2017-05-26T06:12:27.000Z</lastmod>
     
@@ -408,14 +366,14 @@
   </url>
   
   <url>
-    <loc>https://geeksblog.cc//404.html</loc>
+    <loc>https://geeksblog.cc/best-js-snippet.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://geeksblog.cc/best-js-snippet.html</loc>
+    <loc>https://geeksblog.cc//404.html</loc>
     
     <lastmod>2017-05-17T23:42:12.000Z</lastmod>
     
@@ -432,13 +390,6 @@
     <loc>https://geeksblog.cc/bestblog.html</loc>
     
     <lastmod>2017-05-15T15:27:48.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://geeksblog.cc/npm-detail.html</loc>
-    
-    <lastmod>2016-11-27T07:18:51.000Z</lastmod>
     
   </url>
   
