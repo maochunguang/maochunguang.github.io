@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://geeksblog.cc/mac-mysql-unicode.html">
 <meta property="og:site_name" content="业余文艺架构师之路">
 <meta property="og:description" content="mac下mysql5.6字符集设置：     在mac下设置mysql5.6字符集时踩过的坑，百分百保证有效">
-<meta property="og:updated_time" content="2017-05-26T06:12:27.000Z">
+<meta property="og:updated_time" content="2018-07-24T01:49:05.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac下mysql5.6字符集设置">
 <meta name="twitter:description" content="mac下mysql5.6字符集设置：     在mac下设置mysql5.6字符集时踩过的坑，百分百保证有效">
@@ -337,7 +337,7 @@
 <h2 id="查看设置是否成功"><a href="#查看设置是否成功" class="headerlink" title="查看设置是否成功"></a>查看设置是否成功</h2><p>在命令行输入mysql，如果提示没有命令的话，在bash或者zsh的文件里修改，我用的是zsh，设置~/.zshrc,<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> MYSQL=<span class="string">"/usr/local/mysql/bin/"</span></div><div class="line"><span class="built_in">export</span> PATH=<span class="string">"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:<span class="variable">$MYSQL</span>"</span></div></pre></td></tr></table></figure></p>
 <p>在命令行输入mysql,进入mysql命令行后，输入<code>status;</code>或者<code>show variables like &#39;%char%&#39;;</code><br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">|<span class="string"> character_set_client     </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_connection </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_database   </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_filesystem </span>|<span class="string"> binary                                                  </span>|</div><div class="line">|<span class="string"> character_set_results    </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_server     </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_set_system     </span>|<span class="string"> utf8                                                    </span>|</div><div class="line">|<span class="string"> character_sets_dir       </span>|<span class="string"> /usr/local/mysql-5.6.30-osx10.11-x86_64/share/charsets/</span></div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc">我的博客</a></p>
+<p>博客搬家，请访问新博客地址吧! <a href="https://www.duduhuahua.cn">我的博客</a></p>
 </blockquote>
 
       
@@ -350,7 +350,7 @@
         <p><span>本文标题:</span><a  href="/mac-mysql-unicode.html">mac下mysql5.6字符集设置</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 业余文艺架构师 的个人博客">业余文艺架构师</a></p>
         <p><span>发布时间:</span>2016年05月28日 - 23时10分</p>
-        <p><span>最后更新:</span>2017年05月26日 - 14时12分</p>
+        <p><span>最后更新:</span>2018年07月24日 - 09时49分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/mac-mysql-unicode.html" title="mac下mysql5.6字符集设置">https://geeksblog.cc/mac-mysql-unicode.html</a>
             <span class="copy-path" data-clipboard-text="原文: https://geeksblog.cc/mac-mysql-unicode.html　　作者: 业余文艺架构师" title=""></span>
